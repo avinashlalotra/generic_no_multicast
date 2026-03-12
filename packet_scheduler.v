@@ -10,6 +10,7 @@ module packet_scheduler #(
     input wire clk,
     input wire rst_n,
     input wire start,
+    input wire out_ready,
     
     // Memory interface A
     output reg [A_ADDR_W-1:0] a_addr,
@@ -33,6 +34,9 @@ module packet_scheduler #(
     output reg done
 );
 
+    wire stall = (a_pkt_valid | b_pkt_valid) & !out_ready;
+    wire advance = !stall;
+
     reg [31:0] i, j, t;
     reg valid_req;
     reg is_b_phase;
@@ -52,7 +56,7 @@ module packet_scheduler #(
             t <= 0;
             valid_req <= 1'b0;
             is_b_phase <= 1'b0;
-        end else begin
+        end else if (advance) begin
             valid_req <= 1'b0;
             case (state)
                 IDLE: begin
@@ -98,8 +102,9 @@ module packet_scheduler #(
         end
     end
 
+    // Memory Address and Read Enables
     always @(*) begin
-        if (valid_req) begin
+        if (valid_req && advance) begin
             if (!is_b_phase) begin
                 a_ren  = 1'b1;
                 b_ren  = 1'b0;
@@ -130,7 +135,7 @@ module packet_scheduler #(
             i_d <= 0;
             j_d <= 0;
             t_d <= 0;
-        end else begin
+        end else if (advance) begin
             valid_req_d <= valid_req;
             is_b_phase_d <= is_b_phase;
             i_d <= i;
@@ -152,7 +157,7 @@ module packet_scheduler #(
             b_pkt_valid <= 1'b0;
             b_pkt_value <= 0;
             b_pkt_mask  <= 0;
-        end else begin
+        end else if (advance) begin
             if (valid_req_d) begin
                 if (!is_b_phase_d) begin
                     a_pkt_valid <= 1'b1;
@@ -187,7 +192,7 @@ module packet_scheduler #(
     always @(posedge clk or negedge rst_n) begin
         if (!rst_n) begin
             valid_req_dd <= 1'b0;
-        end else begin
+        end else if (advance) begin
             valid_req_dd <= valid_req_d;
         end
     end
@@ -195,7 +200,7 @@ module packet_scheduler #(
     always @(posedge clk or negedge rst_n) begin
         if (!rst_n) begin
             done <= 1'b0;
-        end else begin
+        end else if (advance) begin
             if (valid_req_dd && !valid_req_d) begin
                 done <= 1'b1;
             end else begin
