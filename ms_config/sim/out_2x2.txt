@@ -1,0 +1,29 @@
+WARNING: tb/tb_wrapper_2x2.v:141: $readmemh(tb/mem_A_2x2.hex): Not enough words in the file for the requested range [0:63].
+WARNING: tb/tb_wrapper_2x2.v:142: $readmemh(tb/mem_B_2x2.hex): Not enough words in the file for the requested range [0:63].
+==========================================================
+Time 55: MS CONFIG EMITTED: ALL MS -> [STATE: STATIONARY, PSUM: 0]
+==========================================================
+==========================================================
+Time 455: MS CONFIG EMITTED: ALL MS -> [STATE: STREAMING, PSUM: 1]
+==========================================================
+
+--- FINAL PACKET TRACE (2x2) ---
+Captured 16 packets
+
+Pkt 0 (A): Val 1 -> active MS: [ 0 ]
+Pkt 1 (A): Val 2 -> active MS: [ 1 ]
+Pkt 2 (A): Val 3 -> active MS: [ ]
+Pkt 3 (A): Val 4 -> active MS: [ ]
+Pkt 4 (A): Val 1 -> active MS: [ 2 ]
+Pkt 5 (A): Val 2 -> active MS: [ 3 ]
+Pkt 6 (A): Val 3 -> active MS: [ ]
+Pkt 7 (A): Val 4 -> active MS: [ ]
+Pkt 8 (B): Val 5 -> active MS: [ 0 ]
+Pkt 9 (B): Val 6 -> active MS: [ 1 ]
+Pkt 10 (B): Val 5 -> active MS: [ ]
+Pkt 11 (B): Val 6 -> active MS: [ ]
+Pkt 12 (B): Val 7 -> active MS: [ 2 ]
+Pkt 13 (B): Val 8 -> active MS: [ 3 ]
+Pkt 14 (B): Val 7 -> active MS: [ ]
+Pkt 15 (B): Val 8 -> active MS: [ ]
+tb/tb_wrapper_2x2.v:170: $finish called at 795 (1s)
