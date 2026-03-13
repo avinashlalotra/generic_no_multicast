@@ -1,28 +1,16 @@
-module tb_wrapper;
+module tb_ms_config_top;
 
     localparam M = 2;
-    localparam K = 2;
+    localparam K = 1;
     localparam N = 2;
-    localparam NUM_MS = 8;
+    localparam NUM_MS = 4;
     localparam DATA_W = 32;
-    localparam A_ADDR_W = 4;
-    localparam B_ADDR_W = 4;
+    localparam A_ADDR_W = 6;
+    localparam B_ADDR_W = 6;
 
     reg clk;
     reg rst_n;
     reg start;
-
-    wire [A_ADDR_W-1:0] a_addr;
-    wire a_ren;
-    wire [DATA_W-1:0] a_data;
-
-    wire [B_ADDR_W-1:0] b_addr;
-    wire b_ren;
-    wire [DATA_W-1:0] b_data;
-    
-    wire config_en;
-    reg config_rdy;
-    wire [NUM_MS-1:0] config_data;
     
     wire data_en;
     reg data_rdy;
@@ -32,47 +20,32 @@ module tb_wrapper;
     reg ms_config_rdy;
     wire [(20*NUM_MS)-1:0] ms_config_data;
     
+    wire config_en;
+    reg config_rdy;
+    wire [NUM_MS-1:0] config_data;
+    
     wire done;
 
     // Buffers for packets
-    reg [DATA_W-1:0] pkt_val_buf [0:63];
-    reg [NUM_MS-1:0] pkt_mask_buf [0:63];
+    reg [DATA_W-1:0] pkt_val_buf [0:255];
+    reg [NUM_MS-1:0] pkt_mask_buf [0:255];
     integer pkt_cnt;
 
-    // Instantiate memories
-    simple_mem #(.DATA_W(DATA_W), .ADDR_W(A_ADDR_W)) mem_A (
-        .clk(clk),
-        .ren(a_ren),
-        .addr(a_addr),
-        .rdata(a_data)
-    );
-
-    simple_mem #(.DATA_W(DATA_W), .ADDR_W(B_ADDR_W)) mem_B (
-        .clk(clk),
-        .ren(b_ren),
-        .addr(b_addr),
-        .rdata(b_data)
-    );
-
-    // Instantiate wrapper
-    scheduler_wrapper #(
+    // Instantiate Top Module
+    ms_config_top #(
         .M(M),
         .K(K),
         .N(N),
         .NUM_MS(NUM_MS),
         .DATA_W(DATA_W),
         .A_ADDR_W(A_ADDR_W),
-        .B_ADDR_W(B_ADDR_W)
+        .B_ADDR_W(B_ADDR_W),
+        .A_INIT_FILE("tb/mem_A_2x2.hex"),
+        .B_INIT_FILE("tb/mem_B_2x2.hex")
     ) dut (
         .clk(clk),
         .rst_n(rst_n),
         .start(start),
-        .a_addr(a_addr),
-        .a_ren(a_ren),
-        .a_data(a_data),
-        .b_addr(b_addr),
-        .b_ren(b_ren),
-        .b_data(b_data),
         .ms_config_en(ms_config_en),
         .ms_config_rdy(ms_config_rdy),
         .ms_config_data(ms_config_data),
@@ -93,13 +66,12 @@ module tb_wrapper;
 
     // Timeout watchdog
     initial begin
-        #50000;
+        #10000;
         $display("TIMEOUT error. Simulation did not finish.");
         $finish;
     end
 
     // Randomize ready signals to mock backpressure
-    // We will ensure that eventually both are ready together
     reg [31:0] rand_val;
     always @(posedge clk) begin
         if (!rst_n) begin
@@ -146,16 +118,8 @@ module tb_wrapper;
     end
 
     // Initialize & Test
-    integer idx;
     initial begin
-        // Initialize A matrix
-        $readmemh("tb/mem_A.hex", mem_A.mem);
-        
-        // Initialize B matrix
-        $readmemh("tb/mem_B.hex", mem_B.mem);
-
         pkt_cnt = 0;
-        
         rst_n = 0;
         start = 0;
         
@@ -170,9 +134,8 @@ module tb_wrapper;
         @(posedge done);
         #40;
 
-        $display("\\n--- SIMULATION COMPLETED (2x2, K=2) ---");
+        $display("\\n--- SIMULATION COMPLETED (TOP MODULE 2x2, K=1) ---");
         $display("Captured %0d chronological packets\\n", pkt_cnt);
-
         $finish;
     end
 
