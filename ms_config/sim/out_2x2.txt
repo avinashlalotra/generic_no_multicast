@@ -1,29 +1,21 @@
-WARNING: tb/tb_wrapper_2x2.v:141: $readmemh(tb/mem_A_2x2.hex): Not enough words in the file for the requested range [0:63].
-WARNING: tb/tb_wrapper_2x2.v:142: $readmemh(tb/mem_B_2x2.hex): Not enough words in the file for the requested range [0:63].
+WARNING: tb/tb_wrapper_2x2.v:150: $readmemh(tb/mem_A_2x2.hex): Not enough words in the file for the requested range [0:63].
+WARNING: tb/tb_wrapper_2x2.v:151: $readmemh(tb/mem_B_2x2.hex): Not enough words in the file for the requested range [0:63].
 ==========================================================
 Time 55: MS CONFIG EMITTED: ALL MS -> [STATE: STATIONARY, PSUM: 0]
 ==========================================================
+Time 85: Pkt 0 (A): Val 1 -> active MS: [ 0 ]
+Time 225: Pkt 1 (A): Val 2 -> active MS: [ 2 ]
+Time 245: Pkt 2 (A): Val 1 -> active MS: [ 1 ]
+Time 265: Pkt 3 (A): Val 2 -> active MS: [ 3 ]
 ==========================================================
-Time 455: MS CONFIG EMITTED: ALL MS -> [STATE: STREAMING, PSUM: 1]
+Time 285: MS CONFIG EMITTED: ALL MS -> [STATE: STREAMING, PSUM: 1]
 ==========================================================
+Time 365: Pkt 4 (B): Val 5 -> active MS: [ 0 ]
+Time 405: Pkt 5 (B): Val 5 -> active MS: [ 2 ]
+Time 435: Pkt 6 (B): Val 6 -> active MS: [ 1 ]
+Time 455: Pkt 7 (B): Val 6 -> active MS: [ 3 ]
 
---- FINAL PACKET TRACE (2x2) ---
-Captured 16 packets
+--- SIMULATION COMPLETED (2x2) ---
+Captured 8 chronological packets
 
-Pkt 0 (A): Val 1 -> active MS: [ 0 ]
-Pkt 1 (A): Val 2 -> active MS: [ 1 ]
-Pkt 2 (A): Val 3 -> active MS: [ ]
-Pkt 3 (A): Val 4 -> active MS: [ ]
-Pkt 4 (A): Val 1 -> active MS: [ 2 ]
-Pkt 5 (A): Val 2 -> active MS: [ 3 ]
-Pkt 6 (A): Val 3 -> active MS: [ ]
-Pkt 7 (A): Val 4 -> active MS: [ ]
-Pkt 8 (B): Val 5 -> active MS: [ 0 ]
-Pkt 9 (B): Val 6 -> active MS: [ 1 ]
-Pkt 10 (B): Val 5 -> active MS: [ ]
-Pkt 11 (B): Val 6 -> active MS: [ ]
-Pkt 12 (B): Val 7 -> active MS: [ 2 ]
-Pkt 13 (B): Val 8 -> active MS: [ 3 ]
-Pkt 14 (B): Val 7 -> active MS: [ ]
-Pkt 15 (B): Val 8 -> active MS: [ ]
-tb/tb_wrapper_2x2.v:170: $finish called at 795 (1s)
+tb/tb_wrapper_2x2.v:172: $finish called at 515 (1s)

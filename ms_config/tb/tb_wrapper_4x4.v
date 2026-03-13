@@ -1,7 +1,7 @@
 module tb_wrapper_4x4;
 
     localparam M = 4;
-    localparam K = 4;
+    localparam K = 1;
     localparam N = 4;
     localparam NUM_MS = 16;
     localparam DATA_W = 32;
@@ -116,6 +116,15 @@ module tb_wrapper_4x4;
     // Capture outputs
     always @(posedge clk) begin
         if (config_en && data_en && config_rdy && data_rdy) begin
+            $write("Time %0t: Pkt %0d (%s): Val %0d -> active MS: [ ", $time, pkt_cnt, (pkt_cnt < M*N*K) ? "A" : "B", data_data);
+            begin : print_ms
+                integer i;
+                for (i = 0; i < NUM_MS; i = i + 1) begin
+                    if (config_data[i]) $write("%0d ", i);
+                end
+            end
+            $display("]");
+            
             pkt_val_buf[pkt_cnt] = data_data;
             pkt_mask_buf[pkt_cnt] = config_data;
             pkt_cnt = pkt_cnt + 1;
@@ -157,15 +166,8 @@ module tb_wrapper_4x4;
         @(posedge done);
         #40;
 
-        $display("\n--- FINAL PACKET TRACE (4x4) ---");
-        $display("Captured %0d packets\n", pkt_cnt);
-        for (idx = 0; idx < pkt_cnt; idx = idx + 1) begin
-            $write("Pkt %0d (%s): Val %0d -> active MS: [ ", idx, (idx < M*N*K) ? "A" : "B", pkt_val_buf[idx]);
-            for (ms_idx = 0; ms_idx < NUM_MS; ms_idx = ms_idx + 1) begin
-                if (pkt_mask_buf[idx][ms_idx]) $write("%0d ", ms_idx);
-            end
-            $display("]");
-        end
+        $display("\n--- SIMULATION COMPLETED (4x4) ---");
+        $display("Captured %0d chronological packets\n", pkt_cnt);
 
         $finish;
     end
