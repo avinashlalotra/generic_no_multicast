@@ -132,16 +132,10 @@ module tb_wrapper;
     integer idx;
     initial begin
         // Initialize A matrix
-        mem_A.mem[0] = 32'd1;
-        mem_A.mem[1] = 32'd2;
-        mem_A.mem[2] = 32'd3;
-        mem_A.mem[3] = 32'd4;
+        $readmemh("tb/mem_A.hex", mem_A.mem);
         
         // Initialize B matrix
-        mem_B.mem[0] = 32'd5;
-        mem_B.mem[1] = 32'd6;
-        mem_B.mem[2] = 32'd7;
-        mem_B.mem[3] = 32'd8;
+        $readmemh("tb/mem_B.hex", mem_B.mem);
 
         pkt_cnt = 0;
         

@@ -129,17 +129,11 @@ module tb_scheduler;
     // Initialize & Test
     integer vn_m, vn_n, vn_idx, idx, vn_cnt, base_idx;
     initial begin
-        // Initialize A matrix (row-major)
-        mem_A.mem[0] = 32'd1;
-        mem_A.mem[1] = 32'd2;
-        mem_A.mem[2] = 32'd3;
-        mem_A.mem[3] = 32'd4;
+        // Initialize A matrix
+        $readmemh("tb/mem_A.hex", mem_A.mem);
         
-        // Initialize B matrix (col-major)
-        mem_B.mem[0] = 32'd5;
-        mem_B.mem[1] = 32'd6;
-        mem_B.mem[2] = 32'd7;
-        mem_B.mem[3] = 32'd8;
+        // Initialize B matrix
+        $readmemh("tb/mem_B.hex", mem_B.mem);
 
         a_cnt = 0;
         b_cnt = 0;

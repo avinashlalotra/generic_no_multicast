@@ -1,3 +1,5 @@
+WARNING: tb/tb_wrapper.v:135: $readmemh(tb/mem_A.hex): Not enough words in the file for the requested range [0:15].
+WARNING: tb/tb_wrapper.v:138: $readmemh(tb/mem_B.hex): Not enough words in the file for the requested range [0:15].
 Time 55: MS CONFIG EMITTED: 1000010000100001000010000100001000010000
 Time 455: MS CONFIG EMITTED: 2000120001200012000120001200012000120001
 Captured 16 packets
@@ -17,4 +19,4 @@ Pkt 12 (B): Val 7 , Mask 00000100
 Pkt 13 (B): Val 8 , Mask 00001000
 Pkt 14 (B): Val 7 , Mask 01000000
 Pkt 15 (B): Val 8 , Mask 10000000
-tb/tb_wrapper.v:172: $finish called at 795 (1s)
+tb/tb_wrapper.v:166: $finish called at 795 (1s)

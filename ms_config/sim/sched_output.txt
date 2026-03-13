@@ -1,3 +1,5 @@
+WARNING: tb/tb_scheduler.v:133: $readmemh(tb/mem_A.hex): Not enough words in the file for the requested range [0:15].
+WARNING: tb/tb_scheduler.v:136: $readmemh(tb/mem_B.hex): Not enough words in the file for the requested range [0:15].
 Time 45: MS CONFIG EMITTED: 1000010000100001000010000100001000010000
 Time 165: MS CONFIG EMITTED: 2000120001200012000120001200012000120001
 VN1:
@@ -23,4 +25,4 @@ A 3 , 01000000
 A 4 , 10000000
 B 7 , 01000000
 B 8 , 10000000
-tb/tb_scheduler.v:180: $finish called at 305 (1s)
+tb/tb_scheduler.v:174: $finish called at 305 (1s)
