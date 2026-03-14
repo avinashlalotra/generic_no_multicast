@@ -5,9 +5,9 @@ module art_config_unit #(
     input wire clk,
     input wire rst_n,
 
-    // Trigger
-    input wire start,
-    output reg done,
+    // Command interface
+    input wire cmd_valid,
+    output reg ack,
 
     // BV memory interface
     output reg [BV_ADDR_W-1:0] bv_addr,
@@ -98,7 +98,7 @@ module art_config_unit #(
     always @(posedge clk or negedge rst_n) begin
         if (!rst_n) begin
             state <= S_IDLE;
-            done <= 1'b0;
+            ack <= 1'b0;
             bv_addr <= 0;
             bv_ren <= 1'b0;
             vn_count <= 0;
@@ -108,8 +108,8 @@ module art_config_unit #(
         end else begin
             case (state)
                 S_IDLE: begin
-                    done <= 1'b0;
-                    if (start) begin
+                    ack <= 1'b0;
+                    if (cmd_valid) begin
                         config_accum <= 21'b0;
                         bv_addr <= 0;
                         bv_ren <= 1'b1;
@@ -189,8 +189,8 @@ module art_config_unit #(
 
                 S_DONE: begin
                     rn_config <= config_accum;
-                    done <= 1'b1;
-                    state <= S_IDLE;
+                    ack <= 1'b1;
+                    if (!cmd_valid) state <= S_IDLE;
                 end
             endcase
         end
