@@ -125,7 +125,7 @@ module tb_accel;
         cmd = CMD_INIT;
         // Initialize
         cmd_valid = 0;
-        output_en = 0;
+        output_en = 1; // ENABLED
         #20; rst_n = 1;
         
         run_cmd(CMD_VN_ALLOC,      "VN ALLOCATION");
@@ -138,6 +138,9 @@ module tb_accel;
         $display("\n=== FULL SEQUENCE COMPLETED ===");
         #500;
         $display("Final RN Config: %b", dut.datapath.rn_config_data);
+        
+        // Wait longer for any late results
+        repeat (100) @(posedge clk);
         #100;
 
         $finish;
