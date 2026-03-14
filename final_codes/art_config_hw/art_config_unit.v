@@ -61,7 +61,7 @@ module art_config_unit #(
         end
     endfunction
 
-    // Switch logic generator
+    // Switch logic generator (SRS: 3 bits)
     function automatic [2:0] get_switch_cfg;
         input [7:0] bv;
         input [2:0] l_start, l_end;
@@ -74,24 +74,54 @@ module art_config_unit #(
             cR = count_bits(bv, r_start, r_end);
             cT = total_bits(bv);
 
+            // SRS Mode: 00=idle, 01=addTwo, 10=flowLeft, 11=flowRight
             if (cL > 0 && cR > 0) mode = 2'b01; 
             else if (cL > 0)      mode = 2'b10; 
             else if (cR > 0)      mode = 2'b11; 
             else                  mode = 2'b00; 
 
+            // Output Control: 1 if this switch completes the reduction for the current VN
             genOut = ( (cL + cR) == cT ) && (cT > 0);
             get_switch_cfg = {mode, genOut};
         end
     endfunction
 
-    // DblRS logic generator
+    // DblRS logic generator (DBRS: 6 bits)
     function automatic [5:0] get_dbl_cfg;
         input [7:0] bv;
-        reg [2:0] cfgL, cfgR;
+        reg [3:0] cL, cR, cMid, cTotal;
+        reg [1:0] modeL, modeR;
+        reg genOutL, genOutR;
         begin
-            cfgL = get_switch_cfg(bv, 3'd2, 3'd2, 3'd3, 3'd3);
-            cfgR = get_switch_cfg(bv, 3'd4, 3'd4, 3'd5, 3'd5);
-            get_dbl_cfg = {cfgL[2:1], cfgR[2:1], cfgL[0], cfgR[0]};
+            cL = count_bits(bv, 3'd2, 3'd3); // In0, In1
+            cR = count_bits(bv, 3'd4, 3'd5); // In2, In3
+            cMid = count_bits(bv, 3'd3, 3'd4); // In1, In2
+            cTotal = total_bits(bv);
+
+            // Submode: 00=idle, 01=addOne, 10=addTwo, 11=addThree
+            // Left Side (In0, In1, In2)
+            if (count_bits(bv, 3'd2, 3'd4) == 3) modeL = 2'b11;
+            else if (cL == 2)                    modeL = 2'b10;
+            else if (cL == 1)                    modeL = 2'b01;
+            else                                 modeL = 2'b00;
+
+            // Right Side (In1, In2, In3)
+            if (count_bits(bv, 3'd3, 3'd5) == 3) modeR = 2'b11;
+            else if (cR == 2)                    modeR = 2'b10;
+            else if (cR == 1)                    modeR = 2'b01;
+            else                                 modeR = 2'b00;
+
+            // Full 4-input reduction check
+            if (count_bits(bv, 3'd2, 3'd5) == 4) begin
+                modeL = 2'b10; // Sum(In0, In1)
+                modeR = 2'b11; // Sum(Previous, In2, In3) -> hardware maps modeR=11 to SumAll
+            end
+
+            // Output Control
+            genOutL = (count_bits(bv, 3'd2, 3'd4) == cTotal) && (cTotal > 0);
+            genOutR = (count_bits(bv, 3'd2, 3'd5) == cTotal) && (cTotal > 0);
+
+            get_dbl_cfg = {modeL, modeR, genOutL, genOutR};
         end
     endfunction
 

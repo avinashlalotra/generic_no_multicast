@@ -5,8 +5,8 @@ module tb_art_config;
 
     reg clk;
     reg rst_n;
-    reg start;
-    wire done;
+    reg cmd_valid;
+    wire ack;
 
     wire [BV_ADDR_W-1:0] bv_addr;
     wire bv_ren;
@@ -23,8 +23,8 @@ module tb_art_config;
     ) dut (
         .clk(clk),
         .rst_n(rst_n),
-        .start(start),
-        .done(done),
+        .cmd_valid(cmd_valid),
+        .ack(ack),
         .bv_addr(bv_addr),
         .bv_ren(bv_ren),
         .bv_rdata(bv_rdata),
@@ -57,12 +57,12 @@ module tb_art_config;
         begin
             $display("\n=== TEST: %0s ===", name);
             mem[0] = vn_cnt;
-            start = 1;
+            cmd_valid = 1;
             @(posedge clk);
-            #1; start = 0;
-            $display("  [TB] Waiting for DONE...");
-            wait(done == 1);
-            $display("  [TB] DONE rcvd. Config: %b (%h)", rn_config, rn_config);
+            #1; cmd_valid = 0;
+            $display("  [TB] Waiting for ACK...");
+            wait(ack == 1);
+            $display("  [TB] ACK rcvd. Config: %b (%h)", rn_config, rn_config);
             @(posedge clk);
             #10;
         end
@@ -71,7 +71,7 @@ module tb_art_config;
     initial begin
         $timeformat(-9, 2, " ns", 20);
         rst_n = 0;
-        start = 0;
+        cmd_valid = 0;
         for (i=0; i<16; i=i+1) mem[i] = 0;
         
         #45; rst_n = 1;
