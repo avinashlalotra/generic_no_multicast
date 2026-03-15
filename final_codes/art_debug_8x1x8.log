@@ -1,0 +1,141 @@
+WARNING: controller.v:786: $readmemh(matrices/mem_A_2x2.mem): Not enough words in the file for the requested range [0:1023].
+WARNING: controller.v:786: $readmemh(matrices/mem_B_2x2.mem): Not enough words in the file for the requested range [0:1023].
+
+=== STARTING AUTOMATED FULL RUN ===
+
+---  ACCELERATOR RUN ---
+Time 75: [DIM] Loaded M=8, K=1, N=8
+Time 85: [SCHED] GEN_BV_WRITE: Addr=0, Data=8 (batch_vns=8, K=1)
+Time 95: [SCHED] GEN_BV_WRITE: Addr=1, Data=00000001 (K=1)
+Time 105: [SCHED] GEN_BV_WRITE: Addr=2, Data=00000002 (K=1)
+Time 115: [SCHED] GEN_BV_WRITE: Addr=3, Data=00000004 (K=1)
+Time 125: [SCHED] GEN_BV_WRITE: Addr=4, Data=00000008 (K=1)
+Time 135: [SCHED] GEN_BV_WRITE: Addr=5, Data=00000010 (K=1)
+Time 145: [SCHED] GEN_BV_WRITE: Addr=6, Data=00000020 (K=1)
+Time 155: [SCHED] GEN_BV_WRITE: Addr=7, Data=00000040 (K=1)
+Time 165: [SCHED] GEN_BV_WRITE: Addr=8, Data=00000080 (K=1)
+Time 215: [MASTER]     M_WRITE_M ->     M_WRITE_N (captured=0)
+Time 235: [MASTER]     M_WRITE_N ->   M_RN_CONFIG (captured=0)
+Time 275: [ART_CFG] S_READ_BV: bv_addr=1, rdata_now=00000001
+Time 285: [ART_CFG] S_CAP_BV: VN_IDX 1, AddrWas=1, BV 00000001 -> Cfg 028000
+Time 295: [ART_CFG] S_READ_BV: bv_addr=2, rdata_now=00000002
+Time 305: [ART_CFG] S_CAP_BV: VN_IDX 2, AddrWas=2, BV 00000010 -> Cfg 038000
+Time 315: [ART_CFG] S_READ_BV: bv_addr=3, rdata_now=00000004
+Time 325: [ART_CFG] S_CAP_BV: VN_IDX 3, AddrWas=3, BV 00000100 -> Cfg 000013
+Time 335: [ART_CFG] S_READ_BV: bv_addr=4, rdata_now=00000008
+Time 345: [ART_CFG] S_CAP_BV: VN_IDX 4, AddrWas=4, BV 00001000 -> Cfg 000013
+Time 355: [ART_CFG] S_READ_BV: bv_addr=5, rdata_now=00000010
+Time 365: [ART_CFG] S_CAP_BV: VN_IDX 5, AddrWas=5, BV 00010000 -> Cfg 000007
+Time 375: [ART_CFG] S_READ_BV: bv_addr=6, rdata_now=00000020
+Time 385: [ART_CFG] S_CAP_BV: VN_IDX 6, AddrWas=6, BV 00100000 -> Cfg 000005
+Time 395: [ART_CFG] S_READ_BV: bv_addr=7, rdata_now=00000040
+Time 405: [ART_CFG] S_CAP_BV: VN_IDX 7, AddrWas=7, BV 01000000 -> Cfg 140000
+Time 415: [ART_CFG] S_READ_BV: bv_addr=8, rdata_now=00000080
+Time 425: [ART_CFG] S_CAP_BV: VN_IDX 8, AddrWas=8, BV 10000000 -> Cfg 1c0000
+Time 455: [MASTER]   M_RN_CONFIG -> M_MN_CFG_STAT (captured=0)
+Time 465: [MN_CFG] STARTING. is_streaming=0
+Time 505: [MN_CFG] Cap BV idx 1: 00000001 -> ActiveMask 00000001
+Time 525: [MN_CFG] Cap BV idx 2: 00000002 -> ActiveMask 00000003
+Time 545: [MN_CFG] Cap BV idx 3: 00000004 -> ActiveMask 00000007
+Time 565: [MN_CFG] Cap BV idx 4: 00000008 -> ActiveMask 0000000f
+Time 585: [MN_CFG] Cap BV idx 5: 00000010 -> ActiveMask 0000001f
+Time 605: [MN_CFG] Cap BV idx 6: 00000020 -> ActiveMask 0000003f
+Time 625: [MN_CFG] Cap BV idx 7: 00000040 -> ActiveMask 0000007f
+Time 645: [MN_CFG] Cap BV idx 8: 00000080 -> ActiveMask 000000ff
+Time 665: MS Config Broadcast:
+  MS[0]: state=0001  payload=1
+  MS[1]: state=0001  payload=1
+  MS[2]: state=0001  payload=1
+  MS[3]: state=0001  payload=1
+  MS[4]: state=0001  payload=1
+  MS[5]: state=0001  payload=1
+  MS[6]: state=0001  payload=1
+  MS[7]: state=0001  payload=1
+Time 685: [MASTER] M_MN_CFG_STAT ->      M_SEND_A (captured=0)
+Time 705: [SCHED] Batch 0 Start VN 0 i=0 j=0
+Time 705: [SCHED] t=0 a_addr=2 b_addr=0
+Time 715: Controller Packet -> Val=2  Mask=00000001
+Time 715: [SCHED] Batch 0 Start VN 1 i=0 j=1
+Time 715: [SCHED] t=0 a_addr=2 b_addr=0
+Time 725: Controller Packet -> Val=2  Mask=00000010
+Time 725: [SCHED] Batch 0 Start VN 2 i=0 j=2
+Time 725: [SCHED] t=0 a_addr=2 b_addr=0
+Time 735: Controller Packet -> Val=2  Mask=00000100
+Time 735: [SCHED] Batch 0 Start VN 3 i=0 j=3
+Time 735: [SCHED] t=0 a_addr=2 b_addr=0
+Time 745: Controller Packet -> Val=2  Mask=00001000
+Time 745: [SCHED] Batch 0 Start VN 4 i=0 j=4
+Time 745: [SCHED] t=0 a_addr=2 b_addr=0
+Time 755: Controller Packet -> Val=2  Mask=00010000
+Time 755: [SCHED] Batch 0 Start VN 5 i=0 j=5
+Time 755: [SCHED] t=0 a_addr=2 b_addr=0
+Time 765: Controller Packet -> Val=2  Mask=00100000
+Time 765: [SCHED] Batch 0 Start VN 6 i=0 j=6
+Time 765: [SCHED] t=0 a_addr=2 b_addr=0
+Time 775: Controller Packet -> Val=2  Mask=01000000
+Time 775: [SCHED] Batch 0 Start VN 7 i=0 j=7
+Time 775: [SCHED] t=0 a_addr=2 b_addr=0
+Time 785: Controller Packet -> Val=2  Mask=10000000
+Time 1815: [MASTER]      M_SEND_A -> M_MN_CFG_STRM (captured=0)
+Time 1825: [MN_CFG] STARTING. is_streaming=1
+Time 1865: [MN_CFG] Cap BV idx 1: 00000001 -> ActiveMask 00000001
+Time 1885: [MN_CFG] Cap BV idx 2: 00000002 -> ActiveMask 00000003
+Time 1905: [MN_CFG] Cap BV idx 3: 00000004 -> ActiveMask 00000007
+Time 1925: [MN_CFG] Cap BV idx 4: 00000008 -> ActiveMask 0000000f
+Time 1945: [MN_CFG] Cap BV idx 5: 00000010 -> ActiveMask 0000001f
+Time 1965: [MN_CFG] Cap BV idx 6: 00000020 -> ActiveMask 0000003f
+Time 1985: [MN_CFG] Cap BV idx 7: 00000040 -> ActiveMask 0000007f
+Time 2005: [MN_CFG] Cap BV idx 8: 00000080 -> ActiveMask 000000ff
+Time 2025: MS Config Broadcast:
+  MS[0]: state=0010  payload=1
+  MS[1]: state=0010  payload=1
+  MS[2]: state=0010  payload=1
+  MS[3]: state=0010  payload=1
+  MS[4]: state=0010  payload=1
+  MS[5]: state=0010  payload=1
+  MS[6]: state=0010  payload=1
+  MS[7]: state=0010  payload=1
+Time 2045: [MASTER] M_MN_CFG_STRM ->      M_SEND_B (captured=0)
+Time 2055: [ADDR_B] j=0 K=1 t=0 -> Addr=2
+Time 2065: [SCHED] Batch 0 Start VN 0 i=0 j=0
+Time 2065: [SCHED] t=0 a_addr=0 b_addr=2
+Time 2065: [ADDR_B] j=1 K=1 t=0 -> Addr=3
+Time 2075: Controller Packet -> Val=5  Mask=00000001
+Time 2075: [SCHED] Batch 0 Start VN 1 i=0 j=1
+Time 2075: [SCHED] t=0 a_addr=0 b_addr=3
+Time 2075: [ADDR_B] j=2 K=1 t=0 -> Addr=4
+Time 2085: Controller Packet -> Val=2  Mask=00000010
+Time 2085: [SCHED] Batch 0 Start VN 2 i=0 j=2
+Time 2085: [SCHED] t=0 a_addr=0 b_addr=4
+Time 2085: [ADDR_B] j=3 K=1 t=0 -> Addr=5
+Time 2095: Controller Packet -> Val=10  Mask=00000100
+Time 2095: [SCHED] Batch 0 Start VN 3 i=0 j=3
+Time 2095: [SCHED] t=0 a_addr=0 b_addr=5
+Time 2095: [ADDR_B] j=4 K=1 t=0 -> Addr=6
+Time 2105: Controller Packet -> Val=7  Mask=00001000
+Time 2105: [SCHED] Batch 0 Start VN 4 i=0 j=4
+Time 2105: [SCHED] t=0 a_addr=0 b_addr=6
+Time 2105: [ADDR_B] j=5 K=1 t=0 -> Addr=7
+Time 2115: Controller Packet -> Val=10  Mask=00010000
+Time 2115: [SCHED] Batch 0 Start VN 5 i=0 j=5
+Time 2115: [SCHED] t=0 a_addr=0 b_addr=7
+Time 2115: [ADDR_B] j=6 K=1 t=0 -> Addr=8
+Time 2125: Controller Packet -> Val=0  Mask=00100000
+Time 2125: [SCHED] Batch 0 Start VN 6 i=0 j=6
+Time 2125: [SCHED] t=0 a_addr=0 b_addr=8
+Time 2125: [ADDR_B] j=7 K=1 t=0 -> Addr=9
+Time 2135: Controller Packet -> Val=9  Mask=01000000
+Time 2135: [SCHED] Batch 0 Start VN 7 i=0 j=7
+Time 2135: [SCHED] t=0 a_addr=0 b_addr=9
+Time 2145: Controller Packet -> Val=3  Mask=10000000
+Time 2155: [RESULT 0] ACCELERATOR FINAL RESULT -> 14
+Time 2165: [CTRL] Captured result 0 -> mem_C[2] = 14
+Time 2175: [RESULT 1] ACCELERATOR FINAL RESULT -> 20
+Time 2185: [CTRL] Captured result 1 -> mem_C[3] = 20
+Time 2235: [RESULT 2] ACCELERATOR FINAL RESULT -> 0
+Time 2245: [CTRL] Captured result 2 -> mem_C[4] = 0
+Time 2275: [RESULT 3] ACCELERATOR FINAL RESULT -> 24
+Time 2285: [CTRL] Captured result 3 -> mem_C[5] = 24
+Time 3175: [MASTER]      M_SEND_B ->  M_WAIT_EMPTY (captured=4)
+TIMEOUT
+tb_accel.v:69: $finish called at 1000000 (1s)

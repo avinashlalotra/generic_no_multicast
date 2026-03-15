@@ -1,0 +1,9 @@
+=== STARTING AUTOMATED FULL RUN ===
+Time 2155: [RESULT 0] ACCELERATOR FINAL RESULT -> 14
+Time 2165: [CTRL] Captured result 0 -> mem_C[2] = 14
+Time 2175: [RESULT 1] ACCELERATOR FINAL RESULT -> 20
+Time 2185: [CTRL] Captured result 1 -> mem_C[3] = 20
+Time 2235: [RESULT 2] ACCELERATOR FINAL RESULT -> 0
+Time 2245: [CTRL] Captured result 2 -> mem_C[4] = 0
+Time 2275: [RESULT 3] ACCELERATOR FINAL RESULT -> 24
+Time 2285: [CTRL] Captured result 3 -> mem_C[5] = 24

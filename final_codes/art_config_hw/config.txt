@@ -1,0 +1,94 @@
+Configuration is defined by two structures:
+
+Single Reduction Switch (SRS)
+
+Double Reduction Switch (DBRS)
+
+Each switch controls how inputs are added, forwarded, or ignored, and whether the result is sent to the collection bus.
+
+1. SRS (Single Reduction Switch) Configuration
+
+Structure:
+
+RN_SglRSConfig
+{
+   mode      : 2 bits
+   genOutput : 1 bit
+}
+
+Total size: 3 bits
+
+[2:1] mode
+[0]   genOutput
+SRS Mode Options
+Mode	Binary	Function
+idle	00	ignore inputs
+addTwo	01	add the two inputs
+flowLeft	10	forward left input
+flowRight	11	forward right input
+Output Control
+genOutput = 1 → send result to collection bus
+genOutput = 0 → do not send result
+Example SRS configs
+Operation	Bits
+idle	000
+add two inputs and output	011
+forward left input	100
+forward right input	110
+2. DBRS (Double Reduction Switch) Configuration
+
+Structure:
+
+RN_DblRSConfig
+{
+   mode       : 4 bits
+   genOutputL : 1 bit
+   genOutputR : 1 bit
+}
+
+Total size: 6 bits
+
+[5:2] mode
+[1]   genOutputL
+[0]   genOutputR
+
+A DBRS processes 4 inputs using two internal adders (left and right).
+
+DBRS Submode Options
+
+Each internal adder uses a 2-bit submode:
+
+Submode	Binary	Meaning
+idle	00	no reduction
+addOne	01	pass one value
+addTwo	10	add two inputs
+addThree	11	add three inputs
+
+The 4-bit mode is:
+
+mode = {left_submode , right_submode}
+Example DBRS Modes
+Mode	Binary	Function
+idle	0000	no reduction
+pairwise reduction	1010	two 2-input adds
+asymmetric reduction	1001	left add2, right add1
+full reduction	1111	reduce all inputs
+Output Control
+Bit	Function
+genOutputL	send left result to collection bus
+genOutputR	send right result to collection bus
+3. Example DBRS Configurations
+Operation	Bits
+idle	000000
+full 4-input reduction	111111
+pairwise (2+2) reduction	101011
+left reduction only	110010
+4. Summary Table
+Switch	Inputs	Config bits	Key control
+SRS	2	3 bits	add / forward / idle
+DBRS	4	6 bits	multi-input reduction
+Feature	SRS	DBRS
+inputs	2	4
+reduction types	add2	add1/add2/add3
+forwarding	yes	implicit via submode
+outputs to bus	1	2

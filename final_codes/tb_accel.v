@@ -2,9 +2,9 @@ module tb_accel;
 
     localparam NUM_MS = 8;
     localparam DATA_W = 16;
-    localparam A_ADDR_W = 4;
-    localparam B_ADDR_W = 4;
-    localparam BV_ADDR_W = 4;
+    localparam A_ADDR_W = 10;
+    localparam B_ADDR_W = 10;
+    localparam BV_ADDR_W = 10;
 
     // Command mapping
     localparam CMD_INIT          = 3'd0;
@@ -14,6 +14,7 @@ module tb_accel;
     localparam CMD_MN_CFG_STREAM = 3'd4;
     localparam CMD_SEND_B        = 3'd5;
     localparam CMD_RN_CONFIG     = 3'd6;
+    localparam CMD_FULL_RUN      = 3'd7;
 
     reg clk;
     reg rst_n;
@@ -49,8 +50,8 @@ module tb_accel;
         .A_ADDR_W(A_ADDR_W),
         .B_ADDR_W(B_ADDR_W),
         .BV_ADDR_W(BV_ADDR_W),
-        .A_INIT_FILE("/home/avinash/Desktop/MajorProject/generic_no_multicast/final_codes/matrices/mem_A_2x2.mem"),
-        .B_INIT_FILE("/home/avinash/Desktop/MajorProject/generic_no_multicast/final_codes/matrices/mem_B_2x3.mem")
+        .A_INIT_FILE("matrices/mem_A_2x4.mem"),
+        .B_INIT_FILE("matrices/mem_B_4x2.mem")
     ) dut (
         .CLK(clk),
         .RST_N(rst_n),
@@ -65,16 +66,16 @@ module tb_accel;
     );
 
     initial begin clk = 0; forever #5 clk = ~clk; end
-    initial begin #200000; $display("TIMEOUT"); $finish; end
+    initial begin #1000000; $display("TIMEOUT"); $finish; end
 
     // Print Config word
     task print_ms_config;
         integer s;
-        reg [19:0] cfg;
+        reg [19:0] word;
         begin
             for (s = 0; s < NUM_MS; s = s + 1) begin
-                cfg = ms_config_data[s*20 +: 20];
-                $display("  MS[%0d]: state=%04b  payload=%0d", s, cfg[19:16], cfg[15:0]);
+                word = ms_config_data[s*20 +: 20];
+                $display("  MS[%0d]: state=%04b  payload=%0d", s, word[19:16], word[15:0]);
             end
         end
     endtask
@@ -94,10 +95,28 @@ module tb_accel;
         end
     end
     
-    // Final result printing
+    // Final result printing with handshake
+    integer result_count = 0;
     always @(posedge clk) begin
-        if (output_en && output_rdy) begin
-            $display("Time %0t: ACCELERATOR FINAL RESULT -> %0d", $time, output_data);
+        if (!rst_n) begin
+            output_en <= 1'b0;
+            result_count <= 0;
+        end else begin
+            if (output_rdy && !output_en) begin
+                output_en <= 1'b1; // Pulse ready to consume
+                $display("Time %0d: [RESULT %0d] ACCELERATOR FINAL RESULT -> %0d", $time, result_count, output_data);
+                
+                // Write to result file
+                res_file = $fopen("results_8x8.txt", "a");
+                if (res_file) begin
+                    $fdisplay(res_file, "%d", output_data);
+                    $fclose(res_file);
+                end
+
+                result_count <= result_count + 1;
+            end else begin
+                output_en <= 1'b0;
+            end
         end
     end
 
@@ -125,39 +144,34 @@ module tb_accel;
     integer batch_vns;
     integer num_batches;
     integer M, K, N;
+    integer res_file;
 
     initial begin
+        res_file = $fopen("results_8x8.txt", "w");
+        $fclose(res_file);
         rst_n = 0;
         cmd = CMD_INIT;
         // Initialize
         cmd_valid = 0;
-        output_en = 1;
+        // output_en now handled by always block
         #20; rst_n = 1;
         
         // Let's assume M, K, N are known for the loop (or read them if we want to be fancy)
-        // For the current test (2x2 * 2x3), M=2, K=2, N=3
-        M = 2; K = 2; N = 3;
+        // For the current test (8x8 * 8x8), M=8, K=8, N=8
+        M = 8; K = 8; N = 8;
         total_vns = M * N;
         batch_vns = NUM_MS / K;
         num_batches = (total_vns + batch_vns - 1) / batch_vns;
 
-        $display("\n=== STARTING BATCHED EXECUTION (Total VNs: %0d, Batch Size: %0d, Num Batches: %0d) ===", total_vns, batch_vns, num_batches);
+        $display("\n=== STARTING AUTOMATED FULL RUN ===");
+        run_cmd(CMD_FULL_RUN, "FULL ACCELERATOR RUN");
 
-        for (batch = 0; batch < num_batches; batch = batch + 1) begin
-            $display("\n--- BATCH %0d ---", batch);
-            run_cmd(CMD_VN_ALLOC,      "VN ALLOCATION");
-            run_cmd(CMD_RN_CONFIG,     "RN CONFIGURATION");
-            run_cmd(CMD_MN_CFG_STAT,   "MN CONFIG STATIONARY");
-            run_cmd(CMD_SEND_A,        "SEND MATRIX A");
-            run_cmd(CMD_MN_CFG_STREAM, "MN CONFIG STREAMING");
-            run_cmd(CMD_SEND_B,        "SEND MATRIX B");
-            
-            // Wait for results to drain before next batch
-            if (batch < num_batches - 1) begin
-                $display("  [TB] Waiting for ART to be EMPTY...");
-                wait(isEmpty == 1);
-                #20;
-            end
+        $display("\n=== VERIFYING RESULT MEMORY C ===");
+        M = dut.mem_C.mem[0];
+        N = dut.mem_C.mem[1];
+        $display("M = %d, N = %d", M, N);
+        for (batch = 0; batch < M*N; batch = batch + 1) begin
+            $display("mem_C[%0d] = %d", batch + 2, dut.mem_C.mem[batch + 2]);
         end
 
         $display("\n=== FULL SEQUENCE COMPLETED ===");

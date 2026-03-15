@@ -1,0 +1,2 @@
+Testing Matrix Multiplication: (8x1) * (1x8)
+FAILURE: Dimension mismatch! Expected 8x8, got 0x0

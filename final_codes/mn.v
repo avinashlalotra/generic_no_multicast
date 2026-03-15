@@ -650,7 +650,7 @@ module mkMN_MultiplierSwitch (
     wire [3:0] config_state = controlPorts_putNewConfig_newConfig[19:16];
     wire [15:0] config_psum = controlPorts_putNewConfig_newConfig[15:0];
     
-    assign RDY_dataPorts_putIptData = 1'b1;
+    assign RDY_dataPorts_putIptData = !result_valid;
     assign RDY_dataPorts_getPSum = result_valid;
     assign RDY_controlPorts_putNewConfig = 1'b1;
     assign dataPorts_getPSum = mult_result[15:0];

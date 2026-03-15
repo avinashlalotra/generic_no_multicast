@@ -1,6 +1,6 @@
 module art_config_unit #(
     parameter NUM_MS = 8,
-    parameter BV_ADDR_W = 4
+    parameter BV_ADDR_W = 10
 )(
     input wire clk,
     input wire rst_n,
@@ -29,6 +29,7 @@ module art_config_unit #(
     reg [2:0] state;
     reg [31:0] vn_count;
     reg [31:0] bv_idx;
+    reg [NUM_MS-1:0] bv_buf;
 
     // Internal 21-bit config accumulation
     reg [20:0] config_accum;
@@ -114,7 +115,10 @@ module art_config_unit #(
             // Full 4-input reduction check
             if (count_bits(bv, 3'd2, 3'd5) == 4) begin
                 modeL = 2'b10; // Sum(In0, In1)
-                modeR = 2'b11; // Sum(Previous, In2, In3) -> hardware maps modeR=11 to SumAll
+                // If this is the final root (total==4), sum all. 
+                // If part of larger tree (total==8), split sum to feed S1/S2.
+                if (cTotal == 4) modeR = 2'b11; 
+                else             modeR = 2'b10;
             end
 
             // Output Control
@@ -122,6 +126,33 @@ module art_config_unit #(
             genOutR = (count_bits(bv, 3'd2, 3'd5) == cTotal) && (cTotal > 0);
 
             get_dbl_cfg = {modeL, modeR, genOutL, genOutR};
+        end
+    endfunction
+
+    // Smart Combine for SRS
+    function automatic [2:0] combine_sw;
+        input [2:0] c1, c2;
+        reg [1:0] m1, m2, m_res;
+        begin
+            m1 = c1[2:1]; m2 = c2[2:1];
+            if (m1 == 2'b01 || m2 == 2'b01) m_res = 2'b01;
+            else if (m1 != 2'b00 && m2 != 2'b00 && m1 != m2) m_res = 2'b01;
+            else m_res = m1 | m2;
+            combine_sw = {m_res, (c1[0] | c2[0])};
+        end
+    endfunction
+
+    // Smart Combine for DblRS
+    function automatic [5:0] combine_dbl;
+        input [5:0] c1, c2;
+        reg [1:0] mL1, mL2, mL_res, mR1, mR2, mR_res;
+        begin
+            mL1 = c1[5:4]; mL2 = c2[5:4];
+            mR1 = c1[3:2]; mR2 = c2[3:2];
+            // Similar logic for each half
+            mL_res = (mL1 == 2'b00) ? mL2 : (mL2 == 2'b00) ? mL1 : (mL1 | mL2); 
+            mR_res = (mR1 == 2'b00) ? mR2 : (mR2 == 2'b00) ? mR1 : (mR1 | mR2);
+            combine_dbl = {mL_res, mR_res, (c1[1] | c2[1]), (c1[0] | c2[0])};
         end
     endfunction
 
@@ -166,9 +197,10 @@ module art_config_unit #(
 
                 S_READ_BV: begin
                     bv_ren <= 1'b0;
+                    bv_buf <= bv_rdata;
                     state <= S_CAP_BV;
                 end
-
+ 
                 S_CAP_BV: begin
                     // Process BV for current VN
                     begin : process_vn
@@ -177,19 +209,19 @@ module art_config_unit #(
                         reg [20:0] vn_config;
                         reg [3:0] total;
                         
-                        total = total_bits(bv_rdata);
+                        total = total_bits(bv_buf);
 
                         // Level 0
-                        cS4 = get_switch_cfg(bv_rdata, 3'd6, 3'd6, 3'd7, 3'd7);
-                        cS3 = get_switch_cfg(bv_rdata, 3'd0, 3'd0, 3'd1, 3'd1);
-                        cD0 = get_dbl_cfg(bv_rdata); 
+                        cS4 = get_switch_cfg(bv_buf, 3'd6, 3'd6, 3'd7, 3'd7);
+                        cS3 = get_switch_cfg(bv_buf, 3'd0, 3'd0, 3'd1, 3'd1);
+                        cD0 = get_dbl_cfg(bv_buf); 
                         
                         // Level 1
-                        cS1 = get_switch_cfg(bv_rdata, 3'd0, 3'd1, 3'd2, 3'd3);
-                        cS2 = get_switch_cfg(bv_rdata, 3'd4, 3'd5, 3'd6, 3'd7);
+                        cS1 = get_switch_cfg(bv_buf, 3'd0, 3'd1, 3'd2, 3'd3);
+                        cS2 = get_switch_cfg(bv_buf, 3'd4, 3'd5, 3'd6, 3'd7);
                         
                         // Level 2 (Root)
-                        cS0 = get_switch_cfg(bv_rdata, 3'd0, 3'd3, 3'd4, 3'd7);
+                        cS0 = get_switch_cfg(bv_buf, 3'd0, 3'd3, 3'd4, 3'd7);
                         
                         if (cS3[0] || cD0[1]) begin
                             cS1 = 3'b000;
@@ -204,9 +236,16 @@ module art_config_unit #(
                         end
 
                         vn_config = {cS4, cS3, cS2, cS1, cS0, cD0};
-                        config_accum <= config_accum | vn_config;
+                        $display("Time %0d: [ART_CFG] VN_IDX %0d, BV %08b -> Cfg %06h", $time, bv_idx, bv_buf, vn_config);
+                        
+                        config_accum[20:18] <= combine_sw(config_accum[20:18], cS4);
+                        config_accum[17:15] <= combine_sw(config_accum[17:15], cS3);
+                        config_accum[14:12] <= combine_sw(config_accum[14:12], cS2);
+                        config_accum[11:9]  <= combine_sw(config_accum[11:9],  cS1);
+                        config_accum[8:6]   <= combine_sw(config_accum[8:6],   cS0);
+                        config_accum[5:0]   <= combine_dbl(config_accum[5:0],  cD0);
                     end
-
+ 
                     if (bv_idx < vn_count) begin
                         bv_idx <= bv_idx + 1;
                         bv_addr <= bv_idx[BV_ADDR_W-1:0] + 1;

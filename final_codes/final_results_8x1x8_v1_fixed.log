@@ -1,0 +1,131 @@
+=== STARTING AUTOMATED FULL RUN ===
+Time 1575: [RESULT 0] ACCELERATOR FINAL RESULT -> 10
+Time 1585: [CTRL] Captured result 0 -> mem_C[2] = 10
+Time 4055: [RESULT 1] ACCELERATOR FINAL RESULT -> 4
+Time 4065: [CTRL] Captured result 1 -> mem_C[3] = 4
+Time 6535: [RESULT 2] ACCELERATOR FINAL RESULT -> 20
+Time 6545: [CTRL] Captured result 2 -> mem_C[4] = 20
+Time 9015: [RESULT 3] ACCELERATOR FINAL RESULT -> 14
+Time 9025: [CTRL] Captured result 3 -> mem_C[5] = 14
+Time 11495: [RESULT 4] ACCELERATOR FINAL RESULT -> 20
+Time 11505: [CTRL] Captured result 4 -> mem_C[6] = 20
+Time 13975: [RESULT 5] ACCELERATOR FINAL RESULT -> 0
+Time 13985: [CTRL] Captured result 5 -> mem_C[7] = 0
+Time 16455: [RESULT 6] ACCELERATOR FINAL RESULT -> 18
+Time 16465: [CTRL] Captured result 6 -> mem_C[8] = 18
+Time 18935: [RESULT 7] ACCELERATOR FINAL RESULT -> 6
+Time 18945: [CTRL] Captured result 7 -> mem_C[9] = 6
+Time 21415: [RESULT 8] ACCELERATOR FINAL RESULT -> 0
+Time 21425: [CTRL] Captured result 8 -> mem_C[10] = 0
+Time 23895: [RESULT 9] ACCELERATOR FINAL RESULT -> 0
+Time 23905: [CTRL] Captured result 9 -> mem_C[11] = 0
+Time 26375: [RESULT 10] ACCELERATOR FINAL RESULT -> 0
+Time 26385: [CTRL] Captured result 10 -> mem_C[12] = 0
+Time 28855: [RESULT 11] ACCELERATOR FINAL RESULT -> 0
+Time 28865: [CTRL] Captured result 11 -> mem_C[13] = 0
+Time 31335: [RESULT 12] ACCELERATOR FINAL RESULT -> 0
+Time 31345: [CTRL] Captured result 12 -> mem_C[14] = 0
+Time 33815: [RESULT 13] ACCELERATOR FINAL RESULT -> 0
+Time 33825: [CTRL] Captured result 13 -> mem_C[15] = 0
+Time 36295: [RESULT 14] ACCELERATOR FINAL RESULT -> 0
+Time 36305: [CTRL] Captured result 14 -> mem_C[16] = 0
+Time 38775: [RESULT 15] ACCELERATOR FINAL RESULT -> 0
+Time 38785: [CTRL] Captured result 15 -> mem_C[17] = 0
+Time 41255: [RESULT 16] ACCELERATOR FINAL RESULT -> 50
+Time 41265: [CTRL] Captured result 16 -> mem_C[18] = 50
+Time 43735: [RESULT 17] ACCELERATOR FINAL RESULT -> 20
+Time 43745: [CTRL] Captured result 17 -> mem_C[19] = 20
+Time 46215: [RESULT 18] ACCELERATOR FINAL RESULT -> 100
+Time 46225: [CTRL] Captured result 18 -> mem_C[20] = 100
+Time 48695: [RESULT 19] ACCELERATOR FINAL RESULT -> 70
+Time 48705: [CTRL] Captured result 19 -> mem_C[21] = 70
+Time 51175: [RESULT 20] ACCELERATOR FINAL RESULT -> 100
+Time 51185: [CTRL] Captured result 20 -> mem_C[22] = 100
+Time 53655: [RESULT 21] ACCELERATOR FINAL RESULT -> 0
+Time 53665: [CTRL] Captured result 21 -> mem_C[23] = 0
+Time 56135: [RESULT 22] ACCELERATOR FINAL RESULT -> 90
+Time 56145: [CTRL] Captured result 22 -> mem_C[24] = 90
+Time 58615: [RESULT 23] ACCELERATOR FINAL RESULT -> 30
+Time 58625: [CTRL] Captured result 23 -> mem_C[25] = 30
+Time 61095: [RESULT 24] ACCELERATOR FINAL RESULT -> 25
+Time 61105: [CTRL] Captured result 24 -> mem_C[26] = 25
+Time 63575: [RESULT 25] ACCELERATOR FINAL RESULT -> 10
+Time 63585: [CTRL] Captured result 25 -> mem_C[27] = 10
+Time 66055: [RESULT 26] ACCELERATOR FINAL RESULT -> 50
+Time 66065: [CTRL] Captured result 26 -> mem_C[28] = 50
+Time 68535: [RESULT 27] ACCELERATOR FINAL RESULT -> 35
+Time 68545: [CTRL] Captured result 27 -> mem_C[29] = 35
+Time 71015: [RESULT 28] ACCELERATOR FINAL RESULT -> 50
+Time 71025: [CTRL] Captured result 28 -> mem_C[30] = 50
+Time 73495: [RESULT 29] ACCELERATOR FINAL RESULT -> 0
+Time 73505: [CTRL] Captured result 29 -> mem_C[31] = 0
+Time 75975: [RESULT 30] ACCELERATOR FINAL RESULT -> 45
+Time 75985: [CTRL] Captured result 30 -> mem_C[32] = 45
+Time 78455: [RESULT 31] ACCELERATOR FINAL RESULT -> 15
+Time 78465: [CTRL] Captured result 31 -> mem_C[33] = 15
+Time 80935: [RESULT 32] ACCELERATOR FINAL RESULT -> 50
+Time 80945: [CTRL] Captured result 32 -> mem_C[34] = 50
+Time 83415: [RESULT 33] ACCELERATOR FINAL RESULT -> 20
+Time 83425: [CTRL] Captured result 33 -> mem_C[35] = 20
+Time 85895: [RESULT 34] ACCELERATOR FINAL RESULT -> 100
+Time 85905: [CTRL] Captured result 34 -> mem_C[36] = 100
+Time 88375: [RESULT 35] ACCELERATOR FINAL RESULT -> 70
+Time 88385: [CTRL] Captured result 35 -> mem_C[37] = 70
+Time 90855: [RESULT 36] ACCELERATOR FINAL RESULT -> 100
+Time 90865: [CTRL] Captured result 36 -> mem_C[38] = 100
+Time 93335: [RESULT 37] ACCELERATOR FINAL RESULT -> 0
+Time 93345: [CTRL] Captured result 37 -> mem_C[39] = 0
+Time 95815: [RESULT 38] ACCELERATOR FINAL RESULT -> 90
+Time 95825: [CTRL] Captured result 38 -> mem_C[40] = 90
+Time 98295: [RESULT 39] ACCELERATOR FINAL RESULT -> 30
+Time 98305: [CTRL] Captured result 39 -> mem_C[41] = 30
+Time 100775: [RESULT 40] ACCELERATOR FINAL RESULT -> 25
+Time 100785: [CTRL] Captured result 40 -> mem_C[42] = 25
+Time 103255: [RESULT 41] ACCELERATOR FINAL RESULT -> 10
+Time 103265: [CTRL] Captured result 41 -> mem_C[43] = 10
+Time 105735: [RESULT 42] ACCELERATOR FINAL RESULT -> 50
+Time 105745: [CTRL] Captured result 42 -> mem_C[44] = 50
+Time 108215: [RESULT 43] ACCELERATOR FINAL RESULT -> 35
+Time 108225: [CTRL] Captured result 43 -> mem_C[45] = 35
+Time 110695: [RESULT 44] ACCELERATOR FINAL RESULT -> 50
+Time 110705: [CTRL] Captured result 44 -> mem_C[46] = 50
+Time 113175: [RESULT 45] ACCELERATOR FINAL RESULT -> 0
+Time 113185: [CTRL] Captured result 45 -> mem_C[47] = 0
+Time 115655: [RESULT 46] ACCELERATOR FINAL RESULT -> 45
+Time 115665: [CTRL] Captured result 46 -> mem_C[48] = 45
+Time 118135: [RESULT 47] ACCELERATOR FINAL RESULT -> 15
+Time 118145: [CTRL] Captured result 47 -> mem_C[49] = 15
+Time 120615: [RESULT 48] ACCELERATOR FINAL RESULT -> 30
+Time 120625: [CTRL] Captured result 48 -> mem_C[50] = 30
+Time 123095: [RESULT 49] ACCELERATOR FINAL RESULT -> 12
+Time 123105: [CTRL] Captured result 49 -> mem_C[51] = 12
+Time 125575: [RESULT 50] ACCELERATOR FINAL RESULT -> 60
+Time 125585: [CTRL] Captured result 50 -> mem_C[52] = 60
+Time 128055: [RESULT 51] ACCELERATOR FINAL RESULT -> 42
+Time 128065: [CTRL] Captured result 51 -> mem_C[53] = 42
+Time 130535: [RESULT 52] ACCELERATOR FINAL RESULT -> 60
+Time 130545: [CTRL] Captured result 52 -> mem_C[54] = 60
+Time 133015: [RESULT 53] ACCELERATOR FINAL RESULT -> 0
+Time 133025: [CTRL] Captured result 53 -> mem_C[55] = 0
+Time 135495: [RESULT 54] ACCELERATOR FINAL RESULT -> 54
+Time 135505: [CTRL] Captured result 54 -> mem_C[56] = 54
+Time 137975: [RESULT 55] ACCELERATOR FINAL RESULT -> 18
+Time 137985: [CTRL] Captured result 55 -> mem_C[57] = 18
+Time 140455: [RESULT 56] ACCELERATOR FINAL RESULT -> 10
+Time 140465: [CTRL] Captured result 56 -> mem_C[58] = 10
+Time 142935: [RESULT 57] ACCELERATOR FINAL RESULT -> 4
+Time 142945: [CTRL] Captured result 57 -> mem_C[59] = 4
+Time 145415: [RESULT 58] ACCELERATOR FINAL RESULT -> 20
+Time 145425: [CTRL] Captured result 58 -> mem_C[60] = 20
+Time 147895: [RESULT 59] ACCELERATOR FINAL RESULT -> 14
+Time 147905: [CTRL] Captured result 59 -> mem_C[61] = 14
+Time 150375: [RESULT 60] ACCELERATOR FINAL RESULT -> 20
+Time 150385: [CTRL] Captured result 60 -> mem_C[62] = 20
+Time 152855: [RESULT 61] ACCELERATOR FINAL RESULT -> 0
+Time 152865: [CTRL] Captured result 61 -> mem_C[63] = 0
+Time 155335: [RESULT 62] ACCELERATOR FINAL RESULT -> 18
+Time 155345: [CTRL] Captured result 62 -> mem_C[64] = 18
+Time 157815: [RESULT 63] ACCELERATOR FINAL RESULT -> 6
+Time 157825: [CTRL] Captured result 63 -> mem_C[65] = 6
+=== VERIFYING RESULT MEMORY C ===
+M =           8, N =           8

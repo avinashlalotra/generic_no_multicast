@@ -1,0 +1,3592 @@
+WARNING: controller.v:585: $readmemh(/home/avinash/Desktop/MajorProject/generic_no_multicast/final_codes/matrices/mem_A_8x8.mem): Too many words in the file for the requested range [0:15].
+WARNING: controller.v:585: $readmemh(/home/avinash/Desktop/MajorProject/generic_no_multicast/final_codes/matrices/mem_B_8x8.mem): Too many words in the file for the requested range [0:15].
+
+=== STARTING BATCHED EXECUTION (Total VNs: 64, Batch Size: 1, Num Batches: 64) ===
+
+--- BATCH 0 ---
+
+--- VN ALLOCATION ---
+Time 85: [DIM] Loaded M=8, K=8, N=8
+ACK received for VN ALLOCATION
+
+--- RN CONFIGURATION ---
+Time 215: [ART_CFG] VN_IDX 1, BV 11111111 -> Cfg 0924e8
+ACK received for RN CONFIGURATION
+
+--- ONFIG STATIONARY ---
+Time 335: MS Config Broadcast:
+  MS[0]: state=0001  payload=0
+  MS[1]: state=0001  payload=0
+  MS[2]: state=0001  payload=0
+  MS[3]: state=0001  payload=0
+  MS[4]: state=0001  payload=0
+  MS[5]: state=0001  payload=0
+  MS[6]: state=0001  payload=0
+  MS[7]: state=0001  payload=0
+ACK received for ONFIG STATIONARY
+
+--- SEND MATRIX A ---
+Time 425: Controller Packet -> Val=0  Mask=00000001
+Time 435: Controller Packet -> Val=0  Mask=00000010
+Time 445: Controller Packet -> Val=0  Mask=00000100
+Time 455: Controller Packet -> Val=0  Mask=00001000
+Time 465: Controller Packet -> Val=0  Mask=00010000
+Time 475: Controller Packet -> Val=0  Mask=00100000
+Time 485: Controller Packet -> Val=0  Mask=01000000
+Time 495: Controller Packet -> Val=0  Mask=10000000
+ACK received for SEND MATRIX A
+
+--- CONFIG STREAMING ---
+Time 1095: MS Config Broadcast:
+  MS[0]: state=0010  payload=1
+  MS[1]: state=0010  payload=1
+  MS[2]: state=0010  payload=1
+  MS[3]: state=0010  payload=1
+  MS[4]: state=0010  payload=1
+  MS[5]: state=0010  payload=1
+  MS[6]: state=0010  payload=1
+  MS[7]: state=0010  payload=1
+ACK received for CONFIG STREAMING
+
+--- SEND MATRIX B ---
+Time 1185: Controller Packet -> Val=2  Mask=00000001
+Time 1195: Controller Packet -> Val=3  Mask=00000010
+Time 1205: Controller Packet -> Val=4  Mask=00000100
+Time 1215: Controller Packet -> Val=5  Mask=00001000
+Time 1225: Controller Packet -> Val=6  Mask=00010000
+Time 1235: Controller Packet -> Val=7  Mask=00100000
+Time 1245: Controller Packet -> Val=8  Mask=01000000
+Time 1255: Controller Packet -> Val=8  Mask=10000000
+Time 1425: [RESULT 0] ACCELERATOR FINAL RESULT -> 0
+ACK received for SEND MATRIX B
+  [TB] Waiting for ART to be EMPTY...
+
+--- BATCH 1 ---
+
+--- VN ALLOCATION ---
+ACK received for VN ALLOCATION
+
+--- RN CONFIGURATION ---
+ACK received for RN CONFIGURATION
+
+--- ONFIG STATIONARY ---
+Time 2005: MS Config Broadcast:
+  MS[0]: state=0001  payload=0
+  MS[1]: state=0001  payload=0
+  MS[2]: state=0001  payload=0
+  MS[3]: state=0001  payload=0
+  MS[4]: state=0001  payload=0
+  MS[5]: state=0001  payload=0
+  MS[6]: state=0001  payload=0
+  MS[7]: state=0001  payload=0
+ACK received for ONFIG STATIONARY
+
+--- SEND MATRIX A ---
+Time 2095: Controller Packet -> Val=0  Mask=00000001
+Time 2105: Controller Packet -> Val=0  Mask=00000010
+Time 2115: Controller Packet -> Val=0  Mask=00000100
+Time 2125: Controller Packet -> Val=0  Mask=00001000
+Time 2135: Controller Packet -> Val=0  Mask=00010000
+Time 2145: Controller Packet -> Val=0  Mask=00100000
+Time 2155: Controller Packet -> Val=0  Mask=01000000
+Time 2165: Controller Packet -> Val=0  Mask=10000000
+ACK received for SEND MATRIX A
+
+--- CONFIG STREAMING ---
+Time 2765: MS Config Broadcast:
+  MS[0]: state=0010  payload=1
+  MS[1]: state=0010  payload=1
+  MS[2]: state=0010  payload=1
+  MS[3]: state=0010  payload=1
+  MS[4]: state=0010  payload=1
+  MS[5]: state=0010  payload=1
+  MS[6]: state=0010  payload=1
+  MS[7]: state=0010  payload=1
+ACK received for CONFIG STREAMING
+
+--- SEND MATRIX B ---
+Time 2855: Controller Packet -> Val=16  Mask=00000001
+Time 2865: Controller Packet -> Val=17  Mask=00000010
+Time 2875: Controller Packet -> Val=18  Mask=00000100
+Time 2885: Controller Packet -> Val=19  Mask=00001000
+Time 2895: Controller Packet -> Val=20  Mask=00010000
+Time 2905: Controller Packet -> Val=8  Mask=00100000
+Time 2915: Controller Packet -> Val=8  Mask=01000000
+Time 2925: Controller Packet -> Val=8  Mask=10000000
+Time 3095: [RESULT 1] ACCELERATOR FINAL RESULT -> 0
+ACK received for SEND MATRIX B
+  [TB] Waiting for ART to be EMPTY...
+
+--- BATCH 2 ---
+
+--- VN ALLOCATION ---
+ACK received for VN ALLOCATION
+
+--- RN CONFIGURATION ---
+ACK received for RN CONFIGURATION
+
+--- ONFIG STATIONARY ---
+Time 3675: MS Config Broadcast:
+  MS[0]: state=0001  payload=0
+  MS[1]: state=0001  payload=0
+  MS[2]: state=0001  payload=0
+  MS[3]: state=0001  payload=0
+  MS[4]: state=0001  payload=0
+  MS[5]: state=0001  payload=0
+  MS[6]: state=0001  payload=0
+  MS[7]: state=0001  payload=0
+ACK received for ONFIG STATIONARY
+
+--- SEND MATRIX A ---
+Time 3765: Controller Packet -> Val=0  Mask=00000001
+Time 3775: Controller Packet -> Val=0  Mask=00000010
+Time 3785: Controller Packet -> Val=0  Mask=00000100
+Time 3795: Controller Packet -> Val=0  Mask=00001000
+Time 3805: Controller Packet -> Val=0  Mask=00010000
+Time 3815: Controller Packet -> Val=0  Mask=00100000
+Time 3825: Controller Packet -> Val=0  Mask=01000000
+Time 3835: Controller Packet -> Val=0  Mask=10000000
+ACK received for SEND MATRIX A
+
+--- CONFIG STREAMING ---
+Time 4435: MS Config Broadcast:
+  MS[0]: state=0010  payload=1
+  MS[1]: state=0010  payload=1
+  MS[2]: state=0010  payload=1
+  MS[3]: state=0010  payload=1
+  MS[4]: state=0010  payload=1
+  MS[5]: state=0010  payload=1
+  MS[6]: state=0010  payload=1
+  MS[7]: state=0010  payload=1
+ACK received for CONFIG STREAMING
+
+--- SEND MATRIX B ---
+Time 4525: Controller Packet -> Val=2  Mask=00000001
+Time 4535: Controller Packet -> Val=3  Mask=00000010
+Time 4545: Controller Packet -> Val=4  Mask=00000100
+Time 4555: Controller Packet -> Val=5  Mask=00001000
+Time 4565: Controller Packet -> Val=6  Mask=00010000
+Time 4575: Controller Packet -> Val=7  Mask=00100000
+Time 4585: Controller Packet -> Val=8  Mask=01000000
+Time 4595: Controller Packet -> Val=8  Mask=10000000
+Time 4765: [RESULT 2] ACCELERATOR FINAL RESULT -> 0
+ACK received for SEND MATRIX B
+  [TB] Waiting for ART to be EMPTY...
+
+--- BATCH 3 ---
+
+--- VN ALLOCATION ---
+ACK received for VN ALLOCATION
+
+--- RN CONFIGURATION ---
+ACK received for RN CONFIGURATION
+
+--- ONFIG STATIONARY ---
+Time 5345: MS Config Broadcast:
+  MS[0]: state=0001  payload=0
+  MS[1]: state=0001  payload=0
+  MS[2]: state=0001  payload=0
+  MS[3]: state=0001  payload=0
+  MS[4]: state=0001  payload=0
+  MS[5]: state=0001  payload=0
+  MS[6]: state=0001  payload=0
+  MS[7]: state=0001  payload=0
+ACK received for ONFIG STATIONARY
+
+--- SEND MATRIX A ---
+Time 5435: Controller Packet -> Val=0  Mask=00000001
+Time 5445: Controller Packet -> Val=0  Mask=00000010
+Time 5455: Controller Packet -> Val=0  Mask=00000100
+Time 5465: Controller Packet -> Val=0  Mask=00001000
+Time 5475: Controller Packet -> Val=0  Mask=00010000
+Time 5485: Controller Packet -> Val=0  Mask=00100000
+Time 5495: Controller Packet -> Val=0  Mask=01000000
+Time 5505: Controller Packet -> Val=0  Mask=10000000
+ACK received for SEND MATRIX A
+
+--- CONFIG STREAMING ---
+Time 6105: MS Config Broadcast:
+  MS[0]: state=0010  payload=1
+  MS[1]: state=0010  payload=1
+  MS[2]: state=0010  payload=1
+  MS[3]: state=0010  payload=1
+  MS[4]: state=0010  payload=1
+  MS[5]: state=0010  payload=1
+  MS[6]: state=0010  payload=1
+  MS[7]: state=0010  payload=1
+ACK received for CONFIG STREAMING
+
+--- SEND MATRIX B ---
+Time 6195: Controller Packet -> Val=16  Mask=00000001
+Time 6205: Controller Packet -> Val=17  Mask=00000010
+Time 6215: Controller Packet -> Val=18  Mask=00000100
+Time 6225: Controller Packet -> Val=19  Mask=00001000
+Time 6235: Controller Packet -> Val=20  Mask=00010000
+Time 6245: Controller Packet -> Val=8  Mask=00100000
+Time 6255: Controller Packet -> Val=8  Mask=01000000
+Time 6265: Controller Packet -> Val=8  Mask=10000000
+Time 6435: [RESULT 3] ACCELERATOR FINAL RESULT -> 0
+ACK received for SEND MATRIX B
+  [TB] Waiting for ART to be EMPTY...
+
+--- BATCH 4 ---
+
+--- VN ALLOCATION ---
+ACK received for VN ALLOCATION
+
+--- RN CONFIGURATION ---
+ACK received for RN CONFIGURATION
+
+--- ONFIG STATIONARY ---
+Time 7015: MS Config Broadcast:
+  MS[0]: state=0001  payload=0
+  MS[1]: state=0001  payload=0
+  MS[2]: state=0001  payload=0
+  MS[3]: state=0001  payload=0
+  MS[4]: state=0001  payload=0
+  MS[5]: state=0001  payload=0
+  MS[6]: state=0001  payload=0
+  MS[7]: state=0001  payload=0
+ACK received for ONFIG STATIONARY
+
+--- SEND MATRIX A ---
+Time 7105: Controller Packet -> Val=0  Mask=00000001
+Time 7115: Controller Packet -> Val=0  Mask=00000010
+Time 7125: Controller Packet -> Val=0  Mask=00000100
+Time 7135: Controller Packet -> Val=0  Mask=00001000
+Time 7145: Controller Packet -> Val=0  Mask=00010000
+Time 7155: Controller Packet -> Val=0  Mask=00100000
+Time 7165: Controller Packet -> Val=0  Mask=01000000
+Time 7175: Controller Packet -> Val=0  Mask=10000000
+ACK received for SEND MATRIX A
+
+--- CONFIG STREAMING ---
+Time 7775: MS Config Broadcast:
+  MS[0]: state=0010  payload=1
+  MS[1]: state=0010  payload=1
+  MS[2]: state=0010  payload=1
+  MS[3]: state=0010  payload=1
+  MS[4]: state=0010  payload=1
+  MS[5]: state=0010  payload=1
+  MS[6]: state=0010  payload=1
+  MS[7]: state=0010  payload=1
+ACK received for CONFIG STREAMING
+
+--- SEND MATRIX B ---
+Time 7865: Controller Packet -> Val=2  Mask=00000001
+Time 7875: Controller Packet -> Val=3  Mask=00000010
+Time 7885: Controller Packet -> Val=4  Mask=00000100
+Time 7895: Controller Packet -> Val=5  Mask=00001000
+Time 7905: Controller Packet -> Val=6  Mask=00010000
+Time 7915: Controller Packet -> Val=7  Mask=00100000
+Time 7925: Controller Packet -> Val=8  Mask=01000000
+Time 7935: Controller Packet -> Val=8  Mask=10000000
+Time 8105: [RESULT 4] ACCELERATOR FINAL RESULT -> 0
+ACK received for SEND MATRIX B
+  [TB] Waiting for ART to be EMPTY...
+
+--- BATCH 5 ---
+
+--- VN ALLOCATION ---
+ACK received for VN ALLOCATION
+
+--- RN CONFIGURATION ---
+ACK received for RN CONFIGURATION
+
+--- ONFIG STATIONARY ---
+Time 8685: MS Config Broadcast:
+  MS[0]: state=0001  payload=0
+  MS[1]: state=0001  payload=0
+  MS[2]: state=0001  payload=0
+  MS[3]: state=0001  payload=0
+  MS[4]: state=0001  payload=0
+  MS[5]: state=0001  payload=0
+  MS[6]: state=0001  payload=0
+  MS[7]: state=0001  payload=0
+ACK received for ONFIG STATIONARY
+
+--- SEND MATRIX A ---
+Time 8775: Controller Packet -> Val=0  Mask=00000001
+Time 8785: Controller Packet -> Val=0  Mask=00000010
+Time 8795: Controller Packet -> Val=0  Mask=00000100
+Time 8805: Controller Packet -> Val=0  Mask=00001000
+Time 8815: Controller Packet -> Val=0  Mask=00010000
+Time 8825: Controller Packet -> Val=0  Mask=00100000
+Time 8835: Controller Packet -> Val=0  Mask=01000000
+Time 8845: Controller Packet -> Val=0  Mask=10000000
+ACK received for SEND MATRIX A
+
+--- CONFIG STREAMING ---
+Time 9445: MS Config Broadcast:
+  MS[0]: state=0010  payload=1
+  MS[1]: state=0010  payload=1
+  MS[2]: state=0010  payload=1
+  MS[3]: state=0010  payload=1
+  MS[4]: state=0010  payload=1
+  MS[5]: state=0010  payload=1
+  MS[6]: state=0010  payload=1
+  MS[7]: state=0010  payload=1
+ACK received for CONFIG STREAMING
+
+--- SEND MATRIX B ---
+Time 9535: Controller Packet -> Val=16  Mask=00000001
+Time 9545: Controller Packet -> Val=17  Mask=00000010
+Time 9555: Controller Packet -> Val=18  Mask=00000100
+Time 9565: Controller Packet -> Val=19  Mask=00001000
+Time 9575: Controller Packet -> Val=20  Mask=00010000
+Time 9585: Controller Packet -> Val=8  Mask=00100000
+Time 9595: Controller Packet -> Val=8  Mask=01000000
+Time 9605: Controller Packet -> Val=8  Mask=10000000
+Time 9775: [RESULT 5] ACCELERATOR FINAL RESULT -> 0
+ACK received for SEND MATRIX B
+  [TB] Waiting for ART to be EMPTY...
+
+--- BATCH 6 ---
+
+--- VN ALLOCATION ---
+ACK received for VN ALLOCATION
+
+--- RN CONFIGURATION ---
+ACK received for RN CONFIGURATION
+
+--- ONFIG STATIONARY ---
+Time 10355: MS Config Broadcast:
+  MS[0]: state=0001  payload=0
+  MS[1]: state=0001  payload=0
+  MS[2]: state=0001  payload=0
+  MS[3]: state=0001  payload=0
+  MS[4]: state=0001  payload=0
+  MS[5]: state=0001  payload=0
+  MS[6]: state=0001  payload=0
+  MS[7]: state=0001  payload=0
+ACK received for ONFIG STATIONARY
+
+--- SEND MATRIX A ---
+Time 10445: Controller Packet -> Val=0  Mask=00000001
+Time 10455: Controller Packet -> Val=0  Mask=00000010
+Time 10465: Controller Packet -> Val=0  Mask=00000100
+Time 10475: Controller Packet -> Val=0  Mask=00001000
+Time 10485: Controller Packet -> Val=0  Mask=00010000
+Time 10495: Controller Packet -> Val=0  Mask=00100000
+Time 10505: Controller Packet -> Val=0  Mask=01000000
+Time 10515: Controller Packet -> Val=0  Mask=10000000
+ACK received for SEND MATRIX A
+
+--- CONFIG STREAMING ---
+Time 11115: MS Config Broadcast:
+  MS[0]: state=0010  payload=1
+  MS[1]: state=0010  payload=1
+  MS[2]: state=0010  payload=1
+  MS[3]: state=0010  payload=1
+  MS[4]: state=0010  payload=1
+  MS[5]: state=0010  payload=1
+  MS[6]: state=0010  payload=1
+  MS[7]: state=0010  payload=1
+ACK received for CONFIG STREAMING
+
+--- SEND MATRIX B ---
+Time 11205: Controller Packet -> Val=2  Mask=00000001
+Time 11215: Controller Packet -> Val=3  Mask=00000010
+Time 11225: Controller Packet -> Val=4  Mask=00000100
+Time 11235: Controller Packet -> Val=5  Mask=00001000
+Time 11245: Controller Packet -> Val=6  Mask=00010000
+Time 11255: Controller Packet -> Val=7  Mask=00100000
+Time 11265: Controller Packet -> Val=8  Mask=01000000
+Time 11275: Controller Packet -> Val=8  Mask=10000000
+Time 11445: [RESULT 6] ACCELERATOR FINAL RESULT -> 0
+ACK received for SEND MATRIX B
+  [TB] Waiting for ART to be EMPTY...
+
+--- BATCH 7 ---
+
+--- VN ALLOCATION ---
+ACK received for VN ALLOCATION
+
+--- RN CONFIGURATION ---
+ACK received for RN CONFIGURATION
+
+--- ONFIG STATIONARY ---
+Time 12025: MS Config Broadcast:
+  MS[0]: state=0001  payload=0
+  MS[1]: state=0001  payload=0
+  MS[2]: state=0001  payload=0
+  MS[3]: state=0001  payload=0
+  MS[4]: state=0001  payload=0
+  MS[5]: state=0001  payload=0
+  MS[6]: state=0001  payload=0
+  MS[7]: state=0001  payload=0
+ACK received for ONFIG STATIONARY
+
+--- SEND MATRIX A ---
+Time 12115: Controller Packet -> Val=0  Mask=00000001
+Time 12125: Controller Packet -> Val=0  Mask=00000010
+Time 12135: Controller Packet -> Val=0  Mask=00000100
+Time 12145: Controller Packet -> Val=0  Mask=00001000
+Time 12155: Controller Packet -> Val=0  Mask=00010000
+Time 12165: Controller Packet -> Val=0  Mask=00100000
+Time 12175: Controller Packet -> Val=0  Mask=01000000
+Time 12185: Controller Packet -> Val=0  Mask=10000000
+ACK received for SEND MATRIX A
+
+--- CONFIG STREAMING ---
+Time 12785: MS Config Broadcast:
+  MS[0]: state=0010  payload=1
+  MS[1]: state=0010  payload=1
+  MS[2]: state=0010  payload=1
+  MS[3]: state=0010  payload=1
+  MS[4]: state=0010  payload=1
+  MS[5]: state=0010  payload=1
+  MS[6]: state=0010  payload=1
+  MS[7]: state=0010  payload=1
+ACK received for CONFIG STREAMING
+
+--- SEND MATRIX B ---
+Time 12875: Controller Packet -> Val=16  Mask=00000001
+Time 12885: Controller Packet -> Val=17  Mask=00000010
+Time 12895: Controller Packet -> Val=18  Mask=00000100
+Time 12905: Controller Packet -> Val=19  Mask=00001000
+Time 12915: Controller Packet -> Val=20  Mask=00010000
+Time 12925: Controller Packet -> Val=8  Mask=00100000
+Time 12935: Controller Packet -> Val=8  Mask=01000000
+Time 12945: Controller Packet -> Val=8  Mask=10000000
+Time 13115: [RESULT 7] ACCELERATOR FINAL RESULT -> 0
+ACK received for SEND MATRIX B
+  [TB] Waiting for ART to be EMPTY...
+
+--- BATCH 8 ---
+
+--- VN ALLOCATION ---
+ACK received for VN ALLOCATION
+
+--- RN CONFIGURATION ---
+ACK received for RN CONFIGURATION
+
+--- ONFIG STATIONARY ---
+Time 13695: MS Config Broadcast:
+  MS[0]: state=0001  payload=0
+  MS[1]: state=0001  payload=0
+  MS[2]: state=0001  payload=0
+  MS[3]: state=0001  payload=0
+  MS[4]: state=0001  payload=0
+  MS[5]: state=0001  payload=0
+  MS[6]: state=0001  payload=0
+  MS[7]: state=0001  payload=0
+ACK received for ONFIG STATIONARY
+
+--- SEND MATRIX A ---
+Time 13785: Controller Packet -> Val=1  Mask=00000001
+Time 13795: Controller Packet -> Val=0  Mask=00000010
+Time 13805: Controller Packet -> Val=0  Mask=00000100
+Time 13815: Controller Packet -> Val=0  Mask=00001000
+Time 13825: Controller Packet -> Val=0  Mask=00010000
+Time 13835: Controller Packet -> Val=8  Mask=00100000
+Time 13845: Controller Packet -> Val=8  Mask=01000000
+Time 13855: Controller Packet -> Val=8  Mask=10000000
+ACK received for SEND MATRIX A
+
+--- CONFIG STREAMING ---
+Time 14455: MS Config Broadcast:
+  MS[0]: state=0010  payload=1
+  MS[1]: state=0010  payload=1
+  MS[2]: state=0010  payload=1
+  MS[3]: state=0010  payload=1
+  MS[4]: state=0010  payload=1
+  MS[5]: state=0010  payload=1
+  MS[6]: state=0010  payload=1
+  MS[7]: state=0010  payload=1
+ACK received for CONFIG STREAMING
+
+--- SEND MATRIX B ---
+Time 14545: Controller Packet -> Val=2  Mask=00000001
+Time 14555: Controller Packet -> Val=3  Mask=00000010
+Time 14565: Controller Packet -> Val=4  Mask=00000100
+Time 14575: Controller Packet -> Val=5  Mask=00001000
+Time 14585: Controller Packet -> Val=6  Mask=00010000
+Time 14595: Controller Packet -> Val=7  Mask=00100000
+Time 14605: Controller Packet -> Val=8  Mask=01000000
+Time 14615: Controller Packet -> Val=8  Mask=10000000
+Time 14785: [RESULT 8] ACCELERATOR FINAL RESULT -> 186
+ACK received for SEND MATRIX B
+  [TB] Waiting for ART to be EMPTY...
+
+--- BATCH 9 ---
+
+--- VN ALLOCATION ---
+ACK received for VN ALLOCATION
+
+--- RN CONFIGURATION ---
+ACK received for RN CONFIGURATION
+
+--- ONFIG STATIONARY ---
+Time 15365: MS Config Broadcast:
+  MS[0]: state=0001  payload=0
+  MS[1]: state=0001  payload=0
+  MS[2]: state=0001  payload=0
+  MS[3]: state=0001  payload=0
+  MS[4]: state=0001  payload=0
+  MS[5]: state=0001  payload=0
+  MS[6]: state=0001  payload=0
+  MS[7]: state=0001  payload=0
+ACK received for ONFIG STATIONARY
+
+--- SEND MATRIX A ---
+Time 15455: Controller Packet -> Val=1  Mask=00000001
+Time 15465: Controller Packet -> Val=0  Mask=00000010
+Time 15475: Controller Packet -> Val=0  Mask=00000100
+Time 15485: Controller Packet -> Val=0  Mask=00001000
+Time 15495: Controller Packet -> Val=0  Mask=00010000
+Time 15505: Controller Packet -> Val=8  Mask=00100000
+Time 15515: Controller Packet -> Val=8  Mask=01000000
+Time 15525: Controller Packet -> Val=8  Mask=10000000
+ACK received for SEND MATRIX A
+
+--- CONFIG STREAMING ---
+Time 16125: MS Config Broadcast:
+  MS[0]: state=0010  payload=1
+  MS[1]: state=0010  payload=1
+  MS[2]: state=0010  payload=1
+  MS[3]: state=0010  payload=1
+  MS[4]: state=0010  payload=1
+  MS[5]: state=0010  payload=1
+  MS[6]: state=0010  payload=1
+  MS[7]: state=0010  payload=1
+ACK received for CONFIG STREAMING
+
+--- SEND MATRIX B ---
+Time 16215: Controller Packet -> Val=16  Mask=00000001
+Time 16225: Controller Packet -> Val=17  Mask=00000010
+Time 16235: Controller Packet -> Val=18  Mask=00000100
+Time 16245: Controller Packet -> Val=19  Mask=00001000
+Time 16255: Controller Packet -> Val=20  Mask=00010000
+Time 16265: Controller Packet -> Val=8  Mask=00100000
+Time 16275: Controller Packet -> Val=8  Mask=01000000
+Time 16285: Controller Packet -> Val=8  Mask=10000000
+Time 16455: [RESULT 9] ACCELERATOR FINAL RESULT -> 208
+ACK received for SEND MATRIX B
+  [TB] Waiting for ART to be EMPTY...
+
+--- BATCH 10 ---
+
+--- VN ALLOCATION ---
+ACK received for VN ALLOCATION
+
+--- RN CONFIGURATION ---
+ACK received for RN CONFIGURATION
+
+--- ONFIG STATIONARY ---
+Time 17035: MS Config Broadcast:
+  MS[0]: state=0001  payload=0
+  MS[1]: state=0001  payload=0
+  MS[2]: state=0001  payload=0
+  MS[3]: state=0001  payload=0
+  MS[4]: state=0001  payload=0
+  MS[5]: state=0001  payload=0
+  MS[6]: state=0001  payload=0
+  MS[7]: state=0001  payload=0
+ACK received for ONFIG STATIONARY
+
+--- SEND MATRIX A ---
+Time 17125: Controller Packet -> Val=1  Mask=00000001
+Time 17135: Controller Packet -> Val=0  Mask=00000010
+Time 17145: Controller Packet -> Val=0  Mask=00000100
+Time 17155: Controller Packet -> Val=0  Mask=00001000
+Time 17165: Controller Packet -> Val=0  Mask=00010000
+Time 17175: Controller Packet -> Val=8  Mask=00100000
+Time 17185: Controller Packet -> Val=8  Mask=01000000
+Time 17195: Controller Packet -> Val=8  Mask=10000000
+ACK received for SEND MATRIX A
+
+--- CONFIG STREAMING ---
+Time 17795: MS Config Broadcast:
+  MS[0]: state=0010  payload=1
+  MS[1]: state=0010  payload=1
+  MS[2]: state=0010  payload=1
+  MS[3]: state=0010  payload=1
+  MS[4]: state=0010  payload=1
+  MS[5]: state=0010  payload=1
+  MS[6]: state=0010  payload=1
+  MS[7]: state=0010  payload=1
+ACK received for CONFIG STREAMING
+
+--- SEND MATRIX B ---
+Time 17885: Controller Packet -> Val=2  Mask=00000001
+Time 17895: Controller Packet -> Val=3  Mask=00000010
+Time 17905: Controller Packet -> Val=4  Mask=00000100
+Time 17915: Controller Packet -> Val=5  Mask=00001000
+Time 17925: Controller Packet -> Val=6  Mask=00010000
+Time 17935: Controller Packet -> Val=7  Mask=00100000
+Time 17945: Controller Packet -> Val=8  Mask=01000000
+Time 17955: Controller Packet -> Val=8  Mask=10000000
+Time 18125: [RESULT 10] ACCELERATOR FINAL RESULT -> 186
+ACK received for SEND MATRIX B
+  [TB] Waiting for ART to be EMPTY...
+
+--- BATCH 11 ---
+
+--- VN ALLOCATION ---
+ACK received for VN ALLOCATION
+
+--- RN CONFIGURATION ---
+ACK received for RN CONFIGURATION
+
+--- ONFIG STATIONARY ---
+Time 18705: MS Config Broadcast:
+  MS[0]: state=0001  payload=0
+  MS[1]: state=0001  payload=0
+  MS[2]: state=0001  payload=0
+  MS[3]: state=0001  payload=0
+  MS[4]: state=0001  payload=0
+  MS[5]: state=0001  payload=0
+  MS[6]: state=0001  payload=0
+  MS[7]: state=0001  payload=0
+ACK received for ONFIG STATIONARY
+
+--- SEND MATRIX A ---
+Time 18795: Controller Packet -> Val=1  Mask=00000001
+Time 18805: Controller Packet -> Val=0  Mask=00000010
+Time 18815: Controller Packet -> Val=0  Mask=00000100
+Time 18825: Controller Packet -> Val=0  Mask=00001000
+Time 18835: Controller Packet -> Val=0  Mask=00010000
+Time 18845: Controller Packet -> Val=8  Mask=00100000
+Time 18855: Controller Packet -> Val=8  Mask=01000000
+Time 18865: Controller Packet -> Val=8  Mask=10000000
+ACK received for SEND MATRIX A
+
+--- CONFIG STREAMING ---
+Time 19465: MS Config Broadcast:
+  MS[0]: state=0010  payload=1
+  MS[1]: state=0010  payload=1
+  MS[2]: state=0010  payload=1
+  MS[3]: state=0010  payload=1
+  MS[4]: state=0010  payload=1
+  MS[5]: state=0010  payload=1
+  MS[6]: state=0010  payload=1
+  MS[7]: state=0010  payload=1
+ACK received for CONFIG STREAMING
+
+--- SEND MATRIX B ---
+Time 19555: Controller Packet -> Val=16  Mask=00000001
+Time 19565: Controller Packet -> Val=17  Mask=00000010
+Time 19575: Controller Packet -> Val=18  Mask=00000100
+Time 19585: Controller Packet -> Val=19  Mask=00001000
+Time 19595: Controller Packet -> Val=20  Mask=00010000
+Time 19605: Controller Packet -> Val=8  Mask=00100000
+Time 19615: Controller Packet -> Val=8  Mask=01000000
+Time 19625: Controller Packet -> Val=8  Mask=10000000
+Time 19795: [RESULT 11] ACCELERATOR FINAL RESULT -> 208
+ACK received for SEND MATRIX B
+  [TB] Waiting for ART to be EMPTY...
+
+--- BATCH 12 ---
+
+--- VN ALLOCATION ---
+ACK received for VN ALLOCATION
+
+--- RN CONFIGURATION ---
+ACK received for RN CONFIGURATION
+
+--- ONFIG STATIONARY ---
+Time 20375: MS Config Broadcast:
+  MS[0]: state=0001  payload=0
+  MS[1]: state=0001  payload=0
+  MS[2]: state=0001  payload=0
+  MS[3]: state=0001  payload=0
+  MS[4]: state=0001  payload=0
+  MS[5]: state=0001  payload=0
+  MS[6]: state=0001  payload=0
+  MS[7]: state=0001  payload=0
+ACK received for ONFIG STATIONARY
+
+--- SEND MATRIX A ---
+Time 20465: Controller Packet -> Val=1  Mask=00000001
+Time 20475: Controller Packet -> Val=0  Mask=00000010
+Time 20485: Controller Packet -> Val=0  Mask=00000100
+Time 20495: Controller Packet -> Val=0  Mask=00001000
+Time 20505: Controller Packet -> Val=0  Mask=00010000
+Time 20515: Controller Packet -> Val=8  Mask=00100000
+Time 20525: Controller Packet -> Val=8  Mask=01000000
+Time 20535: Controller Packet -> Val=8  Mask=10000000
+ACK received for SEND MATRIX A
+
+--- CONFIG STREAMING ---
+Time 21135: MS Config Broadcast:
+  MS[0]: state=0010  payload=1
+  MS[1]: state=0010  payload=1
+  MS[2]: state=0010  payload=1
+  MS[3]: state=0010  payload=1
+  MS[4]: state=0010  payload=1
+  MS[5]: state=0010  payload=1
+  MS[6]: state=0010  payload=1
+  MS[7]: state=0010  payload=1
+ACK received for CONFIG STREAMING
+
+--- SEND MATRIX B ---
+Time 21225: Controller Packet -> Val=2  Mask=00000001
+Time 21235: Controller Packet -> Val=3  Mask=00000010
+Time 21245: Controller Packet -> Val=4  Mask=00000100
+Time 21255: Controller Packet -> Val=5  Mask=00001000
+Time 21265: Controller Packet -> Val=6  Mask=00010000
+Time 21275: Controller Packet -> Val=7  Mask=00100000
+Time 21285: Controller Packet -> Val=8  Mask=01000000
+Time 21295: Controller Packet -> Val=8  Mask=10000000
+Time 21465: [RESULT 12] ACCELERATOR FINAL RESULT -> 186
+ACK received for SEND MATRIX B
+  [TB] Waiting for ART to be EMPTY...
+
+--- BATCH 13 ---
+
+--- VN ALLOCATION ---
+ACK received for VN ALLOCATION
+
+--- RN CONFIGURATION ---
+ACK received for RN CONFIGURATION
+
+--- ONFIG STATIONARY ---
+Time 22045: MS Config Broadcast:
+  MS[0]: state=0001  payload=0
+  MS[1]: state=0001  payload=0
+  MS[2]: state=0001  payload=0
+  MS[3]: state=0001  payload=0
+  MS[4]: state=0001  payload=0
+  MS[5]: state=0001  payload=0
+  MS[6]: state=0001  payload=0
+  MS[7]: state=0001  payload=0
+ACK received for ONFIG STATIONARY
+
+--- SEND MATRIX A ---
+Time 22135: Controller Packet -> Val=1  Mask=00000001
+Time 22145: Controller Packet -> Val=0  Mask=00000010
+Time 22155: Controller Packet -> Val=0  Mask=00000100
+Time 22165: Controller Packet -> Val=0  Mask=00001000
+Time 22175: Controller Packet -> Val=0  Mask=00010000
+Time 22185: Controller Packet -> Val=8  Mask=00100000
+Time 22195: Controller Packet -> Val=8  Mask=01000000
+Time 22205: Controller Packet -> Val=8  Mask=10000000
+ACK received for SEND MATRIX A
+
+--- CONFIG STREAMING ---
+Time 22805: MS Config Broadcast:
+  MS[0]: state=0010  payload=1
+  MS[1]: state=0010  payload=1
+  MS[2]: state=0010  payload=1
+  MS[3]: state=0010  payload=1
+  MS[4]: state=0010  payload=1
+  MS[5]: state=0010  payload=1
+  MS[6]: state=0010  payload=1
+  MS[7]: state=0010  payload=1
+ACK received for CONFIG STREAMING
+
+--- SEND MATRIX B ---
+Time 22895: Controller Packet -> Val=16  Mask=00000001
+Time 22905: Controller Packet -> Val=17  Mask=00000010
+Time 22915: Controller Packet -> Val=18  Mask=00000100
+Time 22925: Controller Packet -> Val=19  Mask=00001000
+Time 22935: Controller Packet -> Val=20  Mask=00010000
+Time 22945: Controller Packet -> Val=8  Mask=00100000
+Time 22955: Controller Packet -> Val=8  Mask=01000000
+Time 22965: Controller Packet -> Val=8  Mask=10000000
+Time 23135: [RESULT 13] ACCELERATOR FINAL RESULT -> 208
+ACK received for SEND MATRIX B
+  [TB] Waiting for ART to be EMPTY...
+
+--- BATCH 14 ---
+
+--- VN ALLOCATION ---
+ACK received for VN ALLOCATION
+
+--- RN CONFIGURATION ---
+ACK received for RN CONFIGURATION
+
+--- ONFIG STATIONARY ---
+Time 23715: MS Config Broadcast:
+  MS[0]: state=0001  payload=0
+  MS[1]: state=0001  payload=0
+  MS[2]: state=0001  payload=0
+  MS[3]: state=0001  payload=0
+  MS[4]: state=0001  payload=0
+  MS[5]: state=0001  payload=0
+  MS[6]: state=0001  payload=0
+  MS[7]: state=0001  payload=0
+ACK received for ONFIG STATIONARY
+
+--- SEND MATRIX A ---
+Time 23805: Controller Packet -> Val=1  Mask=00000001
+Time 23815: Controller Packet -> Val=0  Mask=00000010
+Time 23825: Controller Packet -> Val=0  Mask=00000100
+Time 23835: Controller Packet -> Val=0  Mask=00001000
+Time 23845: Controller Packet -> Val=0  Mask=00010000
+Time 23855: Controller Packet -> Val=8  Mask=00100000
+Time 23865: Controller Packet -> Val=8  Mask=01000000
+Time 23875: Controller Packet -> Val=8  Mask=10000000
+ACK received for SEND MATRIX A
+
+--- CONFIG STREAMING ---
+Time 24475: MS Config Broadcast:
+  MS[0]: state=0010  payload=1
+  MS[1]: state=0010  payload=1
+  MS[2]: state=0010  payload=1
+  MS[3]: state=0010  payload=1
+  MS[4]: state=0010  payload=1
+  MS[5]: state=0010  payload=1
+  MS[6]: state=0010  payload=1
+  MS[7]: state=0010  payload=1
+ACK received for CONFIG STREAMING
+
+--- SEND MATRIX B ---
+Time 24565: Controller Packet -> Val=2  Mask=00000001
+Time 24575: Controller Packet -> Val=3  Mask=00000010
+Time 24585: Controller Packet -> Val=4  Mask=00000100
+Time 24595: Controller Packet -> Val=5  Mask=00001000
+Time 24605: Controller Packet -> Val=6  Mask=00010000
+Time 24615: Controller Packet -> Val=7  Mask=00100000
+Time 24625: Controller Packet -> Val=8  Mask=01000000
+Time 24635: Controller Packet -> Val=8  Mask=10000000
+Time 24805: [RESULT 14] ACCELERATOR FINAL RESULT -> 186
+ACK received for SEND MATRIX B
+  [TB] Waiting for ART to be EMPTY...
+
+--- BATCH 15 ---
+
+--- VN ALLOCATION ---
+ACK received for VN ALLOCATION
+
+--- RN CONFIGURATION ---
+ACK received for RN CONFIGURATION
+
+--- ONFIG STATIONARY ---
+Time 25385: MS Config Broadcast:
+  MS[0]: state=0001  payload=0
+  MS[1]: state=0001  payload=0
+  MS[2]: state=0001  payload=0
+  MS[3]: state=0001  payload=0
+  MS[4]: state=0001  payload=0
+  MS[5]: state=0001  payload=0
+  MS[6]: state=0001  payload=0
+  MS[7]: state=0001  payload=0
+ACK received for ONFIG STATIONARY
+
+--- SEND MATRIX A ---
+Time 25475: Controller Packet -> Val=1  Mask=00000001
+Time 25485: Controller Packet -> Val=0  Mask=00000010
+Time 25495: Controller Packet -> Val=0  Mask=00000100
+Time 25505: Controller Packet -> Val=0  Mask=00001000
+Time 25515: Controller Packet -> Val=0  Mask=00010000
+Time 25525: Controller Packet -> Val=8  Mask=00100000
+Time 25535: Controller Packet -> Val=8  Mask=01000000
+Time 25545: Controller Packet -> Val=8  Mask=10000000
+ACK received for SEND MATRIX A
+
+--- CONFIG STREAMING ---
+Time 26145: MS Config Broadcast:
+  MS[0]: state=0010  payload=1
+  MS[1]: state=0010  payload=1
+  MS[2]: state=0010  payload=1
+  MS[3]: state=0010  payload=1
+  MS[4]: state=0010  payload=1
+  MS[5]: state=0010  payload=1
+  MS[6]: state=0010  payload=1
+  MS[7]: state=0010  payload=1
+ACK received for CONFIG STREAMING
+
+--- SEND MATRIX B ---
+Time 26235: Controller Packet -> Val=16  Mask=00000001
+Time 26245: Controller Packet -> Val=17  Mask=00000010
+Time 26255: Controller Packet -> Val=18  Mask=00000100
+Time 26265: Controller Packet -> Val=19  Mask=00001000
+Time 26275: Controller Packet -> Val=20  Mask=00010000
+Time 26285: Controller Packet -> Val=8  Mask=00100000
+Time 26295: Controller Packet -> Val=8  Mask=01000000
+Time 26305: Controller Packet -> Val=8  Mask=10000000
+Time 26475: [RESULT 15] ACCELERATOR FINAL RESULT -> 208
+ACK received for SEND MATRIX B
+  [TB] Waiting for ART to be EMPTY...
+
+--- BATCH 16 ---
+
+--- VN ALLOCATION ---
+ACK received for VN ALLOCATION
+
+--- RN CONFIGURATION ---
+ACK received for RN CONFIGURATION
+
+--- ONFIG STATIONARY ---
+Time 27055: MS Config Broadcast:
+  MS[0]: state=0001  payload=0
+  MS[1]: state=0001  payload=0
+  MS[2]: state=0001  payload=0
+  MS[3]: state=0001  payload=0
+  MS[4]: state=0001  payload=0
+  MS[5]: state=0001  payload=0
+  MS[6]: state=0001  payload=0
+  MS[7]: state=0001  payload=0
+ACK received for ONFIG STATIONARY
+
+--- SEND MATRIX A ---
+Time 27145: Controller Packet -> Val=0  Mask=00000001
+Time 27155: Controller Packet -> Val=0  Mask=00000010
+Time 27165: Controller Packet -> Val=0  Mask=00000100
+Time 27175: Controller Packet -> Val=0  Mask=00001000
+Time 27185: Controller Packet -> Val=0  Mask=00010000
+Time 27195: Controller Packet -> Val=0  Mask=00100000
+Time 27205: Controller Packet -> Val=0  Mask=01000000
+Time 27215: Controller Packet -> Val=0  Mask=10000000
+ACK received for SEND MATRIX A
+
+--- CONFIG STREAMING ---
+Time 27815: MS Config Broadcast:
+  MS[0]: state=0010  payload=1
+  MS[1]: state=0010  payload=1
+  MS[2]: state=0010  payload=1
+  MS[3]: state=0010  payload=1
+  MS[4]: state=0010  payload=1
+  MS[5]: state=0010  payload=1
+  MS[6]: state=0010  payload=1
+  MS[7]: state=0010  payload=1
+ACK received for CONFIG STREAMING
+
+--- SEND MATRIX B ---
+Time 27905: Controller Packet -> Val=2  Mask=00000001
+Time 27915: Controller Packet -> Val=3  Mask=00000010
+Time 27925: Controller Packet -> Val=4  Mask=00000100
+Time 27935: Controller Packet -> Val=5  Mask=00001000
+Time 27945: Controller Packet -> Val=6  Mask=00010000
+Time 27955: Controller Packet -> Val=7  Mask=00100000
+Time 27965: Controller Packet -> Val=8  Mask=01000000
+Time 27975: Controller Packet -> Val=8  Mask=10000000
+Time 28145: [RESULT 16] ACCELERATOR FINAL RESULT -> 0
+ACK received for SEND MATRIX B
+  [TB] Waiting for ART to be EMPTY...
+
+--- BATCH 17 ---
+
+--- VN ALLOCATION ---
+ACK received for VN ALLOCATION
+
+--- RN CONFIGURATION ---
+ACK received for RN CONFIGURATION
+
+--- ONFIG STATIONARY ---
+Time 28725: MS Config Broadcast:
+  MS[0]: state=0001  payload=0
+  MS[1]: state=0001  payload=0
+  MS[2]: state=0001  payload=0
+  MS[3]: state=0001  payload=0
+  MS[4]: state=0001  payload=0
+  MS[5]: state=0001  payload=0
+  MS[6]: state=0001  payload=0
+  MS[7]: state=0001  payload=0
+ACK received for ONFIG STATIONARY
+
+--- SEND MATRIX A ---
+Time 28815: Controller Packet -> Val=0  Mask=00000001
+Time 28825: Controller Packet -> Val=0  Mask=00000010
+Time 28835: Controller Packet -> Val=0  Mask=00000100
+Time 28845: Controller Packet -> Val=0  Mask=00001000
+Time 28855: Controller Packet -> Val=0  Mask=00010000
+Time 28865: Controller Packet -> Val=0  Mask=00100000
+Time 28875: Controller Packet -> Val=0  Mask=01000000
+Time 28885: Controller Packet -> Val=0  Mask=10000000
+ACK received for SEND MATRIX A
+
+--- CONFIG STREAMING ---
+Time 29485: MS Config Broadcast:
+  MS[0]: state=0010  payload=1
+  MS[1]: state=0010  payload=1
+  MS[2]: state=0010  payload=1
+  MS[3]: state=0010  payload=1
+  MS[4]: state=0010  payload=1
+  MS[5]: state=0010  payload=1
+  MS[6]: state=0010  payload=1
+  MS[7]: state=0010  payload=1
+ACK received for CONFIG STREAMING
+
+--- SEND MATRIX B ---
+Time 29575: Controller Packet -> Val=16  Mask=00000001
+Time 29585: Controller Packet -> Val=17  Mask=00000010
+Time 29595: Controller Packet -> Val=18  Mask=00000100
+Time 29605: Controller Packet -> Val=19  Mask=00001000
+Time 29615: Controller Packet -> Val=20  Mask=00010000
+Time 29625: Controller Packet -> Val=8  Mask=00100000
+Time 29635: Controller Packet -> Val=8  Mask=01000000
+Time 29645: Controller Packet -> Val=8  Mask=10000000
+Time 29815: [RESULT 17] ACCELERATOR FINAL RESULT -> 0
+ACK received for SEND MATRIX B
+  [TB] Waiting for ART to be EMPTY...
+
+--- BATCH 18 ---
+
+--- VN ALLOCATION ---
+ACK received for VN ALLOCATION
+
+--- RN CONFIGURATION ---
+ACK received for RN CONFIGURATION
+
+--- ONFIG STATIONARY ---
+Time 30395: MS Config Broadcast:
+  MS[0]: state=0001  payload=0
+  MS[1]: state=0001  payload=0
+  MS[2]: state=0001  payload=0
+  MS[3]: state=0001  payload=0
+  MS[4]: state=0001  payload=0
+  MS[5]: state=0001  payload=0
+  MS[6]: state=0001  payload=0
+  MS[7]: state=0001  payload=0
+ACK received for ONFIG STATIONARY
+
+--- SEND MATRIX A ---
+Time 30485: Controller Packet -> Val=0  Mask=00000001
+Time 30495: Controller Packet -> Val=0  Mask=00000010
+Time 30505: Controller Packet -> Val=0  Mask=00000100
+Time 30515: Controller Packet -> Val=0  Mask=00001000
+Time 30525: Controller Packet -> Val=0  Mask=00010000
+Time 30535: Controller Packet -> Val=0  Mask=00100000
+Time 30545: Controller Packet -> Val=0  Mask=01000000
+Time 30555: Controller Packet -> Val=0  Mask=10000000
+ACK received for SEND MATRIX A
+
+--- CONFIG STREAMING ---
+Time 31155: MS Config Broadcast:
+  MS[0]: state=0010  payload=1
+  MS[1]: state=0010  payload=1
+  MS[2]: state=0010  payload=1
+  MS[3]: state=0010  payload=1
+  MS[4]: state=0010  payload=1
+  MS[5]: state=0010  payload=1
+  MS[6]: state=0010  payload=1
+  MS[7]: state=0010  payload=1
+ACK received for CONFIG STREAMING
+
+--- SEND MATRIX B ---
+Time 31245: Controller Packet -> Val=2  Mask=00000001
+Time 31255: Controller Packet -> Val=3  Mask=00000010
+Time 31265: Controller Packet -> Val=4  Mask=00000100
+Time 31275: Controller Packet -> Val=5  Mask=00001000
+Time 31285: Controller Packet -> Val=6  Mask=00010000
+Time 31295: Controller Packet -> Val=7  Mask=00100000
+Time 31305: Controller Packet -> Val=8  Mask=01000000
+Time 31315: Controller Packet -> Val=8  Mask=10000000
+Time 31485: [RESULT 18] ACCELERATOR FINAL RESULT -> 0
+ACK received for SEND MATRIX B
+  [TB] Waiting for ART to be EMPTY...
+
+--- BATCH 19 ---
+
+--- VN ALLOCATION ---
+ACK received for VN ALLOCATION
+
+--- RN CONFIGURATION ---
+ACK received for RN CONFIGURATION
+
+--- ONFIG STATIONARY ---
+Time 32065: MS Config Broadcast:
+  MS[0]: state=0001  payload=0
+  MS[1]: state=0001  payload=0
+  MS[2]: state=0001  payload=0
+  MS[3]: state=0001  payload=0
+  MS[4]: state=0001  payload=0
+  MS[5]: state=0001  payload=0
+  MS[6]: state=0001  payload=0
+  MS[7]: state=0001  payload=0
+ACK received for ONFIG STATIONARY
+
+--- SEND MATRIX A ---
+Time 32155: Controller Packet -> Val=0  Mask=00000001
+Time 32165: Controller Packet -> Val=0  Mask=00000010
+Time 32175: Controller Packet -> Val=0  Mask=00000100
+Time 32185: Controller Packet -> Val=0  Mask=00001000
+Time 32195: Controller Packet -> Val=0  Mask=00010000
+Time 32205: Controller Packet -> Val=0  Mask=00100000
+Time 32215: Controller Packet -> Val=0  Mask=01000000
+Time 32225: Controller Packet -> Val=0  Mask=10000000
+ACK received for SEND MATRIX A
+
+--- CONFIG STREAMING ---
+Time 32825: MS Config Broadcast:
+  MS[0]: state=0010  payload=1
+  MS[1]: state=0010  payload=1
+  MS[2]: state=0010  payload=1
+  MS[3]: state=0010  payload=1
+  MS[4]: state=0010  payload=1
+  MS[5]: state=0010  payload=1
+  MS[6]: state=0010  payload=1
+  MS[7]: state=0010  payload=1
+ACK received for CONFIG STREAMING
+
+--- SEND MATRIX B ---
+Time 32915: Controller Packet -> Val=16  Mask=00000001
+Time 32925: Controller Packet -> Val=17  Mask=00000010
+Time 32935: Controller Packet -> Val=18  Mask=00000100
+Time 32945: Controller Packet -> Val=19  Mask=00001000
+Time 32955: Controller Packet -> Val=20  Mask=00010000
+Time 32965: Controller Packet -> Val=8  Mask=00100000
+Time 32975: Controller Packet -> Val=8  Mask=01000000
+Time 32985: Controller Packet -> Val=8  Mask=10000000
+Time 33155: [RESULT 19] ACCELERATOR FINAL RESULT -> 0
+ACK received for SEND MATRIX B
+  [TB] Waiting for ART to be EMPTY...
+
+--- BATCH 20 ---
+
+--- VN ALLOCATION ---
+ACK received for VN ALLOCATION
+
+--- RN CONFIGURATION ---
+ACK received for RN CONFIGURATION
+
+--- ONFIG STATIONARY ---
+Time 33735: MS Config Broadcast:
+  MS[0]: state=0001  payload=0
+  MS[1]: state=0001  payload=0
+  MS[2]: state=0001  payload=0
+  MS[3]: state=0001  payload=0
+  MS[4]: state=0001  payload=0
+  MS[5]: state=0001  payload=0
+  MS[6]: state=0001  payload=0
+  MS[7]: state=0001  payload=0
+ACK received for ONFIG STATIONARY
+
+--- SEND MATRIX A ---
+Time 33825: Controller Packet -> Val=0  Mask=00000001
+Time 33835: Controller Packet -> Val=0  Mask=00000010
+Time 33845: Controller Packet -> Val=0  Mask=00000100
+Time 33855: Controller Packet -> Val=0  Mask=00001000
+Time 33865: Controller Packet -> Val=0  Mask=00010000
+Time 33875: Controller Packet -> Val=0  Mask=00100000
+Time 33885: Controller Packet -> Val=0  Mask=01000000
+Time 33895: Controller Packet -> Val=0  Mask=10000000
+ACK received for SEND MATRIX A
+
+--- CONFIG STREAMING ---
+Time 34495: MS Config Broadcast:
+  MS[0]: state=0010  payload=1
+  MS[1]: state=0010  payload=1
+  MS[2]: state=0010  payload=1
+  MS[3]: state=0010  payload=1
+  MS[4]: state=0010  payload=1
+  MS[5]: state=0010  payload=1
+  MS[6]: state=0010  payload=1
+  MS[7]: state=0010  payload=1
+ACK received for CONFIG STREAMING
+
+--- SEND MATRIX B ---
+Time 34585: Controller Packet -> Val=2  Mask=00000001
+Time 34595: Controller Packet -> Val=3  Mask=00000010
+Time 34605: Controller Packet -> Val=4  Mask=00000100
+Time 34615: Controller Packet -> Val=5  Mask=00001000
+Time 34625: Controller Packet -> Val=6  Mask=00010000
+Time 34635: Controller Packet -> Val=7  Mask=00100000
+Time 34645: Controller Packet -> Val=8  Mask=01000000
+Time 34655: Controller Packet -> Val=8  Mask=10000000
+Time 34825: [RESULT 20] ACCELERATOR FINAL RESULT -> 0
+ACK received for SEND MATRIX B
+  [TB] Waiting for ART to be EMPTY...
+
+--- BATCH 21 ---
+
+--- VN ALLOCATION ---
+ACK received for VN ALLOCATION
+
+--- RN CONFIGURATION ---
+ACK received for RN CONFIGURATION
+
+--- ONFIG STATIONARY ---
+Time 35405: MS Config Broadcast:
+  MS[0]: state=0001  payload=0
+  MS[1]: state=0001  payload=0
+  MS[2]: state=0001  payload=0
+  MS[3]: state=0001  payload=0
+  MS[4]: state=0001  payload=0
+  MS[5]: state=0001  payload=0
+  MS[6]: state=0001  payload=0
+  MS[7]: state=0001  payload=0
+ACK received for ONFIG STATIONARY
+
+--- SEND MATRIX A ---
+Time 35495: Controller Packet -> Val=0  Mask=00000001
+Time 35505: Controller Packet -> Val=0  Mask=00000010
+Time 35515: Controller Packet -> Val=0  Mask=00000100
+Time 35525: Controller Packet -> Val=0  Mask=00001000
+Time 35535: Controller Packet -> Val=0  Mask=00010000
+Time 35545: Controller Packet -> Val=0  Mask=00100000
+Time 35555: Controller Packet -> Val=0  Mask=01000000
+Time 35565: Controller Packet -> Val=0  Mask=10000000
+ACK received for SEND MATRIX A
+
+--- CONFIG STREAMING ---
+Time 36165: MS Config Broadcast:
+  MS[0]: state=0010  payload=1
+  MS[1]: state=0010  payload=1
+  MS[2]: state=0010  payload=1
+  MS[3]: state=0010  payload=1
+  MS[4]: state=0010  payload=1
+  MS[5]: state=0010  payload=1
+  MS[6]: state=0010  payload=1
+  MS[7]: state=0010  payload=1
+ACK received for CONFIG STREAMING
+
+--- SEND MATRIX B ---
+Time 36255: Controller Packet -> Val=16  Mask=00000001
+Time 36265: Controller Packet -> Val=17  Mask=00000010
+Time 36275: Controller Packet -> Val=18  Mask=00000100
+Time 36285: Controller Packet -> Val=19  Mask=00001000
+Time 36295: Controller Packet -> Val=20  Mask=00010000
+Time 36305: Controller Packet -> Val=8  Mask=00100000
+Time 36315: Controller Packet -> Val=8  Mask=01000000
+Time 36325: Controller Packet -> Val=8  Mask=10000000
+Time 36495: [RESULT 21] ACCELERATOR FINAL RESULT -> 0
+ACK received for SEND MATRIX B
+  [TB] Waiting for ART to be EMPTY...
+
+--- BATCH 22 ---
+
+--- VN ALLOCATION ---
+ACK received for VN ALLOCATION
+
+--- RN CONFIGURATION ---
+ACK received for RN CONFIGURATION
+
+--- ONFIG STATIONARY ---
+Time 37075: MS Config Broadcast:
+  MS[0]: state=0001  payload=0
+  MS[1]: state=0001  payload=0
+  MS[2]: state=0001  payload=0
+  MS[3]: state=0001  payload=0
+  MS[4]: state=0001  payload=0
+  MS[5]: state=0001  payload=0
+  MS[6]: state=0001  payload=0
+  MS[7]: state=0001  payload=0
+ACK received for ONFIG STATIONARY
+
+--- SEND MATRIX A ---
+Time 37165: Controller Packet -> Val=0  Mask=00000001
+Time 37175: Controller Packet -> Val=0  Mask=00000010
+Time 37185: Controller Packet -> Val=0  Mask=00000100
+Time 37195: Controller Packet -> Val=0  Mask=00001000
+Time 37205: Controller Packet -> Val=0  Mask=00010000
+Time 37215: Controller Packet -> Val=0  Mask=00100000
+Time 37225: Controller Packet -> Val=0  Mask=01000000
+Time 37235: Controller Packet -> Val=0  Mask=10000000
+ACK received for SEND MATRIX A
+
+--- CONFIG STREAMING ---
+Time 37835: MS Config Broadcast:
+  MS[0]: state=0010  payload=1
+  MS[1]: state=0010  payload=1
+  MS[2]: state=0010  payload=1
+  MS[3]: state=0010  payload=1
+  MS[4]: state=0010  payload=1
+  MS[5]: state=0010  payload=1
+  MS[6]: state=0010  payload=1
+  MS[7]: state=0010  payload=1
+ACK received for CONFIG STREAMING
+
+--- SEND MATRIX B ---
+Time 37925: Controller Packet -> Val=2  Mask=00000001
+Time 37935: Controller Packet -> Val=3  Mask=00000010
+Time 37945: Controller Packet -> Val=4  Mask=00000100
+Time 37955: Controller Packet -> Val=5  Mask=00001000
+Time 37965: Controller Packet -> Val=6  Mask=00010000
+Time 37975: Controller Packet -> Val=7  Mask=00100000
+Time 37985: Controller Packet -> Val=8  Mask=01000000
+Time 37995: Controller Packet -> Val=8  Mask=10000000
+Time 38165: [RESULT 22] ACCELERATOR FINAL RESULT -> 0
+ACK received for SEND MATRIX B
+  [TB] Waiting for ART to be EMPTY...
+
+--- BATCH 23 ---
+
+--- VN ALLOCATION ---
+ACK received for VN ALLOCATION
+
+--- RN CONFIGURATION ---
+ACK received for RN CONFIGURATION
+
+--- ONFIG STATIONARY ---
+Time 38745: MS Config Broadcast:
+  MS[0]: state=0001  payload=0
+  MS[1]: state=0001  payload=0
+  MS[2]: state=0001  payload=0
+  MS[3]: state=0001  payload=0
+  MS[4]: state=0001  payload=0
+  MS[5]: state=0001  payload=0
+  MS[6]: state=0001  payload=0
+  MS[7]: state=0001  payload=0
+ACK received for ONFIG STATIONARY
+
+--- SEND MATRIX A ---
+Time 38835: Controller Packet -> Val=0  Mask=00000001
+Time 38845: Controller Packet -> Val=0  Mask=00000010
+Time 38855: Controller Packet -> Val=0  Mask=00000100
+Time 38865: Controller Packet -> Val=0  Mask=00001000
+Time 38875: Controller Packet -> Val=0  Mask=00010000
+Time 38885: Controller Packet -> Val=0  Mask=00100000
+Time 38895: Controller Packet -> Val=0  Mask=01000000
+Time 38905: Controller Packet -> Val=0  Mask=10000000
+ACK received for SEND MATRIX A
+
+--- CONFIG STREAMING ---
+Time 39505: MS Config Broadcast:
+  MS[0]: state=0010  payload=1
+  MS[1]: state=0010  payload=1
+  MS[2]: state=0010  payload=1
+  MS[3]: state=0010  payload=1
+  MS[4]: state=0010  payload=1
+  MS[5]: state=0010  payload=1
+  MS[6]: state=0010  payload=1
+  MS[7]: state=0010  payload=1
+ACK received for CONFIG STREAMING
+
+--- SEND MATRIX B ---
+Time 39595: Controller Packet -> Val=16  Mask=00000001
+Time 39605: Controller Packet -> Val=17  Mask=00000010
+Time 39615: Controller Packet -> Val=18  Mask=00000100
+Time 39625: Controller Packet -> Val=19  Mask=00001000
+Time 39635: Controller Packet -> Val=20  Mask=00010000
+Time 39645: Controller Packet -> Val=8  Mask=00100000
+Time 39655: Controller Packet -> Val=8  Mask=01000000
+Time 39665: Controller Packet -> Val=8  Mask=10000000
+Time 39835: [RESULT 23] ACCELERATOR FINAL RESULT -> 0
+ACK received for SEND MATRIX B
+  [TB] Waiting for ART to be EMPTY...
+
+--- BATCH 24 ---
+
+--- VN ALLOCATION ---
+ACK received for VN ALLOCATION
+
+--- RN CONFIGURATION ---
+ACK received for RN CONFIGURATION
+
+--- ONFIG STATIONARY ---
+Time 40415: MS Config Broadcast:
+  MS[0]: state=0001  payload=0
+  MS[1]: state=0001  payload=0
+  MS[2]: state=0001  payload=0
+  MS[3]: state=0001  payload=0
+  MS[4]: state=0001  payload=0
+  MS[5]: state=0001  payload=0
+  MS[6]: state=0001  payload=0
+  MS[7]: state=0001  payload=0
+ACK received for ONFIG STATIONARY
+
+--- SEND MATRIX A ---
+Time 40505: Controller Packet -> Val=1  Mask=00000001
+Time 40515: Controller Packet -> Val=0  Mask=00000010
+Time 40525: Controller Packet -> Val=0  Mask=00000100
+Time 40535: Controller Packet -> Val=0  Mask=00001000
+Time 40545: Controller Packet -> Val=0  Mask=00010000
+Time 40555: Controller Packet -> Val=8  Mask=00100000
+Time 40565: Controller Packet -> Val=8  Mask=01000000
+Time 40575: Controller Packet -> Val=8  Mask=10000000
+ACK received for SEND MATRIX A
+
+--- CONFIG STREAMING ---
+Time 41175: MS Config Broadcast:
+  MS[0]: state=0010  payload=1
+  MS[1]: state=0010  payload=1
+  MS[2]: state=0010  payload=1
+  MS[3]: state=0010  payload=1
+  MS[4]: state=0010  payload=1
+  MS[5]: state=0010  payload=1
+  MS[6]: state=0010  payload=1
+  MS[7]: state=0010  payload=1
+ACK received for CONFIG STREAMING
+
+--- SEND MATRIX B ---
+Time 41265: Controller Packet -> Val=2  Mask=00000001
+Time 41275: Controller Packet -> Val=3  Mask=00000010
+Time 41285: Controller Packet -> Val=4  Mask=00000100
+Time 41295: Controller Packet -> Val=5  Mask=00001000
+Time 41305: Controller Packet -> Val=6  Mask=00010000
+Time 41315: Controller Packet -> Val=7  Mask=00100000
+Time 41325: Controller Packet -> Val=8  Mask=01000000
+Time 41335: Controller Packet -> Val=8  Mask=10000000
+Time 41505: [RESULT 24] ACCELERATOR FINAL RESULT -> 186
+ACK received for SEND MATRIX B
+  [TB] Waiting for ART to be EMPTY...
+
+--- BATCH 25 ---
+
+--- VN ALLOCATION ---
+ACK received for VN ALLOCATION
+
+--- RN CONFIGURATION ---
+ACK received for RN CONFIGURATION
+
+--- ONFIG STATIONARY ---
+Time 42085: MS Config Broadcast:
+  MS[0]: state=0001  payload=0
+  MS[1]: state=0001  payload=0
+  MS[2]: state=0001  payload=0
+  MS[3]: state=0001  payload=0
+  MS[4]: state=0001  payload=0
+  MS[5]: state=0001  payload=0
+  MS[6]: state=0001  payload=0
+  MS[7]: state=0001  payload=0
+ACK received for ONFIG STATIONARY
+
+--- SEND MATRIX A ---
+Time 42175: Controller Packet -> Val=1  Mask=00000001
+Time 42185: Controller Packet -> Val=0  Mask=00000010
+Time 42195: Controller Packet -> Val=0  Mask=00000100
+Time 42205: Controller Packet -> Val=0  Mask=00001000
+Time 42215: Controller Packet -> Val=0  Mask=00010000
+Time 42225: Controller Packet -> Val=8  Mask=00100000
+Time 42235: Controller Packet -> Val=8  Mask=01000000
+Time 42245: Controller Packet -> Val=8  Mask=10000000
+ACK received for SEND MATRIX A
+
+--- CONFIG STREAMING ---
+Time 42845: MS Config Broadcast:
+  MS[0]: state=0010  payload=1
+  MS[1]: state=0010  payload=1
+  MS[2]: state=0010  payload=1
+  MS[3]: state=0010  payload=1
+  MS[4]: state=0010  payload=1
+  MS[5]: state=0010  payload=1
+  MS[6]: state=0010  payload=1
+  MS[7]: state=0010  payload=1
+ACK received for CONFIG STREAMING
+
+--- SEND MATRIX B ---
+Time 42935: Controller Packet -> Val=16  Mask=00000001
+Time 42945: Controller Packet -> Val=17  Mask=00000010
+Time 42955: Controller Packet -> Val=18  Mask=00000100
+Time 42965: Controller Packet -> Val=19  Mask=00001000
+Time 42975: Controller Packet -> Val=20  Mask=00010000
+Time 42985: Controller Packet -> Val=8  Mask=00100000
+Time 42995: Controller Packet -> Val=8  Mask=01000000
+Time 43005: Controller Packet -> Val=8  Mask=10000000
+Time 43175: [RESULT 25] ACCELERATOR FINAL RESULT -> 208
+ACK received for SEND MATRIX B
+  [TB] Waiting for ART to be EMPTY...
+
+--- BATCH 26 ---
+
+--- VN ALLOCATION ---
+ACK received for VN ALLOCATION
+
+--- RN CONFIGURATION ---
+ACK received for RN CONFIGURATION
+
+--- ONFIG STATIONARY ---
+Time 43755: MS Config Broadcast:
+  MS[0]: state=0001  payload=0
+  MS[1]: state=0001  payload=0
+  MS[2]: state=0001  payload=0
+  MS[3]: state=0001  payload=0
+  MS[4]: state=0001  payload=0
+  MS[5]: state=0001  payload=0
+  MS[6]: state=0001  payload=0
+  MS[7]: state=0001  payload=0
+ACK received for ONFIG STATIONARY
+
+--- SEND MATRIX A ---
+Time 43845: Controller Packet -> Val=1  Mask=00000001
+Time 43855: Controller Packet -> Val=0  Mask=00000010
+Time 43865: Controller Packet -> Val=0  Mask=00000100
+Time 43875: Controller Packet -> Val=0  Mask=00001000
+Time 43885: Controller Packet -> Val=0  Mask=00010000
+Time 43895: Controller Packet -> Val=8  Mask=00100000
+Time 43905: Controller Packet -> Val=8  Mask=01000000
+Time 43915: Controller Packet -> Val=8  Mask=10000000
+ACK received for SEND MATRIX A
+
+--- CONFIG STREAMING ---
+Time 44515: MS Config Broadcast:
+  MS[0]: state=0010  payload=1
+  MS[1]: state=0010  payload=1
+  MS[2]: state=0010  payload=1
+  MS[3]: state=0010  payload=1
+  MS[4]: state=0010  payload=1
+  MS[5]: state=0010  payload=1
+  MS[6]: state=0010  payload=1
+  MS[7]: state=0010  payload=1
+ACK received for CONFIG STREAMING
+
+--- SEND MATRIX B ---
+Time 44605: Controller Packet -> Val=2  Mask=00000001
+Time 44615: Controller Packet -> Val=3  Mask=00000010
+Time 44625: Controller Packet -> Val=4  Mask=00000100
+Time 44635: Controller Packet -> Val=5  Mask=00001000
+Time 44645: Controller Packet -> Val=6  Mask=00010000
+Time 44655: Controller Packet -> Val=7  Mask=00100000
+Time 44665: Controller Packet -> Val=8  Mask=01000000
+Time 44675: Controller Packet -> Val=8  Mask=10000000
+Time 44845: [RESULT 26] ACCELERATOR FINAL RESULT -> 186
+ACK received for SEND MATRIX B
+  [TB] Waiting for ART to be EMPTY...
+
+--- BATCH 27 ---
+
+--- VN ALLOCATION ---
+ACK received for VN ALLOCATION
+
+--- RN CONFIGURATION ---
+ACK received for RN CONFIGURATION
+
+--- ONFIG STATIONARY ---
+Time 45425: MS Config Broadcast:
+  MS[0]: state=0001  payload=0
+  MS[1]: state=0001  payload=0
+  MS[2]: state=0001  payload=0
+  MS[3]: state=0001  payload=0
+  MS[4]: state=0001  payload=0
+  MS[5]: state=0001  payload=0
+  MS[6]: state=0001  payload=0
+  MS[7]: state=0001  payload=0
+ACK received for ONFIG STATIONARY
+
+--- SEND MATRIX A ---
+Time 45515: Controller Packet -> Val=1  Mask=00000001
+Time 45525: Controller Packet -> Val=0  Mask=00000010
+Time 45535: Controller Packet -> Val=0  Mask=00000100
+Time 45545: Controller Packet -> Val=0  Mask=00001000
+Time 45555: Controller Packet -> Val=0  Mask=00010000
+Time 45565: Controller Packet -> Val=8  Mask=00100000
+Time 45575: Controller Packet -> Val=8  Mask=01000000
+Time 45585: Controller Packet -> Val=8  Mask=10000000
+ACK received for SEND MATRIX A
+
+--- CONFIG STREAMING ---
+Time 46185: MS Config Broadcast:
+  MS[0]: state=0010  payload=1
+  MS[1]: state=0010  payload=1
+  MS[2]: state=0010  payload=1
+  MS[3]: state=0010  payload=1
+  MS[4]: state=0010  payload=1
+  MS[5]: state=0010  payload=1
+  MS[6]: state=0010  payload=1
+  MS[7]: state=0010  payload=1
+ACK received for CONFIG STREAMING
+
+--- SEND MATRIX B ---
+Time 46275: Controller Packet -> Val=16  Mask=00000001
+Time 46285: Controller Packet -> Val=17  Mask=00000010
+Time 46295: Controller Packet -> Val=18  Mask=00000100
+Time 46305: Controller Packet -> Val=19  Mask=00001000
+Time 46315: Controller Packet -> Val=20  Mask=00010000
+Time 46325: Controller Packet -> Val=8  Mask=00100000
+Time 46335: Controller Packet -> Val=8  Mask=01000000
+Time 46345: Controller Packet -> Val=8  Mask=10000000
+Time 46515: [RESULT 27] ACCELERATOR FINAL RESULT -> 208
+ACK received for SEND MATRIX B
+  [TB] Waiting for ART to be EMPTY...
+
+--- BATCH 28 ---
+
+--- VN ALLOCATION ---
+ACK received for VN ALLOCATION
+
+--- RN CONFIGURATION ---
+ACK received for RN CONFIGURATION
+
+--- ONFIG STATIONARY ---
+Time 47095: MS Config Broadcast:
+  MS[0]: state=0001  payload=0
+  MS[1]: state=0001  payload=0
+  MS[2]: state=0001  payload=0
+  MS[3]: state=0001  payload=0
+  MS[4]: state=0001  payload=0
+  MS[5]: state=0001  payload=0
+  MS[6]: state=0001  payload=0
+  MS[7]: state=0001  payload=0
+ACK received for ONFIG STATIONARY
+
+--- SEND MATRIX A ---
+Time 47185: Controller Packet -> Val=1  Mask=00000001
+Time 47195: Controller Packet -> Val=0  Mask=00000010
+Time 47205: Controller Packet -> Val=0  Mask=00000100
+Time 47215: Controller Packet -> Val=0  Mask=00001000
+Time 47225: Controller Packet -> Val=0  Mask=00010000
+Time 47235: Controller Packet -> Val=8  Mask=00100000
+Time 47245: Controller Packet -> Val=8  Mask=01000000
+Time 47255: Controller Packet -> Val=8  Mask=10000000
+ACK received for SEND MATRIX A
+
+--- CONFIG STREAMING ---
+Time 47855: MS Config Broadcast:
+  MS[0]: state=0010  payload=1
+  MS[1]: state=0010  payload=1
+  MS[2]: state=0010  payload=1
+  MS[3]: state=0010  payload=1
+  MS[4]: state=0010  payload=1
+  MS[5]: state=0010  payload=1
+  MS[6]: state=0010  payload=1
+  MS[7]: state=0010  payload=1
+ACK received for CONFIG STREAMING
+
+--- SEND MATRIX B ---
+Time 47945: Controller Packet -> Val=2  Mask=00000001
+Time 47955: Controller Packet -> Val=3  Mask=00000010
+Time 47965: Controller Packet -> Val=4  Mask=00000100
+Time 47975: Controller Packet -> Val=5  Mask=00001000
+Time 47985: Controller Packet -> Val=6  Mask=00010000
+Time 47995: Controller Packet -> Val=7  Mask=00100000
+Time 48005: Controller Packet -> Val=8  Mask=01000000
+Time 48015: Controller Packet -> Val=8  Mask=10000000
+Time 48185: [RESULT 28] ACCELERATOR FINAL RESULT -> 186
+ACK received for SEND MATRIX B
+  [TB] Waiting for ART to be EMPTY...
+
+--- BATCH 29 ---
+
+--- VN ALLOCATION ---
+ACK received for VN ALLOCATION
+
+--- RN CONFIGURATION ---
+ACK received for RN CONFIGURATION
+
+--- ONFIG STATIONARY ---
+Time 48765: MS Config Broadcast:
+  MS[0]: state=0001  payload=0
+  MS[1]: state=0001  payload=0
+  MS[2]: state=0001  payload=0
+  MS[3]: state=0001  payload=0
+  MS[4]: state=0001  payload=0
+  MS[5]: state=0001  payload=0
+  MS[6]: state=0001  payload=0
+  MS[7]: state=0001  payload=0
+ACK received for ONFIG STATIONARY
+
+--- SEND MATRIX A ---
+Time 48855: Controller Packet -> Val=1  Mask=00000001
+Time 48865: Controller Packet -> Val=0  Mask=00000010
+Time 48875: Controller Packet -> Val=0  Mask=00000100
+Time 48885: Controller Packet -> Val=0  Mask=00001000
+Time 48895: Controller Packet -> Val=0  Mask=00010000
+Time 48905: Controller Packet -> Val=8  Mask=00100000
+Time 48915: Controller Packet -> Val=8  Mask=01000000
+Time 48925: Controller Packet -> Val=8  Mask=10000000
+ACK received for SEND MATRIX A
+
+--- CONFIG STREAMING ---
+Time 49525: MS Config Broadcast:
+  MS[0]: state=0010  payload=1
+  MS[1]: state=0010  payload=1
+  MS[2]: state=0010  payload=1
+  MS[3]: state=0010  payload=1
+  MS[4]: state=0010  payload=1
+  MS[5]: state=0010  payload=1
+  MS[6]: state=0010  payload=1
+  MS[7]: state=0010  payload=1
+ACK received for CONFIG STREAMING
+
+--- SEND MATRIX B ---
+Time 49615: Controller Packet -> Val=16  Mask=00000001
+Time 49625: Controller Packet -> Val=17  Mask=00000010
+Time 49635: Controller Packet -> Val=18  Mask=00000100
+Time 49645: Controller Packet -> Val=19  Mask=00001000
+Time 49655: Controller Packet -> Val=20  Mask=00010000
+Time 49665: Controller Packet -> Val=8  Mask=00100000
+Time 49675: Controller Packet -> Val=8  Mask=01000000
+Time 49685: Controller Packet -> Val=8  Mask=10000000
+Time 49855: [RESULT 29] ACCELERATOR FINAL RESULT -> 208
+ACK received for SEND MATRIX B
+  [TB] Waiting for ART to be EMPTY...
+
+--- BATCH 30 ---
+
+--- VN ALLOCATION ---
+ACK received for VN ALLOCATION
+
+--- RN CONFIGURATION ---
+ACK received for RN CONFIGURATION
+
+--- ONFIG STATIONARY ---
+Time 50435: MS Config Broadcast:
+  MS[0]: state=0001  payload=0
+  MS[1]: state=0001  payload=0
+  MS[2]: state=0001  payload=0
+  MS[3]: state=0001  payload=0
+  MS[4]: state=0001  payload=0
+  MS[5]: state=0001  payload=0
+  MS[6]: state=0001  payload=0
+  MS[7]: state=0001  payload=0
+ACK received for ONFIG STATIONARY
+
+--- SEND MATRIX A ---
+Time 50525: Controller Packet -> Val=1  Mask=00000001
+Time 50535: Controller Packet -> Val=0  Mask=00000010
+Time 50545: Controller Packet -> Val=0  Mask=00000100
+Time 50555: Controller Packet -> Val=0  Mask=00001000
+Time 50565: Controller Packet -> Val=0  Mask=00010000
+Time 50575: Controller Packet -> Val=8  Mask=00100000
+Time 50585: Controller Packet -> Val=8  Mask=01000000
+Time 50595: Controller Packet -> Val=8  Mask=10000000
+ACK received for SEND MATRIX A
+
+--- CONFIG STREAMING ---
+Time 51195: MS Config Broadcast:
+  MS[0]: state=0010  payload=1
+  MS[1]: state=0010  payload=1
+  MS[2]: state=0010  payload=1
+  MS[3]: state=0010  payload=1
+  MS[4]: state=0010  payload=1
+  MS[5]: state=0010  payload=1
+  MS[6]: state=0010  payload=1
+  MS[7]: state=0010  payload=1
+ACK received for CONFIG STREAMING
+
+--- SEND MATRIX B ---
+Time 51285: Controller Packet -> Val=2  Mask=00000001
+Time 51295: Controller Packet -> Val=3  Mask=00000010
+Time 51305: Controller Packet -> Val=4  Mask=00000100
+Time 51315: Controller Packet -> Val=5  Mask=00001000
+Time 51325: Controller Packet -> Val=6  Mask=00010000
+Time 51335: Controller Packet -> Val=7  Mask=00100000
+Time 51345: Controller Packet -> Val=8  Mask=01000000
+Time 51355: Controller Packet -> Val=8  Mask=10000000
+Time 51525: [RESULT 30] ACCELERATOR FINAL RESULT -> 186
+ACK received for SEND MATRIX B
+  [TB] Waiting for ART to be EMPTY...
+
+--- BATCH 31 ---
+
+--- VN ALLOCATION ---
+ACK received for VN ALLOCATION
+
+--- RN CONFIGURATION ---
+ACK received for RN CONFIGURATION
+
+--- ONFIG STATIONARY ---
+Time 52105: MS Config Broadcast:
+  MS[0]: state=0001  payload=0
+  MS[1]: state=0001  payload=0
+  MS[2]: state=0001  payload=0
+  MS[3]: state=0001  payload=0
+  MS[4]: state=0001  payload=0
+  MS[5]: state=0001  payload=0
+  MS[6]: state=0001  payload=0
+  MS[7]: state=0001  payload=0
+ACK received for ONFIG STATIONARY
+
+--- SEND MATRIX A ---
+Time 52195: Controller Packet -> Val=1  Mask=00000001
+Time 52205: Controller Packet -> Val=0  Mask=00000010
+Time 52215: Controller Packet -> Val=0  Mask=00000100
+Time 52225: Controller Packet -> Val=0  Mask=00001000
+Time 52235: Controller Packet -> Val=0  Mask=00010000
+Time 52245: Controller Packet -> Val=8  Mask=00100000
+Time 52255: Controller Packet -> Val=8  Mask=01000000
+Time 52265: Controller Packet -> Val=8  Mask=10000000
+ACK received for SEND MATRIX A
+
+--- CONFIG STREAMING ---
+Time 52865: MS Config Broadcast:
+  MS[0]: state=0010  payload=1
+  MS[1]: state=0010  payload=1
+  MS[2]: state=0010  payload=1
+  MS[3]: state=0010  payload=1
+  MS[4]: state=0010  payload=1
+  MS[5]: state=0010  payload=1
+  MS[6]: state=0010  payload=1
+  MS[7]: state=0010  payload=1
+ACK received for CONFIG STREAMING
+
+--- SEND MATRIX B ---
+Time 52955: Controller Packet -> Val=16  Mask=00000001
+Time 52965: Controller Packet -> Val=17  Mask=00000010
+Time 52975: Controller Packet -> Val=18  Mask=00000100
+Time 52985: Controller Packet -> Val=19  Mask=00001000
+Time 52995: Controller Packet -> Val=20  Mask=00010000
+Time 53005: Controller Packet -> Val=8  Mask=00100000
+Time 53015: Controller Packet -> Val=8  Mask=01000000
+Time 53025: Controller Packet -> Val=8  Mask=10000000
+Time 53195: [RESULT 31] ACCELERATOR FINAL RESULT -> 208
+ACK received for SEND MATRIX B
+  [TB] Waiting for ART to be EMPTY...
+
+--- BATCH 32 ---
+
+--- VN ALLOCATION ---
+ACK received for VN ALLOCATION
+
+--- RN CONFIGURATION ---
+ACK received for RN CONFIGURATION
+
+--- ONFIG STATIONARY ---
+Time 53775: MS Config Broadcast:
+  MS[0]: state=0001  payload=0
+  MS[1]: state=0001  payload=0
+  MS[2]: state=0001  payload=0
+  MS[3]: state=0001  payload=0
+  MS[4]: state=0001  payload=0
+  MS[5]: state=0001  payload=0
+  MS[6]: state=0001  payload=0
+  MS[7]: state=0001  payload=0
+ACK received for ONFIG STATIONARY
+
+--- SEND MATRIX A ---
+Time 53865: Controller Packet -> Val=0  Mask=00000001
+Time 53875: Controller Packet -> Val=0  Mask=00000010
+Time 53885: Controller Packet -> Val=0  Mask=00000100
+Time 53895: Controller Packet -> Val=0  Mask=00001000
+Time 53905: Controller Packet -> Val=0  Mask=00010000
+Time 53915: Controller Packet -> Val=0  Mask=00100000
+Time 53925: Controller Packet -> Val=0  Mask=01000000
+Time 53935: Controller Packet -> Val=0  Mask=10000000
+ACK received for SEND MATRIX A
+
+--- CONFIG STREAMING ---
+Time 54535: MS Config Broadcast:
+  MS[0]: state=0010  payload=1
+  MS[1]: state=0010  payload=1
+  MS[2]: state=0010  payload=1
+  MS[3]: state=0010  payload=1
+  MS[4]: state=0010  payload=1
+  MS[5]: state=0010  payload=1
+  MS[6]: state=0010  payload=1
+  MS[7]: state=0010  payload=1
+ACK received for CONFIG STREAMING
+
+--- SEND MATRIX B ---
+Time 54625: Controller Packet -> Val=2  Mask=00000001
+Time 54635: Controller Packet -> Val=3  Mask=00000010
+Time 54645: Controller Packet -> Val=4  Mask=00000100
+Time 54655: Controller Packet -> Val=5  Mask=00001000
+Time 54665: Controller Packet -> Val=6  Mask=00010000
+Time 54675: Controller Packet -> Val=7  Mask=00100000
+Time 54685: Controller Packet -> Val=8  Mask=01000000
+Time 54695: Controller Packet -> Val=8  Mask=10000000
+Time 54865: [RESULT 32] ACCELERATOR FINAL RESULT -> 0
+ACK received for SEND MATRIX B
+  [TB] Waiting for ART to be EMPTY...
+
+--- BATCH 33 ---
+
+--- VN ALLOCATION ---
+ACK received for VN ALLOCATION
+
+--- RN CONFIGURATION ---
+ACK received for RN CONFIGURATION
+
+--- ONFIG STATIONARY ---
+Time 55445: MS Config Broadcast:
+  MS[0]: state=0001  payload=0
+  MS[1]: state=0001  payload=0
+  MS[2]: state=0001  payload=0
+  MS[3]: state=0001  payload=0
+  MS[4]: state=0001  payload=0
+  MS[5]: state=0001  payload=0
+  MS[6]: state=0001  payload=0
+  MS[7]: state=0001  payload=0
+ACK received for ONFIG STATIONARY
+
+--- SEND MATRIX A ---
+Time 55535: Controller Packet -> Val=0  Mask=00000001
+Time 55545: Controller Packet -> Val=0  Mask=00000010
+Time 55555: Controller Packet -> Val=0  Mask=00000100
+Time 55565: Controller Packet -> Val=0  Mask=00001000
+Time 55575: Controller Packet -> Val=0  Mask=00010000
+Time 55585: Controller Packet -> Val=0  Mask=00100000
+Time 55595: Controller Packet -> Val=0  Mask=01000000
+Time 55605: Controller Packet -> Val=0  Mask=10000000
+ACK received for SEND MATRIX A
+
+--- CONFIG STREAMING ---
+Time 56205: MS Config Broadcast:
+  MS[0]: state=0010  payload=1
+  MS[1]: state=0010  payload=1
+  MS[2]: state=0010  payload=1
+  MS[3]: state=0010  payload=1
+  MS[4]: state=0010  payload=1
+  MS[5]: state=0010  payload=1
+  MS[6]: state=0010  payload=1
+  MS[7]: state=0010  payload=1
+ACK received for CONFIG STREAMING
+
+--- SEND MATRIX B ---
+Time 56295: Controller Packet -> Val=16  Mask=00000001
+Time 56305: Controller Packet -> Val=17  Mask=00000010
+Time 56315: Controller Packet -> Val=18  Mask=00000100
+Time 56325: Controller Packet -> Val=19  Mask=00001000
+Time 56335: Controller Packet -> Val=20  Mask=00010000
+Time 56345: Controller Packet -> Val=8  Mask=00100000
+Time 56355: Controller Packet -> Val=8  Mask=01000000
+Time 56365: Controller Packet -> Val=8  Mask=10000000
+Time 56535: [RESULT 33] ACCELERATOR FINAL RESULT -> 0
+ACK received for SEND MATRIX B
+  [TB] Waiting for ART to be EMPTY...
+
+--- BATCH 34 ---
+
+--- VN ALLOCATION ---
+ACK received for VN ALLOCATION
+
+--- RN CONFIGURATION ---
+ACK received for RN CONFIGURATION
+
+--- ONFIG STATIONARY ---
+Time 57115: MS Config Broadcast:
+  MS[0]: state=0001  payload=0
+  MS[1]: state=0001  payload=0
+  MS[2]: state=0001  payload=0
+  MS[3]: state=0001  payload=0
+  MS[4]: state=0001  payload=0
+  MS[5]: state=0001  payload=0
+  MS[6]: state=0001  payload=0
+  MS[7]: state=0001  payload=0
+ACK received for ONFIG STATIONARY
+
+--- SEND MATRIX A ---
+Time 57205: Controller Packet -> Val=0  Mask=00000001
+Time 57215: Controller Packet -> Val=0  Mask=00000010
+Time 57225: Controller Packet -> Val=0  Mask=00000100
+Time 57235: Controller Packet -> Val=0  Mask=00001000
+Time 57245: Controller Packet -> Val=0  Mask=00010000
+Time 57255: Controller Packet -> Val=0  Mask=00100000
+Time 57265: Controller Packet -> Val=0  Mask=01000000
+Time 57275: Controller Packet -> Val=0  Mask=10000000
+ACK received for SEND MATRIX A
+
+--- CONFIG STREAMING ---
+Time 57875: MS Config Broadcast:
+  MS[0]: state=0010  payload=1
+  MS[1]: state=0010  payload=1
+  MS[2]: state=0010  payload=1
+  MS[3]: state=0010  payload=1
+  MS[4]: state=0010  payload=1
+  MS[5]: state=0010  payload=1
+  MS[6]: state=0010  payload=1
+  MS[7]: state=0010  payload=1
+ACK received for CONFIG STREAMING
+
+--- SEND MATRIX B ---
+Time 57965: Controller Packet -> Val=2  Mask=00000001
+Time 57975: Controller Packet -> Val=3  Mask=00000010
+Time 57985: Controller Packet -> Val=4  Mask=00000100
+Time 57995: Controller Packet -> Val=5  Mask=00001000
+Time 58005: Controller Packet -> Val=6  Mask=00010000
+Time 58015: Controller Packet -> Val=7  Mask=00100000
+Time 58025: Controller Packet -> Val=8  Mask=01000000
+Time 58035: Controller Packet -> Val=8  Mask=10000000
+Time 58205: [RESULT 34] ACCELERATOR FINAL RESULT -> 0
+ACK received for SEND MATRIX B
+  [TB] Waiting for ART to be EMPTY...
+
+--- BATCH 35 ---
+
+--- VN ALLOCATION ---
+ACK received for VN ALLOCATION
+
+--- RN CONFIGURATION ---
+ACK received for RN CONFIGURATION
+
+--- ONFIG STATIONARY ---
+Time 58785: MS Config Broadcast:
+  MS[0]: state=0001  payload=0
+  MS[1]: state=0001  payload=0
+  MS[2]: state=0001  payload=0
+  MS[3]: state=0001  payload=0
+  MS[4]: state=0001  payload=0
+  MS[5]: state=0001  payload=0
+  MS[6]: state=0001  payload=0
+  MS[7]: state=0001  payload=0
+ACK received for ONFIG STATIONARY
+
+--- SEND MATRIX A ---
+Time 58875: Controller Packet -> Val=0  Mask=00000001
+Time 58885: Controller Packet -> Val=0  Mask=00000010
+Time 58895: Controller Packet -> Val=0  Mask=00000100
+Time 58905: Controller Packet -> Val=0  Mask=00001000
+Time 58915: Controller Packet -> Val=0  Mask=00010000
+Time 58925: Controller Packet -> Val=0  Mask=00100000
+Time 58935: Controller Packet -> Val=0  Mask=01000000
+Time 58945: Controller Packet -> Val=0  Mask=10000000
+ACK received for SEND MATRIX A
+
+--- CONFIG STREAMING ---
+Time 59545: MS Config Broadcast:
+  MS[0]: state=0010  payload=1
+  MS[1]: state=0010  payload=1
+  MS[2]: state=0010  payload=1
+  MS[3]: state=0010  payload=1
+  MS[4]: state=0010  payload=1
+  MS[5]: state=0010  payload=1
+  MS[6]: state=0010  payload=1
+  MS[7]: state=0010  payload=1
+ACK received for CONFIG STREAMING
+
+--- SEND MATRIX B ---
+Time 59635: Controller Packet -> Val=16  Mask=00000001
+Time 59645: Controller Packet -> Val=17  Mask=00000010
+Time 59655: Controller Packet -> Val=18  Mask=00000100
+Time 59665: Controller Packet -> Val=19  Mask=00001000
+Time 59675: Controller Packet -> Val=20  Mask=00010000
+Time 59685: Controller Packet -> Val=8  Mask=00100000
+Time 59695: Controller Packet -> Val=8  Mask=01000000
+Time 59705: Controller Packet -> Val=8  Mask=10000000
+Time 59875: [RESULT 35] ACCELERATOR FINAL RESULT -> 0
+ACK received for SEND MATRIX B
+  [TB] Waiting for ART to be EMPTY...
+
+--- BATCH 36 ---
+
+--- VN ALLOCATION ---
+ACK received for VN ALLOCATION
+
+--- RN CONFIGURATION ---
+ACK received for RN CONFIGURATION
+
+--- ONFIG STATIONARY ---
+Time 60455: MS Config Broadcast:
+  MS[0]: state=0001  payload=0
+  MS[1]: state=0001  payload=0
+  MS[2]: state=0001  payload=0
+  MS[3]: state=0001  payload=0
+  MS[4]: state=0001  payload=0
+  MS[5]: state=0001  payload=0
+  MS[6]: state=0001  payload=0
+  MS[7]: state=0001  payload=0
+ACK received for ONFIG STATIONARY
+
+--- SEND MATRIX A ---
+Time 60545: Controller Packet -> Val=0  Mask=00000001
+Time 60555: Controller Packet -> Val=0  Mask=00000010
+Time 60565: Controller Packet -> Val=0  Mask=00000100
+Time 60575: Controller Packet -> Val=0  Mask=00001000
+Time 60585: Controller Packet -> Val=0  Mask=00010000
+Time 60595: Controller Packet -> Val=0  Mask=00100000
+Time 60605: Controller Packet -> Val=0  Mask=01000000
+Time 60615: Controller Packet -> Val=0  Mask=10000000
+ACK received for SEND MATRIX A
+
+--- CONFIG STREAMING ---
+Time 61215: MS Config Broadcast:
+  MS[0]: state=0010  payload=1
+  MS[1]: state=0010  payload=1
+  MS[2]: state=0010  payload=1
+  MS[3]: state=0010  payload=1
+  MS[4]: state=0010  payload=1
+  MS[5]: state=0010  payload=1
+  MS[6]: state=0010  payload=1
+  MS[7]: state=0010  payload=1
+ACK received for CONFIG STREAMING
+
+--- SEND MATRIX B ---
+Time 61305: Controller Packet -> Val=2  Mask=00000001
+Time 61315: Controller Packet -> Val=3  Mask=00000010
+Time 61325: Controller Packet -> Val=4  Mask=00000100
+Time 61335: Controller Packet -> Val=5  Mask=00001000
+Time 61345: Controller Packet -> Val=6  Mask=00010000
+Time 61355: Controller Packet -> Val=7  Mask=00100000
+Time 61365: Controller Packet -> Val=8  Mask=01000000
+Time 61375: Controller Packet -> Val=8  Mask=10000000
+Time 61545: [RESULT 36] ACCELERATOR FINAL RESULT -> 0
+ACK received for SEND MATRIX B
+  [TB] Waiting for ART to be EMPTY...
+
+--- BATCH 37 ---
+
+--- VN ALLOCATION ---
+ACK received for VN ALLOCATION
+
+--- RN CONFIGURATION ---
+ACK received for RN CONFIGURATION
+
+--- ONFIG STATIONARY ---
+Time 62125: MS Config Broadcast:
+  MS[0]: state=0001  payload=0
+  MS[1]: state=0001  payload=0
+  MS[2]: state=0001  payload=0
+  MS[3]: state=0001  payload=0
+  MS[4]: state=0001  payload=0
+  MS[5]: state=0001  payload=0
+  MS[6]: state=0001  payload=0
+  MS[7]: state=0001  payload=0
+ACK received for ONFIG STATIONARY
+
+--- SEND MATRIX A ---
+Time 62215: Controller Packet -> Val=0  Mask=00000001
+Time 62225: Controller Packet -> Val=0  Mask=00000010
+Time 62235: Controller Packet -> Val=0  Mask=00000100
+Time 62245: Controller Packet -> Val=0  Mask=00001000
+Time 62255: Controller Packet -> Val=0  Mask=00010000
+Time 62265: Controller Packet -> Val=0  Mask=00100000
+Time 62275: Controller Packet -> Val=0  Mask=01000000
+Time 62285: Controller Packet -> Val=0  Mask=10000000
+ACK received for SEND MATRIX A
+
+--- CONFIG STREAMING ---
+Time 62885: MS Config Broadcast:
+  MS[0]: state=0010  payload=1
+  MS[1]: state=0010  payload=1
+  MS[2]: state=0010  payload=1
+  MS[3]: state=0010  payload=1
+  MS[4]: state=0010  payload=1
+  MS[5]: state=0010  payload=1
+  MS[6]: state=0010  payload=1
+  MS[7]: state=0010  payload=1
+ACK received for CONFIG STREAMING
+
+--- SEND MATRIX B ---
+Time 62975: Controller Packet -> Val=16  Mask=00000001
+Time 62985: Controller Packet -> Val=17  Mask=00000010
+Time 62995: Controller Packet -> Val=18  Mask=00000100
+Time 63005: Controller Packet -> Val=19  Mask=00001000
+Time 63015: Controller Packet -> Val=20  Mask=00010000
+Time 63025: Controller Packet -> Val=8  Mask=00100000
+Time 63035: Controller Packet -> Val=8  Mask=01000000
+Time 63045: Controller Packet -> Val=8  Mask=10000000
+Time 63215: [RESULT 37] ACCELERATOR FINAL RESULT -> 0
+ACK received for SEND MATRIX B
+  [TB] Waiting for ART to be EMPTY...
+
+--- BATCH 38 ---
+
+--- VN ALLOCATION ---
+ACK received for VN ALLOCATION
+
+--- RN CONFIGURATION ---
+ACK received for RN CONFIGURATION
+
+--- ONFIG STATIONARY ---
+Time 63795: MS Config Broadcast:
+  MS[0]: state=0001  payload=0
+  MS[1]: state=0001  payload=0
+  MS[2]: state=0001  payload=0
+  MS[3]: state=0001  payload=0
+  MS[4]: state=0001  payload=0
+  MS[5]: state=0001  payload=0
+  MS[6]: state=0001  payload=0
+  MS[7]: state=0001  payload=0
+ACK received for ONFIG STATIONARY
+
+--- SEND MATRIX A ---
+Time 63885: Controller Packet -> Val=0  Mask=00000001
+Time 63895: Controller Packet -> Val=0  Mask=00000010
+Time 63905: Controller Packet -> Val=0  Mask=00000100
+Time 63915: Controller Packet -> Val=0  Mask=00001000
+Time 63925: Controller Packet -> Val=0  Mask=00010000
+Time 63935: Controller Packet -> Val=0  Mask=00100000
+Time 63945: Controller Packet -> Val=0  Mask=01000000
+Time 63955: Controller Packet -> Val=0  Mask=10000000
+ACK received for SEND MATRIX A
+
+--- CONFIG STREAMING ---
+Time 64555: MS Config Broadcast:
+  MS[0]: state=0010  payload=1
+  MS[1]: state=0010  payload=1
+  MS[2]: state=0010  payload=1
+  MS[3]: state=0010  payload=1
+  MS[4]: state=0010  payload=1
+  MS[5]: state=0010  payload=1
+  MS[6]: state=0010  payload=1
+  MS[7]: state=0010  payload=1
+ACK received for CONFIG STREAMING
+
+--- SEND MATRIX B ---
+Time 64645: Controller Packet -> Val=2  Mask=00000001
+Time 64655: Controller Packet -> Val=3  Mask=00000010
+Time 64665: Controller Packet -> Val=4  Mask=00000100
+Time 64675: Controller Packet -> Val=5  Mask=00001000
+Time 64685: Controller Packet -> Val=6  Mask=00010000
+Time 64695: Controller Packet -> Val=7  Mask=00100000
+Time 64705: Controller Packet -> Val=8  Mask=01000000
+Time 64715: Controller Packet -> Val=8  Mask=10000000
+Time 64885: [RESULT 38] ACCELERATOR FINAL RESULT -> 0
+ACK received for SEND MATRIX B
+  [TB] Waiting for ART to be EMPTY...
+
+--- BATCH 39 ---
+
+--- VN ALLOCATION ---
+ACK received for VN ALLOCATION
+
+--- RN CONFIGURATION ---
+ACK received for RN CONFIGURATION
+
+--- ONFIG STATIONARY ---
+Time 65465: MS Config Broadcast:
+  MS[0]: state=0001  payload=0
+  MS[1]: state=0001  payload=0
+  MS[2]: state=0001  payload=0
+  MS[3]: state=0001  payload=0
+  MS[4]: state=0001  payload=0
+  MS[5]: state=0001  payload=0
+  MS[6]: state=0001  payload=0
+  MS[7]: state=0001  payload=0
+ACK received for ONFIG STATIONARY
+
+--- SEND MATRIX A ---
+Time 65555: Controller Packet -> Val=0  Mask=00000001
+Time 65565: Controller Packet -> Val=0  Mask=00000010
+Time 65575: Controller Packet -> Val=0  Mask=00000100
+Time 65585: Controller Packet -> Val=0  Mask=00001000
+Time 65595: Controller Packet -> Val=0  Mask=00010000
+Time 65605: Controller Packet -> Val=0  Mask=00100000
+Time 65615: Controller Packet -> Val=0  Mask=01000000
+Time 65625: Controller Packet -> Val=0  Mask=10000000
+ACK received for SEND MATRIX A
+
+--- CONFIG STREAMING ---
+Time 66225: MS Config Broadcast:
+  MS[0]: state=0010  payload=1
+  MS[1]: state=0010  payload=1
+  MS[2]: state=0010  payload=1
+  MS[3]: state=0010  payload=1
+  MS[4]: state=0010  payload=1
+  MS[5]: state=0010  payload=1
+  MS[6]: state=0010  payload=1
+  MS[7]: state=0010  payload=1
+ACK received for CONFIG STREAMING
+
+--- SEND MATRIX B ---
+Time 66315: Controller Packet -> Val=16  Mask=00000001
+Time 66325: Controller Packet -> Val=17  Mask=00000010
+Time 66335: Controller Packet -> Val=18  Mask=00000100
+Time 66345: Controller Packet -> Val=19  Mask=00001000
+Time 66355: Controller Packet -> Val=20  Mask=00010000
+Time 66365: Controller Packet -> Val=8  Mask=00100000
+Time 66375: Controller Packet -> Val=8  Mask=01000000
+Time 66385: Controller Packet -> Val=8  Mask=10000000
+Time 66555: [RESULT 39] ACCELERATOR FINAL RESULT -> 0
+ACK received for SEND MATRIX B
+  [TB] Waiting for ART to be EMPTY...
+
+--- BATCH 40 ---
+
+--- VN ALLOCATION ---
+ACK received for VN ALLOCATION
+
+--- RN CONFIGURATION ---
+ACK received for RN CONFIGURATION
+
+--- ONFIG STATIONARY ---
+Time 67135: MS Config Broadcast:
+  MS[0]: state=0001  payload=0
+  MS[1]: state=0001  payload=0
+  MS[2]: state=0001  payload=0
+  MS[3]: state=0001  payload=0
+  MS[4]: state=0001  payload=0
+  MS[5]: state=0001  payload=0
+  MS[6]: state=0001  payload=0
+  MS[7]: state=0001  payload=0
+ACK received for ONFIG STATIONARY
+
+--- SEND MATRIX A ---
+Time 67225: Controller Packet -> Val=1  Mask=00000001
+Time 67235: Controller Packet -> Val=0  Mask=00000010
+Time 67245: Controller Packet -> Val=0  Mask=00000100
+Time 67255: Controller Packet -> Val=0  Mask=00001000
+Time 67265: Controller Packet -> Val=0  Mask=00010000
+Time 67275: Controller Packet -> Val=8  Mask=00100000
+Time 67285: Controller Packet -> Val=8  Mask=01000000
+Time 67295: Controller Packet -> Val=8  Mask=10000000
+ACK received for SEND MATRIX A
+
+--- CONFIG STREAMING ---
+Time 67895: MS Config Broadcast:
+  MS[0]: state=0010  payload=1
+  MS[1]: state=0010  payload=1
+  MS[2]: state=0010  payload=1
+  MS[3]: state=0010  payload=1
+  MS[4]: state=0010  payload=1
+  MS[5]: state=0010  payload=1
+  MS[6]: state=0010  payload=1
+  MS[7]: state=0010  payload=1
+ACK received for CONFIG STREAMING
+
+--- SEND MATRIX B ---
+Time 67985: Controller Packet -> Val=2  Mask=00000001
+Time 67995: Controller Packet -> Val=3  Mask=00000010
+Time 68005: Controller Packet -> Val=4  Mask=00000100
+Time 68015: Controller Packet -> Val=5  Mask=00001000
+Time 68025: Controller Packet -> Val=6  Mask=00010000
+Time 68035: Controller Packet -> Val=7  Mask=00100000
+Time 68045: Controller Packet -> Val=8  Mask=01000000
+Time 68055: Controller Packet -> Val=8  Mask=10000000
+Time 68225: [RESULT 40] ACCELERATOR FINAL RESULT -> 186
+ACK received for SEND MATRIX B
+  [TB] Waiting for ART to be EMPTY...
+
+--- BATCH 41 ---
+
+--- VN ALLOCATION ---
+ACK received for VN ALLOCATION
+
+--- RN CONFIGURATION ---
+ACK received for RN CONFIGURATION
+
+--- ONFIG STATIONARY ---
+Time 68805: MS Config Broadcast:
+  MS[0]: state=0001  payload=0
+  MS[1]: state=0001  payload=0
+  MS[2]: state=0001  payload=0
+  MS[3]: state=0001  payload=0
+  MS[4]: state=0001  payload=0
+  MS[5]: state=0001  payload=0
+  MS[6]: state=0001  payload=0
+  MS[7]: state=0001  payload=0
+ACK received for ONFIG STATIONARY
+
+--- SEND MATRIX A ---
+Time 68895: Controller Packet -> Val=1  Mask=00000001
+Time 68905: Controller Packet -> Val=0  Mask=00000010
+Time 68915: Controller Packet -> Val=0  Mask=00000100
+Time 68925: Controller Packet -> Val=0  Mask=00001000
+Time 68935: Controller Packet -> Val=0  Mask=00010000
+Time 68945: Controller Packet -> Val=8  Mask=00100000
+Time 68955: Controller Packet -> Val=8  Mask=01000000
+Time 68965: Controller Packet -> Val=8  Mask=10000000
+ACK received for SEND MATRIX A
+
+--- CONFIG STREAMING ---
+Time 69565: MS Config Broadcast:
+  MS[0]: state=0010  payload=1
+  MS[1]: state=0010  payload=1
+  MS[2]: state=0010  payload=1
+  MS[3]: state=0010  payload=1
+  MS[4]: state=0010  payload=1
+  MS[5]: state=0010  payload=1
+  MS[6]: state=0010  payload=1
+  MS[7]: state=0010  payload=1
+ACK received for CONFIG STREAMING
+
+--- SEND MATRIX B ---
+Time 69655: Controller Packet -> Val=16  Mask=00000001
+Time 69665: Controller Packet -> Val=17  Mask=00000010
+Time 69675: Controller Packet -> Val=18  Mask=00000100
+Time 69685: Controller Packet -> Val=19  Mask=00001000
+Time 69695: Controller Packet -> Val=20  Mask=00010000
+Time 69705: Controller Packet -> Val=8  Mask=00100000
+Time 69715: Controller Packet -> Val=8  Mask=01000000
+Time 69725: Controller Packet -> Val=8  Mask=10000000
+Time 69895: [RESULT 41] ACCELERATOR FINAL RESULT -> 208
+ACK received for SEND MATRIX B
+  [TB] Waiting for ART to be EMPTY...
+
+--- BATCH 42 ---
+
+--- VN ALLOCATION ---
+ACK received for VN ALLOCATION
+
+--- RN CONFIGURATION ---
+ACK received for RN CONFIGURATION
+
+--- ONFIG STATIONARY ---
+Time 70475: MS Config Broadcast:
+  MS[0]: state=0001  payload=0
+  MS[1]: state=0001  payload=0
+  MS[2]: state=0001  payload=0
+  MS[3]: state=0001  payload=0
+  MS[4]: state=0001  payload=0
+  MS[5]: state=0001  payload=0
+  MS[6]: state=0001  payload=0
+  MS[7]: state=0001  payload=0
+ACK received for ONFIG STATIONARY
+
+--- SEND MATRIX A ---
+Time 70565: Controller Packet -> Val=1  Mask=00000001
+Time 70575: Controller Packet -> Val=0  Mask=00000010
+Time 70585: Controller Packet -> Val=0  Mask=00000100
+Time 70595: Controller Packet -> Val=0  Mask=00001000
+Time 70605: Controller Packet -> Val=0  Mask=00010000
+Time 70615: Controller Packet -> Val=8  Mask=00100000
+Time 70625: Controller Packet -> Val=8  Mask=01000000
+Time 70635: Controller Packet -> Val=8  Mask=10000000
+ACK received for SEND MATRIX A
+
+--- CONFIG STREAMING ---
+Time 71235: MS Config Broadcast:
+  MS[0]: state=0010  payload=1
+  MS[1]: state=0010  payload=1
+  MS[2]: state=0010  payload=1
+  MS[3]: state=0010  payload=1
+  MS[4]: state=0010  payload=1
+  MS[5]: state=0010  payload=1
+  MS[6]: state=0010  payload=1
+  MS[7]: state=0010  payload=1
+ACK received for CONFIG STREAMING
+
+--- SEND MATRIX B ---
+Time 71325: Controller Packet -> Val=2  Mask=00000001
+Time 71335: Controller Packet -> Val=3  Mask=00000010
+Time 71345: Controller Packet -> Val=4  Mask=00000100
+Time 71355: Controller Packet -> Val=5  Mask=00001000
+Time 71365: Controller Packet -> Val=6  Mask=00010000
+Time 71375: Controller Packet -> Val=7  Mask=00100000
+Time 71385: Controller Packet -> Val=8  Mask=01000000
+Time 71395: Controller Packet -> Val=8  Mask=10000000
+Time 71565: [RESULT 42] ACCELERATOR FINAL RESULT -> 186
+ACK received for SEND MATRIX B
+  [TB] Waiting for ART to be EMPTY...
+
+--- BATCH 43 ---
+
+--- VN ALLOCATION ---
+ACK received for VN ALLOCATION
+
+--- RN CONFIGURATION ---
+ACK received for RN CONFIGURATION
+
+--- ONFIG STATIONARY ---
+Time 72145: MS Config Broadcast:
+  MS[0]: state=0001  payload=0
+  MS[1]: state=0001  payload=0
+  MS[2]: state=0001  payload=0
+  MS[3]: state=0001  payload=0
+  MS[4]: state=0001  payload=0
+  MS[5]: state=0001  payload=0
+  MS[6]: state=0001  payload=0
+  MS[7]: state=0001  payload=0
+ACK received for ONFIG STATIONARY
+
+--- SEND MATRIX A ---
+Time 72235: Controller Packet -> Val=1  Mask=00000001
+Time 72245: Controller Packet -> Val=0  Mask=00000010
+Time 72255: Controller Packet -> Val=0  Mask=00000100
+Time 72265: Controller Packet -> Val=0  Mask=00001000
+Time 72275: Controller Packet -> Val=0  Mask=00010000
+Time 72285: Controller Packet -> Val=8  Mask=00100000
+Time 72295: Controller Packet -> Val=8  Mask=01000000
+Time 72305: Controller Packet -> Val=8  Mask=10000000
+ACK received for SEND MATRIX A
+
+--- CONFIG STREAMING ---
+Time 72905: MS Config Broadcast:
+  MS[0]: state=0010  payload=1
+  MS[1]: state=0010  payload=1
+  MS[2]: state=0010  payload=1
+  MS[3]: state=0010  payload=1
+  MS[4]: state=0010  payload=1
+  MS[5]: state=0010  payload=1
+  MS[6]: state=0010  payload=1
+  MS[7]: state=0010  payload=1
+ACK received for CONFIG STREAMING
+
+--- SEND MATRIX B ---
+Time 72995: Controller Packet -> Val=16  Mask=00000001
+Time 73005: Controller Packet -> Val=17  Mask=00000010
+Time 73015: Controller Packet -> Val=18  Mask=00000100
+Time 73025: Controller Packet -> Val=19  Mask=00001000
+Time 73035: Controller Packet -> Val=20  Mask=00010000
+Time 73045: Controller Packet -> Val=8  Mask=00100000
+Time 73055: Controller Packet -> Val=8  Mask=01000000
+Time 73065: Controller Packet -> Val=8  Mask=10000000
+Time 73235: [RESULT 43] ACCELERATOR FINAL RESULT -> 208
+ACK received for SEND MATRIX B
+  [TB] Waiting for ART to be EMPTY...
+
+--- BATCH 44 ---
+
+--- VN ALLOCATION ---
+ACK received for VN ALLOCATION
+
+--- RN CONFIGURATION ---
+ACK received for RN CONFIGURATION
+
+--- ONFIG STATIONARY ---
+Time 73815: MS Config Broadcast:
+  MS[0]: state=0001  payload=0
+  MS[1]: state=0001  payload=0
+  MS[2]: state=0001  payload=0
+  MS[3]: state=0001  payload=0
+  MS[4]: state=0001  payload=0
+  MS[5]: state=0001  payload=0
+  MS[6]: state=0001  payload=0
+  MS[7]: state=0001  payload=0
+ACK received for ONFIG STATIONARY
+
+--- SEND MATRIX A ---
+Time 73905: Controller Packet -> Val=1  Mask=00000001
+Time 73915: Controller Packet -> Val=0  Mask=00000010
+Time 73925: Controller Packet -> Val=0  Mask=00000100
+Time 73935: Controller Packet -> Val=0  Mask=00001000
+Time 73945: Controller Packet -> Val=0  Mask=00010000
+Time 73955: Controller Packet -> Val=8  Mask=00100000
+Time 73965: Controller Packet -> Val=8  Mask=01000000
+Time 73975: Controller Packet -> Val=8  Mask=10000000
+ACK received for SEND MATRIX A
+
+--- CONFIG STREAMING ---
+Time 74575: MS Config Broadcast:
+  MS[0]: state=0010  payload=1
+  MS[1]: state=0010  payload=1
+  MS[2]: state=0010  payload=1
+  MS[3]: state=0010  payload=1
+  MS[4]: state=0010  payload=1
+  MS[5]: state=0010  payload=1
+  MS[6]: state=0010  payload=1
+  MS[7]: state=0010  payload=1
+ACK received for CONFIG STREAMING
+
+--- SEND MATRIX B ---
+Time 74665: Controller Packet -> Val=2  Mask=00000001
+Time 74675: Controller Packet -> Val=3  Mask=00000010
+Time 74685: Controller Packet -> Val=4  Mask=00000100
+Time 74695: Controller Packet -> Val=5  Mask=00001000
+Time 74705: Controller Packet -> Val=6  Mask=00010000
+Time 74715: Controller Packet -> Val=7  Mask=00100000
+Time 74725: Controller Packet -> Val=8  Mask=01000000
+Time 74735: Controller Packet -> Val=8  Mask=10000000
+Time 74905: [RESULT 44] ACCELERATOR FINAL RESULT -> 186
+ACK received for SEND MATRIX B
+  [TB] Waiting for ART to be EMPTY...
+
+--- BATCH 45 ---
+
+--- VN ALLOCATION ---
+ACK received for VN ALLOCATION
+
+--- RN CONFIGURATION ---
+ACK received for RN CONFIGURATION
+
+--- ONFIG STATIONARY ---
+Time 75485: MS Config Broadcast:
+  MS[0]: state=0001  payload=0
+  MS[1]: state=0001  payload=0
+  MS[2]: state=0001  payload=0
+  MS[3]: state=0001  payload=0
+  MS[4]: state=0001  payload=0
+  MS[5]: state=0001  payload=0
+  MS[6]: state=0001  payload=0
+  MS[7]: state=0001  payload=0
+ACK received for ONFIG STATIONARY
+
+--- SEND MATRIX A ---
+Time 75575: Controller Packet -> Val=1  Mask=00000001
+Time 75585: Controller Packet -> Val=0  Mask=00000010
+Time 75595: Controller Packet -> Val=0  Mask=00000100
+Time 75605: Controller Packet -> Val=0  Mask=00001000
+Time 75615: Controller Packet -> Val=0  Mask=00010000
+Time 75625: Controller Packet -> Val=8  Mask=00100000
+Time 75635: Controller Packet -> Val=8  Mask=01000000
+Time 75645: Controller Packet -> Val=8  Mask=10000000
+ACK received for SEND MATRIX A
+
+--- CONFIG STREAMING ---
+Time 76245: MS Config Broadcast:
+  MS[0]: state=0010  payload=1
+  MS[1]: state=0010  payload=1
+  MS[2]: state=0010  payload=1
+  MS[3]: state=0010  payload=1
+  MS[4]: state=0010  payload=1
+  MS[5]: state=0010  payload=1
+  MS[6]: state=0010  payload=1
+  MS[7]: state=0010  payload=1
+ACK received for CONFIG STREAMING
+
+--- SEND MATRIX B ---
+Time 76335: Controller Packet -> Val=16  Mask=00000001
+Time 76345: Controller Packet -> Val=17  Mask=00000010
+Time 76355: Controller Packet -> Val=18  Mask=00000100
+Time 76365: Controller Packet -> Val=19  Mask=00001000
+Time 76375: Controller Packet -> Val=20  Mask=00010000
+Time 76385: Controller Packet -> Val=8  Mask=00100000
+Time 76395: Controller Packet -> Val=8  Mask=01000000
+Time 76405: Controller Packet -> Val=8  Mask=10000000
+Time 76575: [RESULT 45] ACCELERATOR FINAL RESULT -> 208
+ACK received for SEND MATRIX B
+  [TB] Waiting for ART to be EMPTY...
+
+--- BATCH 46 ---
+
+--- VN ALLOCATION ---
+ACK received for VN ALLOCATION
+
+--- RN CONFIGURATION ---
+ACK received for RN CONFIGURATION
+
+--- ONFIG STATIONARY ---
+Time 77155: MS Config Broadcast:
+  MS[0]: state=0001  payload=0
+  MS[1]: state=0001  payload=0
+  MS[2]: state=0001  payload=0
+  MS[3]: state=0001  payload=0
+  MS[4]: state=0001  payload=0
+  MS[5]: state=0001  payload=0
+  MS[6]: state=0001  payload=0
+  MS[7]: state=0001  payload=0
+ACK received for ONFIG STATIONARY
+
+--- SEND MATRIX A ---
+Time 77245: Controller Packet -> Val=1  Mask=00000001
+Time 77255: Controller Packet -> Val=0  Mask=00000010
+Time 77265: Controller Packet -> Val=0  Mask=00000100
+Time 77275: Controller Packet -> Val=0  Mask=00001000
+Time 77285: Controller Packet -> Val=0  Mask=00010000
+Time 77295: Controller Packet -> Val=8  Mask=00100000
+Time 77305: Controller Packet -> Val=8  Mask=01000000
+Time 77315: Controller Packet -> Val=8  Mask=10000000
+ACK received for SEND MATRIX A
+
+--- CONFIG STREAMING ---
+Time 77915: MS Config Broadcast:
+  MS[0]: state=0010  payload=1
+  MS[1]: state=0010  payload=1
+  MS[2]: state=0010  payload=1
+  MS[3]: state=0010  payload=1
+  MS[4]: state=0010  payload=1
+  MS[5]: state=0010  payload=1
+  MS[6]: state=0010  payload=1
+  MS[7]: state=0010  payload=1
+ACK received for CONFIG STREAMING
+
+--- SEND MATRIX B ---
+Time 78005: Controller Packet -> Val=2  Mask=00000001
+Time 78015: Controller Packet -> Val=3  Mask=00000010
+Time 78025: Controller Packet -> Val=4  Mask=00000100
+Time 78035: Controller Packet -> Val=5  Mask=00001000
+Time 78045: Controller Packet -> Val=6  Mask=00010000
+Time 78055: Controller Packet -> Val=7  Mask=00100000
+Time 78065: Controller Packet -> Val=8  Mask=01000000
+Time 78075: Controller Packet -> Val=8  Mask=10000000
+Time 78245: [RESULT 46] ACCELERATOR FINAL RESULT -> 186
+ACK received for SEND MATRIX B
+  [TB] Waiting for ART to be EMPTY...
+
+--- BATCH 47 ---
+
+--- VN ALLOCATION ---
+ACK received for VN ALLOCATION
+
+--- RN CONFIGURATION ---
+ACK received for RN CONFIGURATION
+
+--- ONFIG STATIONARY ---
+Time 78825: MS Config Broadcast:
+  MS[0]: state=0001  payload=0
+  MS[1]: state=0001  payload=0
+  MS[2]: state=0001  payload=0
+  MS[3]: state=0001  payload=0
+  MS[4]: state=0001  payload=0
+  MS[5]: state=0001  payload=0
+  MS[6]: state=0001  payload=0
+  MS[7]: state=0001  payload=0
+ACK received for ONFIG STATIONARY
+
+--- SEND MATRIX A ---
+Time 78915: Controller Packet -> Val=1  Mask=00000001
+Time 78925: Controller Packet -> Val=0  Mask=00000010
+Time 78935: Controller Packet -> Val=0  Mask=00000100
+Time 78945: Controller Packet -> Val=0  Mask=00001000
+Time 78955: Controller Packet -> Val=0  Mask=00010000
+Time 78965: Controller Packet -> Val=8  Mask=00100000
+Time 78975: Controller Packet -> Val=8  Mask=01000000
+Time 78985: Controller Packet -> Val=8  Mask=10000000
+ACK received for SEND MATRIX A
+
+--- CONFIG STREAMING ---
+Time 79585: MS Config Broadcast:
+  MS[0]: state=0010  payload=1
+  MS[1]: state=0010  payload=1
+  MS[2]: state=0010  payload=1
+  MS[3]: state=0010  payload=1
+  MS[4]: state=0010  payload=1
+  MS[5]: state=0010  payload=1
+  MS[6]: state=0010  payload=1
+  MS[7]: state=0010  payload=1
+ACK received for CONFIG STREAMING
+
+--- SEND MATRIX B ---
+Time 79675: Controller Packet -> Val=16  Mask=00000001
+Time 79685: Controller Packet -> Val=17  Mask=00000010
+Time 79695: Controller Packet -> Val=18  Mask=00000100
+Time 79705: Controller Packet -> Val=19  Mask=00001000
+Time 79715: Controller Packet -> Val=20  Mask=00010000
+Time 79725: Controller Packet -> Val=8  Mask=00100000
+Time 79735: Controller Packet -> Val=8  Mask=01000000
+Time 79745: Controller Packet -> Val=8  Mask=10000000
+Time 79915: [RESULT 47] ACCELERATOR FINAL RESULT -> 208
+ACK received for SEND MATRIX B
+  [TB] Waiting for ART to be EMPTY...
+
+--- BATCH 48 ---
+
+--- VN ALLOCATION ---
+ACK received for VN ALLOCATION
+
+--- RN CONFIGURATION ---
+ACK received for RN CONFIGURATION
+
+--- ONFIG STATIONARY ---
+Time 80495: MS Config Broadcast:
+  MS[0]: state=0001  payload=0
+  MS[1]: state=0001  payload=0
+  MS[2]: state=0001  payload=0
+  MS[3]: state=0001  payload=0
+  MS[4]: state=0001  payload=0
+  MS[5]: state=0001  payload=0
+  MS[6]: state=0001  payload=0
+  MS[7]: state=0001  payload=0
+ACK received for ONFIG STATIONARY
+
+--- SEND MATRIX A ---
+Time 80585: Controller Packet -> Val=0  Mask=00000001
+Time 80595: Controller Packet -> Val=0  Mask=00000010
+Time 80605: Controller Packet -> Val=0  Mask=00000100
+Time 80615: Controller Packet -> Val=0  Mask=00001000
+Time 80625: Controller Packet -> Val=0  Mask=00010000
+Time 80635: Controller Packet -> Val=0  Mask=00100000
+Time 80645: Controller Packet -> Val=0  Mask=01000000
+Time 80655: Controller Packet -> Val=0  Mask=10000000
+ACK received for SEND MATRIX A
+
+--- CONFIG STREAMING ---
+Time 81255: MS Config Broadcast:
+  MS[0]: state=0010  payload=1
+  MS[1]: state=0010  payload=1
+  MS[2]: state=0010  payload=1
+  MS[3]: state=0010  payload=1
+  MS[4]: state=0010  payload=1
+  MS[5]: state=0010  payload=1
+  MS[6]: state=0010  payload=1
+  MS[7]: state=0010  payload=1
+ACK received for CONFIG STREAMING
+
+--- SEND MATRIX B ---
+Time 81345: Controller Packet -> Val=2  Mask=00000001
+Time 81355: Controller Packet -> Val=3  Mask=00000010
+Time 81365: Controller Packet -> Val=4  Mask=00000100
+Time 81375: Controller Packet -> Val=5  Mask=00001000
+Time 81385: Controller Packet -> Val=6  Mask=00010000
+Time 81395: Controller Packet -> Val=7  Mask=00100000
+Time 81405: Controller Packet -> Val=8  Mask=01000000
+Time 81415: Controller Packet -> Val=8  Mask=10000000
+Time 81585: [RESULT 48] ACCELERATOR FINAL RESULT -> 0
+ACK received for SEND MATRIX B
+  [TB] Waiting for ART to be EMPTY...
+
+--- BATCH 49 ---
+
+--- VN ALLOCATION ---
+ACK received for VN ALLOCATION
+
+--- RN CONFIGURATION ---
+ACK received for RN CONFIGURATION
+
+--- ONFIG STATIONARY ---
+Time 82165: MS Config Broadcast:
+  MS[0]: state=0001  payload=0
+  MS[1]: state=0001  payload=0
+  MS[2]: state=0001  payload=0
+  MS[3]: state=0001  payload=0
+  MS[4]: state=0001  payload=0
+  MS[5]: state=0001  payload=0
+  MS[6]: state=0001  payload=0
+  MS[7]: state=0001  payload=0
+ACK received for ONFIG STATIONARY
+
+--- SEND MATRIX A ---
+Time 82255: Controller Packet -> Val=0  Mask=00000001
+Time 82265: Controller Packet -> Val=0  Mask=00000010
+Time 82275: Controller Packet -> Val=0  Mask=00000100
+Time 82285: Controller Packet -> Val=0  Mask=00001000
+Time 82295: Controller Packet -> Val=0  Mask=00010000
+Time 82305: Controller Packet -> Val=0  Mask=00100000
+Time 82315: Controller Packet -> Val=0  Mask=01000000
+Time 82325: Controller Packet -> Val=0  Mask=10000000
+ACK received for SEND MATRIX A
+
+--- CONFIG STREAMING ---
+Time 82925: MS Config Broadcast:
+  MS[0]: state=0010  payload=1
+  MS[1]: state=0010  payload=1
+  MS[2]: state=0010  payload=1
+  MS[3]: state=0010  payload=1
+  MS[4]: state=0010  payload=1
+  MS[5]: state=0010  payload=1
+  MS[6]: state=0010  payload=1
+  MS[7]: state=0010  payload=1
+ACK received for CONFIG STREAMING
+
+--- SEND MATRIX B ---
+Time 83015: Controller Packet -> Val=16  Mask=00000001
+Time 83025: Controller Packet -> Val=17  Mask=00000010
+Time 83035: Controller Packet -> Val=18  Mask=00000100
+Time 83045: Controller Packet -> Val=19  Mask=00001000
+Time 83055: Controller Packet -> Val=20  Mask=00010000
+Time 83065: Controller Packet -> Val=8  Mask=00100000
+Time 83075: Controller Packet -> Val=8  Mask=01000000
+Time 83085: Controller Packet -> Val=8  Mask=10000000
+Time 83255: [RESULT 49] ACCELERATOR FINAL RESULT -> 0
+ACK received for SEND MATRIX B
+  [TB] Waiting for ART to be EMPTY...
+
+--- BATCH 50 ---
+
+--- VN ALLOCATION ---
+ACK received for VN ALLOCATION
+
+--- RN CONFIGURATION ---
+ACK received for RN CONFIGURATION
+
+--- ONFIG STATIONARY ---
+Time 83835: MS Config Broadcast:
+  MS[0]: state=0001  payload=0
+  MS[1]: state=0001  payload=0
+  MS[2]: state=0001  payload=0
+  MS[3]: state=0001  payload=0
+  MS[4]: state=0001  payload=0
+  MS[5]: state=0001  payload=0
+  MS[6]: state=0001  payload=0
+  MS[7]: state=0001  payload=0
+ACK received for ONFIG STATIONARY
+
+--- SEND MATRIX A ---
+Time 83925: Controller Packet -> Val=0  Mask=00000001
+Time 83935: Controller Packet -> Val=0  Mask=00000010
+Time 83945: Controller Packet -> Val=0  Mask=00000100
+Time 83955: Controller Packet -> Val=0  Mask=00001000
+Time 83965: Controller Packet -> Val=0  Mask=00010000
+Time 83975: Controller Packet -> Val=0  Mask=00100000
+Time 83985: Controller Packet -> Val=0  Mask=01000000
+Time 83995: Controller Packet -> Val=0  Mask=10000000
+ACK received for SEND MATRIX A
+
+--- CONFIG STREAMING ---
+Time 84595: MS Config Broadcast:
+  MS[0]: state=0010  payload=1
+  MS[1]: state=0010  payload=1
+  MS[2]: state=0010  payload=1
+  MS[3]: state=0010  payload=1
+  MS[4]: state=0010  payload=1
+  MS[5]: state=0010  payload=1
+  MS[6]: state=0010  payload=1
+  MS[7]: state=0010  payload=1
+ACK received for CONFIG STREAMING
+
+--- SEND MATRIX B ---
+Time 84685: Controller Packet -> Val=2  Mask=00000001
+Time 84695: Controller Packet -> Val=3  Mask=00000010
+Time 84705: Controller Packet -> Val=4  Mask=00000100
+Time 84715: Controller Packet -> Val=5  Mask=00001000
+Time 84725: Controller Packet -> Val=6  Mask=00010000
+Time 84735: Controller Packet -> Val=7  Mask=00100000
+Time 84745: Controller Packet -> Val=8  Mask=01000000
+Time 84755: Controller Packet -> Val=8  Mask=10000000
+Time 84925: [RESULT 50] ACCELERATOR FINAL RESULT -> 0
+ACK received for SEND MATRIX B
+  [TB] Waiting for ART to be EMPTY...
+
+--- BATCH 51 ---
+
+--- VN ALLOCATION ---
+ACK received for VN ALLOCATION
+
+--- RN CONFIGURATION ---
+ACK received for RN CONFIGURATION
+
+--- ONFIG STATIONARY ---
+Time 85505: MS Config Broadcast:
+  MS[0]: state=0001  payload=0
+  MS[1]: state=0001  payload=0
+  MS[2]: state=0001  payload=0
+  MS[3]: state=0001  payload=0
+  MS[4]: state=0001  payload=0
+  MS[5]: state=0001  payload=0
+  MS[6]: state=0001  payload=0
+  MS[7]: state=0001  payload=0
+ACK received for ONFIG STATIONARY
+
+--- SEND MATRIX A ---
+Time 85595: Controller Packet -> Val=0  Mask=00000001
+Time 85605: Controller Packet -> Val=0  Mask=00000010
+Time 85615: Controller Packet -> Val=0  Mask=00000100
+Time 85625: Controller Packet -> Val=0  Mask=00001000
+Time 85635: Controller Packet -> Val=0  Mask=00010000
+Time 85645: Controller Packet -> Val=0  Mask=00100000
+Time 85655: Controller Packet -> Val=0  Mask=01000000
+Time 85665: Controller Packet -> Val=0  Mask=10000000
+ACK received for SEND MATRIX A
+
+--- CONFIG STREAMING ---
+Time 86265: MS Config Broadcast:
+  MS[0]: state=0010  payload=1
+  MS[1]: state=0010  payload=1
+  MS[2]: state=0010  payload=1
+  MS[3]: state=0010  payload=1
+  MS[4]: state=0010  payload=1
+  MS[5]: state=0010  payload=1
+  MS[6]: state=0010  payload=1
+  MS[7]: state=0010  payload=1
+ACK received for CONFIG STREAMING
+
+--- SEND MATRIX B ---
+Time 86355: Controller Packet -> Val=16  Mask=00000001
+Time 86365: Controller Packet -> Val=17  Mask=00000010
+Time 86375: Controller Packet -> Val=18  Mask=00000100
+Time 86385: Controller Packet -> Val=19  Mask=00001000
+Time 86395: Controller Packet -> Val=20  Mask=00010000
+Time 86405: Controller Packet -> Val=8  Mask=00100000
+Time 86415: Controller Packet -> Val=8  Mask=01000000
+Time 86425: Controller Packet -> Val=8  Mask=10000000
+Time 86595: [RESULT 51] ACCELERATOR FINAL RESULT -> 0
+ACK received for SEND MATRIX B
+  [TB] Waiting for ART to be EMPTY...
+
+--- BATCH 52 ---
+
+--- VN ALLOCATION ---
+ACK received for VN ALLOCATION
+
+--- RN CONFIGURATION ---
+ACK received for RN CONFIGURATION
+
+--- ONFIG STATIONARY ---
+Time 87175: MS Config Broadcast:
+  MS[0]: state=0001  payload=0
+  MS[1]: state=0001  payload=0
+  MS[2]: state=0001  payload=0
+  MS[3]: state=0001  payload=0
+  MS[4]: state=0001  payload=0
+  MS[5]: state=0001  payload=0
+  MS[6]: state=0001  payload=0
+  MS[7]: state=0001  payload=0
+ACK received for ONFIG STATIONARY
+
+--- SEND MATRIX A ---
+Time 87265: Controller Packet -> Val=0  Mask=00000001
+Time 87275: Controller Packet -> Val=0  Mask=00000010
+Time 87285: Controller Packet -> Val=0  Mask=00000100
+Time 87295: Controller Packet -> Val=0  Mask=00001000
+Time 87305: Controller Packet -> Val=0  Mask=00010000
+Time 87315: Controller Packet -> Val=0  Mask=00100000
+Time 87325: Controller Packet -> Val=0  Mask=01000000
+Time 87335: Controller Packet -> Val=0  Mask=10000000
+ACK received for SEND MATRIX A
+
+--- CONFIG STREAMING ---
+Time 87935: MS Config Broadcast:
+  MS[0]: state=0010  payload=1
+  MS[1]: state=0010  payload=1
+  MS[2]: state=0010  payload=1
+  MS[3]: state=0010  payload=1
+  MS[4]: state=0010  payload=1
+  MS[5]: state=0010  payload=1
+  MS[6]: state=0010  payload=1
+  MS[7]: state=0010  payload=1
+ACK received for CONFIG STREAMING
+
+--- SEND MATRIX B ---
+Time 88025: Controller Packet -> Val=2  Mask=00000001
+Time 88035: Controller Packet -> Val=3  Mask=00000010
+Time 88045: Controller Packet -> Val=4  Mask=00000100
+Time 88055: Controller Packet -> Val=5  Mask=00001000
+Time 88065: Controller Packet -> Val=6  Mask=00010000
+Time 88075: Controller Packet -> Val=7  Mask=00100000
+Time 88085: Controller Packet -> Val=8  Mask=01000000
+Time 88095: Controller Packet -> Val=8  Mask=10000000
+Time 88265: [RESULT 52] ACCELERATOR FINAL RESULT -> 0
+ACK received for SEND MATRIX B
+  [TB] Waiting for ART to be EMPTY...
+
+--- BATCH 53 ---
+
+--- VN ALLOCATION ---
+ACK received for VN ALLOCATION
+
+--- RN CONFIGURATION ---
+ACK received for RN CONFIGURATION
+
+--- ONFIG STATIONARY ---
+Time 88845: MS Config Broadcast:
+  MS[0]: state=0001  payload=0
+  MS[1]: state=0001  payload=0
+  MS[2]: state=0001  payload=0
+  MS[3]: state=0001  payload=0
+  MS[4]: state=0001  payload=0
+  MS[5]: state=0001  payload=0
+  MS[6]: state=0001  payload=0
+  MS[7]: state=0001  payload=0
+ACK received for ONFIG STATIONARY
+
+--- SEND MATRIX A ---
+Time 88935: Controller Packet -> Val=0  Mask=00000001
+Time 88945: Controller Packet -> Val=0  Mask=00000010
+Time 88955: Controller Packet -> Val=0  Mask=00000100
+Time 88965: Controller Packet -> Val=0  Mask=00001000
+Time 88975: Controller Packet -> Val=0  Mask=00010000
+Time 88985: Controller Packet -> Val=0  Mask=00100000
+Time 88995: Controller Packet -> Val=0  Mask=01000000
+Time 89005: Controller Packet -> Val=0  Mask=10000000
+ACK received for SEND MATRIX A
+
+--- CONFIG STREAMING ---
+Time 89605: MS Config Broadcast:
+  MS[0]: state=0010  payload=1
+  MS[1]: state=0010  payload=1
+  MS[2]: state=0010  payload=1
+  MS[3]: state=0010  payload=1
+  MS[4]: state=0010  payload=1
+  MS[5]: state=0010  payload=1
+  MS[6]: state=0010  payload=1
+  MS[7]: state=0010  payload=1
+ACK received for CONFIG STREAMING
+
+--- SEND MATRIX B ---
+Time 89695: Controller Packet -> Val=16  Mask=00000001
+Time 89705: Controller Packet -> Val=17  Mask=00000010
+Time 89715: Controller Packet -> Val=18  Mask=00000100
+Time 89725: Controller Packet -> Val=19  Mask=00001000
+Time 89735: Controller Packet -> Val=20  Mask=00010000
+Time 89745: Controller Packet -> Val=8  Mask=00100000
+Time 89755: Controller Packet -> Val=8  Mask=01000000
+Time 89765: Controller Packet -> Val=8  Mask=10000000
+Time 89935: [RESULT 53] ACCELERATOR FINAL RESULT -> 0
+ACK received for SEND MATRIX B
+  [TB] Waiting for ART to be EMPTY...
+
+--- BATCH 54 ---
+
+--- VN ALLOCATION ---
+ACK received for VN ALLOCATION
+
+--- RN CONFIGURATION ---
+ACK received for RN CONFIGURATION
+
+--- ONFIG STATIONARY ---
+Time 90515: MS Config Broadcast:
+  MS[0]: state=0001  payload=0
+  MS[1]: state=0001  payload=0
+  MS[2]: state=0001  payload=0
+  MS[3]: state=0001  payload=0
+  MS[4]: state=0001  payload=0
+  MS[5]: state=0001  payload=0
+  MS[6]: state=0001  payload=0
+  MS[7]: state=0001  payload=0
+ACK received for ONFIG STATIONARY
+
+--- SEND MATRIX A ---
+Time 90605: Controller Packet -> Val=0  Mask=00000001
+Time 90615: Controller Packet -> Val=0  Mask=00000010
+Time 90625: Controller Packet -> Val=0  Mask=00000100
+Time 90635: Controller Packet -> Val=0  Mask=00001000
+Time 90645: Controller Packet -> Val=0  Mask=00010000
+Time 90655: Controller Packet -> Val=0  Mask=00100000
+Time 90665: Controller Packet -> Val=0  Mask=01000000
+Time 90675: Controller Packet -> Val=0  Mask=10000000
+ACK received for SEND MATRIX A
+
+--- CONFIG STREAMING ---
+Time 91275: MS Config Broadcast:
+  MS[0]: state=0010  payload=1
+  MS[1]: state=0010  payload=1
+  MS[2]: state=0010  payload=1
+  MS[3]: state=0010  payload=1
+  MS[4]: state=0010  payload=1
+  MS[5]: state=0010  payload=1
+  MS[6]: state=0010  payload=1
+  MS[7]: state=0010  payload=1
+ACK received for CONFIG STREAMING
+
+--- SEND MATRIX B ---
+Time 91365: Controller Packet -> Val=2  Mask=00000001
+Time 91375: Controller Packet -> Val=3  Mask=00000010
+Time 91385: Controller Packet -> Val=4  Mask=00000100
+Time 91395: Controller Packet -> Val=5  Mask=00001000
+Time 91405: Controller Packet -> Val=6  Mask=00010000
+Time 91415: Controller Packet -> Val=7  Mask=00100000
+Time 91425: Controller Packet -> Val=8  Mask=01000000
+Time 91435: Controller Packet -> Val=8  Mask=10000000
+Time 91605: [RESULT 54] ACCELERATOR FINAL RESULT -> 0
+ACK received for SEND MATRIX B
+  [TB] Waiting for ART to be EMPTY...
+
+--- BATCH 55 ---
+
+--- VN ALLOCATION ---
+ACK received for VN ALLOCATION
+
+--- RN CONFIGURATION ---
+ACK received for RN CONFIGURATION
+
+--- ONFIG STATIONARY ---
+Time 92185: MS Config Broadcast:
+  MS[0]: state=0001  payload=0
+  MS[1]: state=0001  payload=0
+  MS[2]: state=0001  payload=0
+  MS[3]: state=0001  payload=0
+  MS[4]: state=0001  payload=0
+  MS[5]: state=0001  payload=0
+  MS[6]: state=0001  payload=0
+  MS[7]: state=0001  payload=0
+ACK received for ONFIG STATIONARY
+
+--- SEND MATRIX A ---
+Time 92275: Controller Packet -> Val=0  Mask=00000001
+Time 92285: Controller Packet -> Val=0  Mask=00000010
+Time 92295: Controller Packet -> Val=0  Mask=00000100
+Time 92305: Controller Packet -> Val=0  Mask=00001000
+Time 92315: Controller Packet -> Val=0  Mask=00010000
+Time 92325: Controller Packet -> Val=0  Mask=00100000
+Time 92335: Controller Packet -> Val=0  Mask=01000000
+Time 92345: Controller Packet -> Val=0  Mask=10000000
+ACK received for SEND MATRIX A
+
+--- CONFIG STREAMING ---
+Time 92945: MS Config Broadcast:
+  MS[0]: state=0010  payload=1
+  MS[1]: state=0010  payload=1
+  MS[2]: state=0010  payload=1
+  MS[3]: state=0010  payload=1
+  MS[4]: state=0010  payload=1
+  MS[5]: state=0010  payload=1
+  MS[6]: state=0010  payload=1
+  MS[7]: state=0010  payload=1
+ACK received for CONFIG STREAMING
+
+--- SEND MATRIX B ---
+Time 93035: Controller Packet -> Val=16  Mask=00000001
+Time 93045: Controller Packet -> Val=17  Mask=00000010
+Time 93055: Controller Packet -> Val=18  Mask=00000100
+Time 93065: Controller Packet -> Val=19  Mask=00001000
+Time 93075: Controller Packet -> Val=20  Mask=00010000
+Time 93085: Controller Packet -> Val=8  Mask=00100000
+Time 93095: Controller Packet -> Val=8  Mask=01000000
+Time 93105: Controller Packet -> Val=8  Mask=10000000
+Time 93275: [RESULT 55] ACCELERATOR FINAL RESULT -> 0
+ACK received for SEND MATRIX B
+  [TB] Waiting for ART to be EMPTY...
+
+--- BATCH 56 ---
+
+--- VN ALLOCATION ---
+ACK received for VN ALLOCATION
+
+--- RN CONFIGURATION ---
+ACK received for RN CONFIGURATION
+
+--- ONFIG STATIONARY ---
+Time 93855: MS Config Broadcast:
+  MS[0]: state=0001  payload=0
+  MS[1]: state=0001  payload=0
+  MS[2]: state=0001  payload=0
+  MS[3]: state=0001  payload=0
+  MS[4]: state=0001  payload=0
+  MS[5]: state=0001  payload=0
+  MS[6]: state=0001  payload=0
+  MS[7]: state=0001  payload=0
+ACK received for ONFIG STATIONARY
+
+--- SEND MATRIX A ---
+Time 93945: Controller Packet -> Val=1  Mask=00000001
+Time 93955: Controller Packet -> Val=0  Mask=00000010
+Time 93965: Controller Packet -> Val=0  Mask=00000100
+Time 93975: Controller Packet -> Val=0  Mask=00001000
+Time 93985: Controller Packet -> Val=0  Mask=00010000
+Time 93995: Controller Packet -> Val=8  Mask=00100000
+Time 94005: Controller Packet -> Val=8  Mask=01000000
+Time 94015: Controller Packet -> Val=8  Mask=10000000
+ACK received for SEND MATRIX A
+
+--- CONFIG STREAMING ---
+Time 94615: MS Config Broadcast:
+  MS[0]: state=0010  payload=1
+  MS[1]: state=0010  payload=1
+  MS[2]: state=0010  payload=1
+  MS[3]: state=0010  payload=1
+  MS[4]: state=0010  payload=1
+  MS[5]: state=0010  payload=1
+  MS[6]: state=0010  payload=1
+  MS[7]: state=0010  payload=1
+ACK received for CONFIG STREAMING
+
+--- SEND MATRIX B ---
+Time 94705: Controller Packet -> Val=2  Mask=00000001
+Time 94715: Controller Packet -> Val=3  Mask=00000010
+Time 94725: Controller Packet -> Val=4  Mask=00000100
+Time 94735: Controller Packet -> Val=5  Mask=00001000
+Time 94745: Controller Packet -> Val=6  Mask=00010000
+Time 94755: Controller Packet -> Val=7  Mask=00100000
+Time 94765: Controller Packet -> Val=8  Mask=01000000
+Time 94775: Controller Packet -> Val=8  Mask=10000000
+Time 94945: [RESULT 56] ACCELERATOR FINAL RESULT -> 186
+ACK received for SEND MATRIX B
+  [TB] Waiting for ART to be EMPTY...
+
+--- BATCH 57 ---
+
+--- VN ALLOCATION ---
+ACK received for VN ALLOCATION
+
+--- RN CONFIGURATION ---
+ACK received for RN CONFIGURATION
+
+--- ONFIG STATIONARY ---
+Time 95525: MS Config Broadcast:
+  MS[0]: state=0001  payload=0
+  MS[1]: state=0001  payload=0
+  MS[2]: state=0001  payload=0
+  MS[3]: state=0001  payload=0
+  MS[4]: state=0001  payload=0
+  MS[5]: state=0001  payload=0
+  MS[6]: state=0001  payload=0
+  MS[7]: state=0001  payload=0
+ACK received for ONFIG STATIONARY
+
+--- SEND MATRIX A ---
+Time 95615: Controller Packet -> Val=1  Mask=00000001
+Time 95625: Controller Packet -> Val=0  Mask=00000010
+Time 95635: Controller Packet -> Val=0  Mask=00000100
+Time 95645: Controller Packet -> Val=0  Mask=00001000
+Time 95655: Controller Packet -> Val=0  Mask=00010000
+Time 95665: Controller Packet -> Val=8  Mask=00100000
+Time 95675: Controller Packet -> Val=8  Mask=01000000
+Time 95685: Controller Packet -> Val=8  Mask=10000000
+ACK received for SEND MATRIX A
+
+--- CONFIG STREAMING ---
+Time 96285: MS Config Broadcast:
+  MS[0]: state=0010  payload=1
+  MS[1]: state=0010  payload=1
+  MS[2]: state=0010  payload=1
+  MS[3]: state=0010  payload=1
+  MS[4]: state=0010  payload=1
+  MS[5]: state=0010  payload=1
+  MS[6]: state=0010  payload=1
+  MS[7]: state=0010  payload=1
+ACK received for CONFIG STREAMING
+
+--- SEND MATRIX B ---
+Time 96375: Controller Packet -> Val=16  Mask=00000001
+Time 96385: Controller Packet -> Val=17  Mask=00000010
+Time 96395: Controller Packet -> Val=18  Mask=00000100
+Time 96405: Controller Packet -> Val=19  Mask=00001000
+Time 96415: Controller Packet -> Val=20  Mask=00010000
+Time 96425: Controller Packet -> Val=8  Mask=00100000
+Time 96435: Controller Packet -> Val=8  Mask=01000000
+Time 96445: Controller Packet -> Val=8  Mask=10000000
+Time 96615: [RESULT 57] ACCELERATOR FINAL RESULT -> 208
+ACK received for SEND MATRIX B
+  [TB] Waiting for ART to be EMPTY...
+
+--- BATCH 58 ---
+
+--- VN ALLOCATION ---
+ACK received for VN ALLOCATION
+
+--- RN CONFIGURATION ---
+ACK received for RN CONFIGURATION
+
+--- ONFIG STATIONARY ---
+Time 97195: MS Config Broadcast:
+  MS[0]: state=0001  payload=0
+  MS[1]: state=0001  payload=0
+  MS[2]: state=0001  payload=0
+  MS[3]: state=0001  payload=0
+  MS[4]: state=0001  payload=0
+  MS[5]: state=0001  payload=0
+  MS[6]: state=0001  payload=0
+  MS[7]: state=0001  payload=0
+ACK received for ONFIG STATIONARY
+
+--- SEND MATRIX A ---
+Time 97285: Controller Packet -> Val=1  Mask=00000001
+Time 97295: Controller Packet -> Val=0  Mask=00000010
+Time 97305: Controller Packet -> Val=0  Mask=00000100
+Time 97315: Controller Packet -> Val=0  Mask=00001000
+Time 97325: Controller Packet -> Val=0  Mask=00010000
+Time 97335: Controller Packet -> Val=8  Mask=00100000
+Time 97345: Controller Packet -> Val=8  Mask=01000000
+Time 97355: Controller Packet -> Val=8  Mask=10000000
+ACK received for SEND MATRIX A
+
+--- CONFIG STREAMING ---
+Time 97955: MS Config Broadcast:
+  MS[0]: state=0010  payload=1
+  MS[1]: state=0010  payload=1
+  MS[2]: state=0010  payload=1
+  MS[3]: state=0010  payload=1
+  MS[4]: state=0010  payload=1
+  MS[5]: state=0010  payload=1
+  MS[6]: state=0010  payload=1
+  MS[7]: state=0010  payload=1
+ACK received for CONFIG STREAMING
+
+--- SEND MATRIX B ---
+Time 98045: Controller Packet -> Val=2  Mask=00000001
+Time 98055: Controller Packet -> Val=3  Mask=00000010
+Time 98065: Controller Packet -> Val=4  Mask=00000100
+Time 98075: Controller Packet -> Val=5  Mask=00001000
+Time 98085: Controller Packet -> Val=6  Mask=00010000
+Time 98095: Controller Packet -> Val=7  Mask=00100000
+Time 98105: Controller Packet -> Val=8  Mask=01000000
+Time 98115: Controller Packet -> Val=8  Mask=10000000
+Time 98285: [RESULT 58] ACCELERATOR FINAL RESULT -> 186
+ACK received for SEND MATRIX B
+  [TB] Waiting for ART to be EMPTY...
+
+--- BATCH 59 ---
+
+--- VN ALLOCATION ---
+ACK received for VN ALLOCATION
+
+--- RN CONFIGURATION ---
+ACK received for RN CONFIGURATION
+
+--- ONFIG STATIONARY ---
+Time 98865: MS Config Broadcast:
+  MS[0]: state=0001  payload=0
+  MS[1]: state=0001  payload=0
+  MS[2]: state=0001  payload=0
+  MS[3]: state=0001  payload=0
+  MS[4]: state=0001  payload=0
+  MS[5]: state=0001  payload=0
+  MS[6]: state=0001  payload=0
+  MS[7]: state=0001  payload=0
+ACK received for ONFIG STATIONARY
+
+--- SEND MATRIX A ---
+Time 98955: Controller Packet -> Val=1  Mask=00000001
+Time 98965: Controller Packet -> Val=0  Mask=00000010
+Time 98975: Controller Packet -> Val=0  Mask=00000100
+Time 98985: Controller Packet -> Val=0  Mask=00001000
+Time 98995: Controller Packet -> Val=0  Mask=00010000
+Time 99005: Controller Packet -> Val=8  Mask=00100000
+Time 99015: Controller Packet -> Val=8  Mask=01000000
+Time 99025: Controller Packet -> Val=8  Mask=10000000
+ACK received for SEND MATRIX A
+
+--- CONFIG STREAMING ---
+Time 99625: MS Config Broadcast:
+  MS[0]: state=0010  payload=1
+  MS[1]: state=0010  payload=1
+  MS[2]: state=0010  payload=1
+  MS[3]: state=0010  payload=1
+  MS[4]: state=0010  payload=1
+  MS[5]: state=0010  payload=1
+  MS[6]: state=0010  payload=1
+  MS[7]: state=0010  payload=1
+ACK received for CONFIG STREAMING
+
+--- SEND MATRIX B ---
+Time 99715: Controller Packet -> Val=16  Mask=00000001
+Time 99725: Controller Packet -> Val=17  Mask=00000010
+Time 99735: Controller Packet -> Val=18  Mask=00000100
+Time 99745: Controller Packet -> Val=19  Mask=00001000
+Time 99755: Controller Packet -> Val=20  Mask=00010000
+Time 99765: Controller Packet -> Val=8  Mask=00100000
+Time 99775: Controller Packet -> Val=8  Mask=01000000
+Time 99785: Controller Packet -> Val=8  Mask=10000000
+Time 99955: [RESULT 59] ACCELERATOR FINAL RESULT -> 208
+ACK received for SEND MATRIX B
+  [TB] Waiting for ART to be EMPTY...
+
+--- BATCH 60 ---
+
+--- VN ALLOCATION ---
+ACK received for VN ALLOCATION
+
+--- RN CONFIGURATION ---
+ACK received for RN CONFIGURATION
+
+--- ONFIG STATIONARY ---
+Time 100535: MS Config Broadcast:
+  MS[0]: state=0001  payload=0
+  MS[1]: state=0001  payload=0
+  MS[2]: state=0001  payload=0
+  MS[3]: state=0001  payload=0
+  MS[4]: state=0001  payload=0
+  MS[5]: state=0001  payload=0
+  MS[6]: state=0001  payload=0
+  MS[7]: state=0001  payload=0
+ACK received for ONFIG STATIONARY
+
+--- SEND MATRIX A ---
+Time 100625: Controller Packet -> Val=1  Mask=00000001
+Time 100635: Controller Packet -> Val=0  Mask=00000010
+Time 100645: Controller Packet -> Val=0  Mask=00000100
+Time 100655: Controller Packet -> Val=0  Mask=00001000
+Time 100665: Controller Packet -> Val=0  Mask=00010000
+Time 100675: Controller Packet -> Val=8  Mask=00100000
+Time 100685: Controller Packet -> Val=8  Mask=01000000
+Time 100695: Controller Packet -> Val=8  Mask=10000000
+ACK received for SEND MATRIX A
+
+--- CONFIG STREAMING ---
+Time 101295: MS Config Broadcast:
+  MS[0]: state=0010  payload=1
+  MS[1]: state=0010  payload=1
+  MS[2]: state=0010  payload=1
+  MS[3]: state=0010  payload=1
+  MS[4]: state=0010  payload=1
+  MS[5]: state=0010  payload=1
+  MS[6]: state=0010  payload=1
+  MS[7]: state=0010  payload=1
+ACK received for CONFIG STREAMING
+
+--- SEND MATRIX B ---
+Time 101385: Controller Packet -> Val=2  Mask=00000001
+Time 101395: Controller Packet -> Val=3  Mask=00000010
+Time 101405: Controller Packet -> Val=4  Mask=00000100
+Time 101415: Controller Packet -> Val=5  Mask=00001000
+Time 101425: Controller Packet -> Val=6  Mask=00010000
+Time 101435: Controller Packet -> Val=7  Mask=00100000
+Time 101445: Controller Packet -> Val=8  Mask=01000000
+Time 101455: Controller Packet -> Val=8  Mask=10000000
+Time 101625: [RESULT 60] ACCELERATOR FINAL RESULT -> 186
+ACK received for SEND MATRIX B
+  [TB] Waiting for ART to be EMPTY...
+
+--- BATCH 61 ---
+
+--- VN ALLOCATION ---
+ACK received for VN ALLOCATION
+
+--- RN CONFIGURATION ---
+ACK received for RN CONFIGURATION
+
+--- ONFIG STATIONARY ---
+Time 102205: MS Config Broadcast:
+  MS[0]: state=0001  payload=0
+  MS[1]: state=0001  payload=0
+  MS[2]: state=0001  payload=0
+  MS[3]: state=0001  payload=0
+  MS[4]: state=0001  payload=0
+  MS[5]: state=0001  payload=0
+  MS[6]: state=0001  payload=0
+  MS[7]: state=0001  payload=0
+ACK received for ONFIG STATIONARY
+
+--- SEND MATRIX A ---
+Time 102295: Controller Packet -> Val=1  Mask=00000001
+Time 102305: Controller Packet -> Val=0  Mask=00000010
+Time 102315: Controller Packet -> Val=0  Mask=00000100
+Time 102325: Controller Packet -> Val=0  Mask=00001000
+Time 102335: Controller Packet -> Val=0  Mask=00010000
+Time 102345: Controller Packet -> Val=8  Mask=00100000
+Time 102355: Controller Packet -> Val=8  Mask=01000000
+Time 102365: Controller Packet -> Val=8  Mask=10000000
+ACK received for SEND MATRIX A
+
+--- CONFIG STREAMING ---
+Time 102965: MS Config Broadcast:
+  MS[0]: state=0010  payload=1
+  MS[1]: state=0010  payload=1
+  MS[2]: state=0010  payload=1
+  MS[3]: state=0010  payload=1
+  MS[4]: state=0010  payload=1
+  MS[5]: state=0010  payload=1
+  MS[6]: state=0010  payload=1
+  MS[7]: state=0010  payload=1
+ACK received for CONFIG STREAMING
+
+--- SEND MATRIX B ---
+Time 103055: Controller Packet -> Val=16  Mask=00000001
+Time 103065: Controller Packet -> Val=17  Mask=00000010
+Time 103075: Controller Packet -> Val=18  Mask=00000100
+Time 103085: Controller Packet -> Val=19  Mask=00001000
+Time 103095: Controller Packet -> Val=20  Mask=00010000
+Time 103105: Controller Packet -> Val=8  Mask=00100000
+Time 103115: Controller Packet -> Val=8  Mask=01000000
+Time 103125: Controller Packet -> Val=8  Mask=10000000
+Time 103295: [RESULT 61] ACCELERATOR FINAL RESULT -> 208
+ACK received for SEND MATRIX B
+  [TB] Waiting for ART to be EMPTY...
+
+--- BATCH 62 ---
+
+--- VN ALLOCATION ---
+ACK received for VN ALLOCATION
+
+--- RN CONFIGURATION ---
+ACK received for RN CONFIGURATION
+
+--- ONFIG STATIONARY ---
+Time 103875: MS Config Broadcast:
+  MS[0]: state=0001  payload=0
+  MS[1]: state=0001  payload=0
+  MS[2]: state=0001  payload=0
+  MS[3]: state=0001  payload=0
+  MS[4]: state=0001  payload=0
+  MS[5]: state=0001  payload=0
+  MS[6]: state=0001  payload=0
+  MS[7]: state=0001  payload=0
+ACK received for ONFIG STATIONARY
+
+--- SEND MATRIX A ---
+Time 103965: Controller Packet -> Val=1  Mask=00000001
+Time 103975: Controller Packet -> Val=0  Mask=00000010
+Time 103985: Controller Packet -> Val=0  Mask=00000100
+Time 103995: Controller Packet -> Val=0  Mask=00001000
+Time 104005: Controller Packet -> Val=0  Mask=00010000
+Time 104015: Controller Packet -> Val=8  Mask=00100000
+Time 104025: Controller Packet -> Val=8  Mask=01000000
+Time 104035: Controller Packet -> Val=8  Mask=10000000
+ACK received for SEND MATRIX A
+
+--- CONFIG STREAMING ---
+Time 104635: MS Config Broadcast:
+  MS[0]: state=0010  payload=1
+  MS[1]: state=0010  payload=1
+  MS[2]: state=0010  payload=1
+  MS[3]: state=0010  payload=1
+  MS[4]: state=0010  payload=1
+  MS[5]: state=0010  payload=1
+  MS[6]: state=0010  payload=1
+  MS[7]: state=0010  payload=1
+ACK received for CONFIG STREAMING
+
+--- SEND MATRIX B ---
+Time 104725: Controller Packet -> Val=2  Mask=00000001
+Time 104735: Controller Packet -> Val=3  Mask=00000010
+Time 104745: Controller Packet -> Val=4  Mask=00000100
+Time 104755: Controller Packet -> Val=5  Mask=00001000
+Time 104765: Controller Packet -> Val=6  Mask=00010000
+Time 104775: Controller Packet -> Val=7  Mask=00100000
+Time 104785: Controller Packet -> Val=8  Mask=01000000
+Time 104795: Controller Packet -> Val=8  Mask=10000000
+Time 104965: [RESULT 62] ACCELERATOR FINAL RESULT -> 186
+ACK received for SEND MATRIX B
+  [TB] Waiting for ART to be EMPTY...
+
+--- BATCH 63 ---
+
+--- VN ALLOCATION ---
+ACK received for VN ALLOCATION
+
+--- RN CONFIGURATION ---
+ACK received for RN CONFIGURATION
+
+--- ONFIG STATIONARY ---
+Time 105545: MS Config Broadcast:
+  MS[0]: state=0001  payload=0
+  MS[1]: state=0001  payload=0
+  MS[2]: state=0001  payload=0
+  MS[3]: state=0001  payload=0
+  MS[4]: state=0001  payload=0
+  MS[5]: state=0001  payload=0
+  MS[6]: state=0001  payload=0
+  MS[7]: state=0001  payload=0
+ACK received for ONFIG STATIONARY
+
+--- SEND MATRIX A ---
+Time 105635: Controller Packet -> Val=1  Mask=00000001
+Time 105645: Controller Packet -> Val=0  Mask=00000010
+Time 105655: Controller Packet -> Val=0  Mask=00000100
+Time 105665: Controller Packet -> Val=0  Mask=00001000
+Time 105675: Controller Packet -> Val=0  Mask=00010000
+Time 105685: Controller Packet -> Val=8  Mask=00100000
+Time 105695: Controller Packet -> Val=8  Mask=01000000
+Time 105705: Controller Packet -> Val=8  Mask=10000000
+ACK received for SEND MATRIX A
+
+--- CONFIG STREAMING ---
+Time 106305: MS Config Broadcast:
+  MS[0]: state=0010  payload=1
+  MS[1]: state=0010  payload=1
+  MS[2]: state=0010  payload=1
+  MS[3]: state=0010  payload=1
+  MS[4]: state=0010  payload=1
+  MS[5]: state=0010  payload=1
+  MS[6]: state=0010  payload=1
+  MS[7]: state=0010  payload=1
+ACK received for CONFIG STREAMING
+
+--- SEND MATRIX B ---
+Time 106395: Controller Packet -> Val=16  Mask=00000001
+Time 106405: Controller Packet -> Val=17  Mask=00000010
+Time 106415: Controller Packet -> Val=18  Mask=00000100
+Time 106425: Controller Packet -> Val=19  Mask=00001000
+Time 106435: Controller Packet -> Val=20  Mask=00010000
+Time 106445: Controller Packet -> Val=8  Mask=00100000
+Time 106455: Controller Packet -> Val=8  Mask=01000000
+Time 106465: Controller Packet -> Val=8  Mask=10000000
+Time 106635: [RESULT 63] ACCELERATOR FINAL RESULT -> 208
+ACK received for SEND MATRIX B
+
+=== FULL SEQUENCE COMPLETED ===
+tb_accel.v:177: $finish called at 107085 (1s)

@@ -1,9 +1,9 @@
 module system_top #(
     parameter NUM_MS = 8,
     parameter DATA_W = 16,
-    parameter A_ADDR_W = 4,
-    parameter B_ADDR_W = 4,
-    parameter BV_ADDR_W = 4,
+    parameter A_ADDR_W = 10,
+    parameter B_ADDR_W = 10,
+    parameter BV_ADDR_W = 10,
     parameter A_INIT_FILE = "",
     parameter B_INIT_FILE = ""
 )(
@@ -32,6 +32,20 @@ module system_top #(
     output wire rn_config_en,
     input  wire rn_config_rdy,
     output wire [20:0] rn_config_data,
+    output wire [31:0] k_probe,
+
+    // Result Memory C Interface
+    output reg mem_c_wen,
+    output reg [B_ADDR_W-1:0] mem_c_waddr,
+    output reg [DATA_W-1:0] mem_c_wdata,
+
+    // Status from Datapath
+    input wire isEmpty,
+
+    // Output from ART
+    input  wire [DATA_W-1:0] art_output_data,
+    input  wire art_output_rdy,
+    output reg  art_output_en,
 
     output wire ack
 );
@@ -47,14 +61,68 @@ module system_top #(
     wire mnc_ack;
     wire rnc_ack;
 
-    // Command Decoder
+    // Master State Machine for CMD_FULL_RUN
+    localparam M_IDLE           = 4'd0;
+    localparam M_WRITE_M        = 4'd1;
+    localparam M_WRITE_N        = 4'd2;
+    localparam M_ALLOC          = 4'd3;
+    localparam M_RN_CONFIG      = 4'd4;
+    localparam M_MN_CFG_STAT    = 4'd5;
+    localparam M_SEND_A         = 4'd6;
+    localparam M_MN_CFG_STRM    = 4'd7;
+    localparam M_SEND_B         = 4'd8;
+    localparam M_WAIT_EMPTY     = 4'd9;
+    localparam M_CHECK_DONE     = 4'd10;
+    localparam M_ACK            = 4'd11;
+
+    reg [3:0] master_state, next_master_state;
+    reg full_run_active;
+    reg [31:0] results_captured;
+    reg [31:0] results_target;
+    reg [B_ADDR_W-1:0] next_c_addr;
+
+    // Derived dimensions from packet_scheduler
+    wire [31:0] sched_M = pbg.wrapper.sched.dim_M;
+    wire [31:0] sched_N = pbg.wrapper.sched.dim_N;
+    wire [31:0] total_results = sched_M * sched_N;
+
+    // Command Decoder / Internal Sequencer
     always @(*) begin
+        next_master_state = master_state;
         pbg_cmd = 2'b00;
         pbg_cmd_valid = 1'b0;
         mnc_cmd = 2'b00;
         mnc_cmd_valid = 1'b0;
+        rnc_cmd_valid = 1'b0;
 
-        if (cmd_valid) begin
+        if (full_run_active) begin
+            case (master_state)
+                M_ALLOC: begin
+                    pbg_cmd = 2'b01;
+                    pbg_cmd_valid = 1'b1;
+                end
+                M_RN_CONFIG: begin
+                    rnc_cmd_valid = 1'b1;
+                end
+                M_MN_CFG_STAT: begin
+                    mnc_cmd = 2'b01;
+                    mnc_cmd_valid = 1'b1;
+                end
+                M_SEND_A: begin
+                    pbg_cmd = 2'b10;
+                    pbg_cmd_valid = 1'b1;
+                end
+                M_MN_CFG_STRM: begin
+                    mnc_cmd = 2'b10;
+                    mnc_cmd_valid = 1'b1;
+                end
+                M_SEND_B: begin
+                    pbg_cmd = 2'b11;
+                    pbg_cmd_valid = 1'b1;
+                end
+                default: ;
+            endcase
+        end else if (cmd_valid) begin
             case (cmd)
                 3'd1: begin // VN_ALLOC
                     pbg_cmd = 2'b01; 
@@ -88,21 +156,140 @@ module system_top #(
     always @(posedge clk or negedge rst_n) begin
         if (!rst_n) begin
             last_cmd_target <= 2'd0;
-        end else if (cmd_valid) begin
-            if (cmd == 3'd1 || cmd == 3'd3 || cmd == 3'd5) last_cmd_target <= 2'd0;
-            else if (cmd == 3'd2 || cmd == 3'd4) last_cmd_target <= 2'd1;
-            else if (cmd == 3'd6) last_cmd_target <= 2'd2;
+            master_state <= M_IDLE;
+            full_run_active <= 1'b0;
+            next_c_addr <= 0;
+            results_captured <= 0;
+            mem_c_wen <= 1'b0;
+            mem_c_waddr <= 0;
+            mem_c_wdata <= 0;
+            art_output_en <= 1'b0;
+        end else begin
+            mem_c_wen <= 1'b0;
+            art_output_en <= 1'b0;
+
+            // Manual command tracking
+            if (cmd_valid && !full_run_active) begin
+                if (cmd == 3'd1 || cmd == 3'd3 || cmd == 3'd5) last_cmd_target <= 2'd0;
+                else if (cmd == 3'd2 || cmd == 3'd4) last_cmd_target <= 2'd1;
+                else if (cmd == 3'd6) last_cmd_target <= 2'd2;
+                
+                if (cmd == 3'b111) begin // FULL_RUN
+                    full_run_active <= 1'b1;
+                    master_state <= M_ALLOC; // Dimensions will be loaded in M_ALLOC if first time
+                    next_c_addr <= 0;
+                    results_captured <= 0;
+                end
+            end
+
+            // Result capture (autonomous)
+            if (art_output_rdy && art_output_en) begin
+                mem_c_wen <= 1'b1;
+                mem_c_waddr <= next_c_addr;
+                mem_c_wdata <= art_output_data;
+                next_c_addr <= next_c_addr + 1;
+                results_captured <= results_captured + 1;
+                $display("Time %0d: [CTRL] Captured result %0d -> mem_C[%0d] = %0d", $time, results_captured, next_c_addr, art_output_data);
+            end
+            // Capture only in Send B or Wait Empty phases
+            // Pulse art_output_en to consume one result at a time
+            art_output_en <= art_output_rdy && !art_output_en && (master_state == M_SEND_B || master_state == M_WAIT_EMPTY);
+
+            // Master State Machine
+            if (full_run_active) begin
+                case (master_state)
+                    M_ALLOC: begin
+                        if (pbg_ack) begin
+                            results_target <= (pbg.wrapper.sched.current_batch + 1) * pbg.wrapper.sched.batch_vns;
+                            // If first batch, write dimensions
+                            if (next_c_addr == 0) begin
+                                master_state <= M_WRITE_M;
+                            end else begin
+                                master_state <= M_RN_CONFIG;
+                            end
+                        end
+                    end
+                    M_WRITE_M: begin
+                        mem_c_wen <= 1'b1;
+                        mem_c_waddr <= 0;
+                        mem_c_wdata <= sched_M[DATA_W-1:0];
+                        next_c_addr <= 1;
+                        next_master_state <= M_WRITE_N;
+                    end
+                    M_WRITE_N: begin
+                        mem_c_wen <= 1'b1;
+                        mem_c_waddr <= 1;
+                        mem_c_wdata <= sched_N[DATA_W-1:0];
+                        next_c_addr <= 2;
+                        next_master_state <= M_RN_CONFIG;
+                    end
+                    M_RN_CONFIG: begin
+                        if (rnc_ack) next_master_state <= M_MN_CFG_STAT;
+                    end
+                    M_MN_CFG_STAT: begin
+                        if (mnc_ack) next_master_state <= M_SEND_A;
+                    end
+                    M_SEND_A: begin
+                        if (pbg_ack) next_master_state <= M_MN_CFG_STRM;
+                    end
+                    M_MN_CFG_STRM: begin
+                        if (mnc_ack) next_master_state <= M_SEND_B;
+                    end
+                    M_SEND_B: begin
+                        if (pbg_ack) next_master_state <= M_WAIT_EMPTY;
+                    end
+                    M_WAIT_EMPTY: begin
+                        // Wait for results of current batch OR DN to be empty
+                        if (results_captured >= results_target || results_captured >= total_results) begin
+                            if (isEmpty) begin // DN isEmpty
+                                next_master_state <= M_CHECK_DONE;
+                            end
+                        end
+                    end
+                    M_CHECK_DONE: begin
+                        // Is this the last batch?
+                        // pbg.wrapper.sched.dims_loaded being cleared means pbg saw last batch
+                        if (!pbg.wrapper.sched.dims_loaded) begin
+                            next_master_state <= M_ACK;
+                        end else begin
+                            // Reset counters for next batch if needed
+                            next_master_state <= M_ALLOC;
+                        end
+                    end
+                    M_ACK: begin
+                        full_run_active <= 1'b0;
+                        $display("Time %0d: [FULL_RUN] FINISHED. Total captured: %d", $time, results_captured);
+                        next_master_state <= M_IDLE;
+                    end
+                    default: ;
+                endcase
+                if (master_state != next_master_state) begin
+                    $display("Time %0d: [MASTER] %s -> %s (captured=%0d)", $time,
+                             (master_state == M_IDLE) ? "M_IDLE" : (master_state == M_ALLOC) ? "M_ALLOC" : (master_state == M_WRITE_M) ? "M_WRITE_M" : (master_state == M_WRITE_N) ? "M_WRITE_N" : (master_state == M_RN_CONFIG) ? "M_RN_CONFIG" : (master_state == M_MN_CFG_STAT) ? "M_MN_CFG_STAT" : (master_state == M_SEND_A) ? "M_SEND_A" : (master_state == M_MN_CFG_STRM) ? "M_MN_CFG_STRM" : (master_state == M_SEND_B) ? "M_SEND_B" : (master_state == M_WAIT_EMPTY) ? "M_WAIT_EMPTY" : (master_state == M_CHECK_DONE) ? "M_CHECK_DONE" : "M_ACK",
+                             (next_master_state == M_IDLE) ? "M_IDLE" : (next_master_state == M_ALLOC) ? "M_ALLOC" : (next_master_state == M_WRITE_M) ? "M_WRITE_M" : (next_master_state == M_WRITE_N) ? "M_WRITE_N" : (next_master_state == M_RN_CONFIG) ? "M_RN_CONFIG" : (next_master_state == M_MN_CFG_STAT) ? "M_MN_CFG_STAT" : (next_master_state == M_SEND_A) ? "M_SEND_A" : (next_master_state == M_MN_CFG_STRM) ? "M_MN_CFG_STRM" : (next_master_state == M_SEND_B) ? "M_SEND_B" : (next_master_state == M_WAIT_EMPTY) ? "M_WAIT_EMPTY" : (next_master_state == M_CHECK_DONE) ? "M_CHECK_DONE" : "M_ACK",
+                             results_captured);
+                    master_state <= next_master_state;
+                end
+            end
         end
     end
 
     // Combinatorial Target for immediate memory access
-    wire [1:0] current_target = (cmd_valid) ? ( (cmd == 3'd1 || cmd == 3'd3 || cmd == 3'd5) ? 2'd0 :
+    wire [1:0] current_target = (full_run_active) ? ( (master_state == M_ALLOC || master_state == M_SEND_A || master_state == M_SEND_B) ? 2'd0 :
+                                                     (master_state == M_MN_CFG_STAT || master_state == M_MN_CFG_STRM) ? 2'd1 :
+                                                     (master_state == M_RN_CONFIG) ? 2'd2 : 2'd0 ) :
+                                (cmd_valid) ? ( (cmd == 3'd1 || cmd == 3'd3 || cmd == 3'd5) ? 2'd0 :
                                                 (cmd == 3'd2 || cmd == 3'd4)               ? 2'd1 :
                                                 (cmd == 3'd6)                               ? 2'd2 : last_cmd_target )
                                             : last_cmd_target;
 
-    assign ack = (last_cmd_target == 2'd1) ? mnc_ack : 
+    assign ack = (full_run_active) ? (master_state == M_ACK) :
+                 (last_cmd_target == 2'd1) ? mnc_ack :
                  (last_cmd_target == 2'd2) ? rnc_ack : pbg_ack;
+
+    wire [31:0] k_val;
+    wire [31:0] pbg_current_batch, pbg_batch_vns, pbg_total_vns;
+    assign k_probe = k_val;
 
     // BV memory interface sharing
     wire [BV_ADDR_W-1:0] pbg_bv_addr;
@@ -144,6 +331,10 @@ module system_top #(
         .bv_addr(shared_bv_addr),
         .bv_ren(shared_bv_ren),
         .bv_rdata(pbg_bv_rdata),
+        .k_out(k_val),
+        .current_batch(pbg_current_batch),
+        .batch_vns(pbg_batch_vns),
+        .total_vns(pbg_total_vns),
         .ack(pbg_ack)
     );
 
@@ -166,6 +357,7 @@ module system_top #(
         .ms_config_en(ms_config_en),
         .ms_config_rdy(ms_config_rdy),
         .ms_config_data(ms_config_data),
+        .k_val(k_val),
         .ack(mnc_ack)
     );
 
@@ -191,7 +383,7 @@ endmodule
 
 module mn_config #(
     parameter NUM_MS = 8,
-    parameter BV_ADDR_W = 4
+    parameter BV_ADDR_W = 10
 )(
     input wire clk,
     input wire rst_n,
@@ -209,6 +401,7 @@ module mn_config #(
     output reg ms_config_en,
     input  wire ms_config_rdy,
     output reg [(20*NUM_MS)-1:0] ms_config_data,
+    input  wire [31:0] k_val,
 
     output reg ack
 );
@@ -267,6 +460,7 @@ module mn_config #(
                         bv_addr <= 0;
                         bv_ren  <= 1'b1;
                         state   <= S_READ_BV_CNT;
+                        $display("Time %0d: [MN_CFG] STARTING. is_streaming=%b", $time, (cmd == CMD_CFG_STREAMING));
                     end
                 end
 
@@ -296,14 +490,17 @@ module mn_config #(
 
                 // Capture BV, accumulate mask, issue next read or emit
                 S_CAP_BV: begin
-                    active_mask <= active_mask | bv_rdata;
-                    if (bv_idx < num_vns) begin
-                        bv_idx  <= bv_idx + 1;
-                        bv_addr <= bv_idx[BV_ADDR_W-1:0] + 1;
-                        bv_ren  <= 1'b1;
-                        state   <= S_READ_BV;
-                    end else begin
-                        state <= S_EMIT_CFG;
+                    if (advance) begin
+                        active_mask <= active_mask | bv_rdata;
+                        $display("Time %0d: [MN_CFG] Cap BV idx %0d: %08h -> ActiveMask %08h", $time, bv_idx, bv_rdata, active_mask | bv_rdata);
+                        if (bv_idx < num_vns) begin
+                            bv_idx  <= bv_idx + 1;
+                            bv_addr <= bv_idx[BV_ADDR_W-1:0] + 1;
+                            bv_ren  <= 1'b1;
+                            state   <= S_READ_BV;
+                        end else begin
+                            state   <= S_EMIT_CFG;
+                        end
                     end
                 end
 
@@ -312,18 +509,16 @@ module mn_config #(
                     ms_config_en <= 1'b1;
                     begin : build_cfg
                         integer s;
-                        reg [19:0] cfg;
+                        reg [159:0] tmp_cfg;
+                        tmp_cfg = 0;
                         for (s = 0; s < NUM_MS; s = s + 1) begin
                             if (active_mask[s]) begin
-                                if (is_streaming)
-                                    cfg = {STATE_MULT_STREAMING,16'd1};
-                                else
-                                    cfg = {STATE_FILL_STATIONARY,16'd0};
+                                tmp_cfg[s*20 +: 20] = {(is_streaming ? STATE_MULT_STREAMING : STATE_FILL_STATIONARY), 16'h0001};
                             end else begin
-                                cfg = {STATE_IDLE, 16'd0};
+                                tmp_cfg[s*20 +: 20] = {STATE_IDLE, 16'h0000};
                             end
-                            ms_config_data[s*20 +: 20] <= cfg;
                         end
+                        ms_config_data <= tmp_cfg;
                     end
                     state <= S_ACK;
                 end
@@ -331,7 +526,9 @@ module mn_config #(
                 S_ACK: begin
                     ms_config_en <= 1'b0;
                     ack          <= 1'b1;
-                    state        <= S_IDLE;
+                    if (!cmd_valid) begin
+                        state <= S_IDLE;
+                    end
                 end
             endcase
         end
@@ -342,9 +539,9 @@ endmodule
 module path_bit_gen_top #(
     parameter NUM_MS = 8,
     parameter DATA_W = 16,
-    parameter A_ADDR_W = 4,
-    parameter B_ADDR_W = 4,
-    parameter BV_ADDR_W = 4,
+    parameter A_ADDR_W = 10,
+    parameter B_ADDR_W = 10,
+    parameter BV_ADDR_W = 10,
     parameter A_INIT_FILE = "",
     parameter B_INIT_FILE = ""
 )(
@@ -369,7 +566,10 @@ module path_bit_gen_top #(
     input  wire [BV_ADDR_W-1:0] bv_addr,
     input  wire bv_ren,
     output wire [NUM_MS-1:0] bv_rdata,
-
+    output wire [31:0] k_out,
+    output wire [31:0] current_batch,
+    output wire [31:0] batch_vns,
+    output wire [31:0] total_vns,
     output wire ack
 );
 
@@ -457,7 +657,10 @@ module path_bit_gen_top #(
         .data_en(data_en),
         .data_rdy(data_rdy),
         .data_data(data_data),
-
+        .k_out(k_out),
+        .current_batch(current_batch),
+        .batch_vns(batch_vns),
+        .total_vns(total_vns),
         .ack(ack)
     );
 
@@ -468,9 +671,9 @@ endmodule
 module scheduler_wrapper #(
     parameter NUM_MS = 8,
     parameter DATA_W = 32,
-    parameter A_ADDR_W = 4,
-    parameter B_ADDR_W = 4,
-    parameter BV_ADDR_W = 4
+    parameter A_ADDR_W = 10,
+    parameter B_ADDR_W = 10,
+    parameter BV_ADDR_W = 10
 )(
     input wire clk,
     input wire rst_n,
@@ -504,6 +707,10 @@ module scheduler_wrapper #(
     input  wire data_rdy,
     output wire [DATA_W-1:0] data_data,
 
+    output wire [31:0] k_out,
+    output wire [31:0] current_batch,
+    output wire [31:0] batch_vns,
+    output wire [31:0] total_vns,
     output wire ack
 );
 
@@ -547,7 +754,10 @@ module scheduler_wrapper #(
         .b_pkt_valid(b_pkt_valid),
         .b_pkt_value(b_pkt_value),
         .b_pkt_mask(b_pkt_mask),
-
+        .k_out(k_out),
+        .current_batch(current_batch),
+        .batch_vns(batch_vns),
+        .total_vns(total_vns),
         .ack(ack)
     );
 
@@ -561,13 +771,13 @@ endmodule
 
 module simple_mem #(
     parameter DATA_W = 32,
-    parameter ADDR_W = 4,
+    parameter ADDR_W = 10,
     parameter INIT_FILE = ""
 )(
     input wire clk,
     input wire ren,
     input wire [ADDR_W-1:0] addr,
-    output reg [DATA_W-1:0] rdata
+    output wire [DATA_W-1:0] rdata
 );
     reg [DATA_W-1:0] mem [0:(1<<ADDR_W)-1];
 
@@ -577,16 +787,12 @@ module simple_mem #(
         end
     end
 
-    always @(posedge clk) begin
-        if (ren) begin
-            rdata <= mem[addr];
-        end
-    end
+    assign rdata = mem[addr];
 endmodule
 // Dual-port simple memory: 1 write port + 1 read port
 module simple_mem_dp #(
     parameter DATA_W = 32,
-    parameter ADDR_W = 4
+    parameter ADDR_W = 10
 )(
     input wire clk,
 
@@ -598,7 +804,7 @@ module simple_mem_dp #(
     // Read port
     input wire ren,
     input wire [ADDR_W-1:0] raddr,
-    output reg [DATA_W-1:0] rdata
+    output wire [DATA_W-1:0] rdata
 );
     reg [DATA_W-1:0] mem [0:(1<<ADDR_W)-1];
 
@@ -608,19 +814,15 @@ module simple_mem_dp #(
         end
     end
 
-    always @(posedge clk) begin
-        if (ren) begin
-            rdata <= mem[raddr];
-        end
-    end
+    assign rdata = mem[raddr];
 endmodule
 
 module packet_scheduler #(
     parameter NUM_MS = 8,
     parameter DATA_W = 32,
-    parameter A_ADDR_W = 4,
-    parameter B_ADDR_W = 4,
-    parameter BV_ADDR_W = 4
+    parameter A_ADDR_W = 10,
+    parameter B_ADDR_W = 10,
+    parameter BV_ADDR_W = 10
 )(
     input wire clk,
     input wire rst_n,
@@ -655,8 +857,15 @@ module packet_scheduler #(
     output reg [DATA_W-1:0] b_pkt_value,
     output reg [NUM_MS-1:0] b_pkt_mask,
 
+    output reg [31:0] k_out,
+    output reg [31:0] current_batch,
+    output wire [31:0] batch_vns,
+    output wire [31:0] total_vns,
     output reg ack
 );
+
+    assign total_vns = dim_M * dim_N;
+    assign batch_vns = 1;
 
     // Command encoding
     localparam CMD_IDLE     = 2'b00;
@@ -682,11 +891,6 @@ module packet_scheduler #(
     // Runtime dimensions (read from memory, persist across commands)
     reg [31:0] dim_M, dim_K, dim_N;
     reg dims_loaded;
-    reg [31:0] current_batch;
-
-    // Derived parameters
-    wire [31:0] total_vns = dim_M * dim_N;
-    wire [31:0] batch_vns = (dim_K > 0) ? (NUM_MS / dim_K) : 1; 
 
     // Loop counters
     reg [31:0] vn_idx, t;
@@ -720,6 +924,8 @@ module packet_scheduler #(
             t          <= 0;
             valid_req  <= 1'b0;
             is_b_phase <= 1'b0;
+            batch_inc_done <= 1'b0;
+            k_out      <= 0;
             drain_cnt  <= 0;
             bv_wen     <= 1'b0;
             bv_waddr   <= 0;
@@ -729,6 +935,7 @@ module packet_scheduler #(
             valid_req <= 1'b0;
             bv_wen    <= 1'b0;
             ack       <= 1'b0;
+            k_out     <= dim_K;
             case (state)
                 // ---------------------------------------------------------
                 IDLE: begin
@@ -741,6 +948,8 @@ module packet_scheduler #(
                                 end else begin
                                     state <= GEN_BV;
                                 end
+                                vn_idx <= 0;
+                                t <= 0;
                                 batch_inc_done <= 1'b0;
                             end
                             CMD_SEND_A: begin
@@ -765,23 +974,21 @@ module packet_scheduler #(
                 end
 
                 READ_M: begin
+                    dim_M <= a_data;
                     state <= READ_K_A;
                 end
                 READ_K_A: begin
-                    dim_M <= a_data;
+                    dim_K <= a_data;
                     state <= READ_K_B;
                 end
                 READ_K_B: begin
-                    dim_K <= a_data;
-                    state <= READ_N;
-                end
-                READ_N: begin
+                    dim_N <= b_data;
                     state <= WAIT_DIM;
                 end
                 WAIT_DIM: begin
-                    dim_N  <= b_data;
                     dims_loaded <= 1'b1;
                     current_batch <= 0;
+                    $display("Time %0d: [DIM] Loaded M=%0d, K=%0d, N=%0d", $time, dim_M, dim_K, dim_N);
                     state  <= GEN_BV;
                 end
 
@@ -794,6 +1001,7 @@ module packet_scheduler #(
                         bv_wen   <= 1'b1;
                         bv_waddr <= 0;
                         bv_wdata <= (rem_vns < batch_vns) ? rem_vns : batch_vns;
+                        $display("Time %0d: [SCHED] GEN_BV_WRITE: Addr=0, Data=%0d (batch_vns=%0d, K=%0d)", $time, (rem_vns < batch_vns) ? rem_vns : batch_vns, batch_vns, dim_K);
                         vn_idx   <= 1;
                     end else if (vn_idx <= batch_vns) begin
                         // Write local BV to shared memory
@@ -801,6 +1009,7 @@ module packet_scheduler #(
                             bv_wen   <= 1'b1;
                             bv_waddr <= vn_idx[BV_ADDR_W-1:0];
                             bv_wdata <= (({{(NUM_MS-1){1'b0}}, 1'b1} << dim_K) - 1) << ((vn_idx-1) * dim_K);
+                            $display("Time %0d: [SCHED] GEN_BV_WRITE: Addr=%0d, Data=%08h (K=%0d)", $time, vn_idx, (({{(NUM_MS-1){1'b0}}, 1'b1} << dim_K) - 1) << ((vn_idx-1) * dim_K), dim_K);
                         end
                         vn_idx   <= vn_idx + 1;
                     end else begin
@@ -821,13 +1030,15 @@ module packet_scheduler #(
                     end
 
                     // Increment counters
+                    if (t == 0) $display("Time %0d: [SCHED] Batch %0d Start VN %0d i=%0d j=%0d", $time, current_batch, vn_idx, i_curr, j_curr);
+                    $display("Time %0d: [SCHED] t=%0d a_addr=%0d b_addr=%0d", $time, t, a_addr, b_addr);
                     if (t == dim_K - 1) begin
                         t <= 0;
                         if (vn_idx == batch_vns - 1) begin
                             vn_idx    <= 0;
                             valid_req <= 1'b0;
                             state     <= DRAIN;
-                            drain_cnt <= 8'd50;
+                            drain_cnt <= 8'd100; // Increased drain for safety
                         end else begin
                             vn_idx <= vn_idx + 1;
                         end
@@ -854,8 +1065,12 @@ module packet_scheduler #(
                         end
                     end
                     is_b_phase <= 1'b0;
+                    vn_idx <= 0;
+                    t <= 0;
                     ack   <= 1'b1;
-                    state <= IDLE;
+                    if (!cmd_valid) begin
+                        state <= IDLE;
+                    end
                 end
             endcase
         end
@@ -876,15 +1091,15 @@ module packet_scheduler #(
         case (state)
             READ_M: begin
                 a_ren  = 1'b1;
-                a_addr = 0;  // Read M from mem_A[0]
-                b_ren  = 1'b1;
-                b_addr = 0;  // Read K from mem_B[0]
+                a_addr = 0;
             end
             READ_K_A: begin
                 a_ren  = 1'b1;
-                a_addr = 1;  // Read K from mem_A[1]
+                a_addr = 1;
+            end
+            READ_K_B: begin
                 b_ren  = 1'b1;
-                b_addr = 1;  // Read N from mem_B[1]
+                b_addr = 1;
             end
 
             default: begin
@@ -895,7 +1110,8 @@ module packet_scheduler #(
                         a_addr = i_curr * dim_K + t + 2;
                     end else begin
                         b_ren  = 1'b1;
-                        b_addr = t * dim_N + j_curr + 2;
+                        b_addr = j_curr * dim_K + t + 2;
+                        if (advance) $display("Time %0d: [ADDR_B] j=%0d K=%0d t=%0d -> Addr=%0d", $time, j_curr, dim_K, t, b_addr);
                     end
                 end
             end
@@ -907,23 +1123,24 @@ module packet_scheduler #(
     // =========================================================================
     reg valid_req_d;
     reg is_b_phase_d;
-    reg [31:0] global_vn_d, t_d;
+    reg [31:0] global_vn_d;
+    reg [31:0] t_d;
 
     always @(posedge clk or negedge rst_n) begin
         if (!rst_n) begin
-            valid_req_d  <= 1'b0;
-            is_b_phase_d <= 1'b0;
-            global_vn_d <= 0;
-            t_d <= 0;
+            valid_req_d   <= 1'b0;
+            is_b_phase_d  <= 1'b0;
+            global_vn_d   <= 0;
+            t_d           <= 0;
         end else if (advance) begin
-            valid_req_d  <= valid_req;
-            is_b_phase_d <= is_b_phase;
-            global_vn_d <= global_vn;
-            t_d <= t;
+            valid_req_d   <= valid_req;
+            is_b_phase_d  <= is_b_phase;
+            global_vn_d   <= global_vn;
+            t_d           <= t;
         end
     end
 
-    wire [31:0] ms_index = ((global_vn_d % batch_vns) * dim_K) + t_d;
+    wire [31:0] ms_index = ((global_vn % batch_vns) * dim_K) + t;
     wire [NUM_MS-1:0] mask_one = 1;
     wire [NUM_MS-1:0] mask_val = mask_one << ms_index;
 
@@ -940,8 +1157,8 @@ module packet_scheduler #(
             b_pkt_value <= 0;
             b_pkt_mask  <= 0;
         end else if (advance) begin
-            if (valid_req_d) begin
-                if (!is_b_phase_d) begin
+            if (valid_req) begin
+                if (!is_b_phase) begin
                     a_pkt_valid <= 1'b1;
                     a_pkt_value <= a_data;
                     a_pkt_mask  <= mask_val;

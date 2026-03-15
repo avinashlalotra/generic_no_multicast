@@ -298,9 +298,9 @@ endmodule
 module mkAccelerator #(
     parameter NUM_MS = 8,
     parameter DATA_W = 16,
-    parameter A_ADDR_W = 4,
-    parameter B_ADDR_W = 4,
-    parameter BV_ADDR_W = 4,
+    parameter A_ADDR_W = 10,
+    parameter B_ADDR_W = 10,
+    parameter BV_ADDR_W = 10,
     parameter A_INIT_FILE = "",
     parameter B_INIT_FILE = ""
 )(CLK,
@@ -357,8 +357,8 @@ module mkAccelerator #(
     .A_ADDR_W(A_ADDR_W),
     .B_ADDR_W(B_ADDR_W),
     .BV_ADDR_W(BV_ADDR_W),
-    .A_INIT_FILE(A_INIT_FILE),
-    .B_INIT_FILE(B_INIT_FILE)
+    .A_INIT_FILE("matrices/mem_A_2x2.mem"),
+    .B_INIT_FILE("matrices/mem_B_2x2.mem")
   ) controller (
     .clk(CLK),
     .rst_n(RST_N),
@@ -376,6 +376,20 @@ module mkAccelerator #(
     .rn_config_en(ctrl$rn_config_en),
     .rn_config_rdy(ctrl$rn_config_rdy),
     .rn_config_data(ctrl$rn_config_data),
+
+    // Result Memory Interface
+    .mem_c_wen(mem_c_wen),
+    .mem_c_waddr(mem_c_waddr),
+    .mem_c_wdata(mem_c_wdata),
+
+    // Status
+    .isEmpty(isEmpty),
+
+    // Output capture
+    .art_output_data(output_data),
+    .art_output_rdy(output_rdy),
+    .art_output_en(ctrl_art_output_en),
+
     .ack(ack)
   );
 
@@ -399,8 +413,27 @@ module mkAccelerator #(
     .input_en(ctrl$data_en),
     .input_rdy(ctrl$data_rdy),
     .output_data(output_data),
-    .output_en(output_en),
+    .output_en(output_en | ctrl_art_output_en),
     .output_rdy(output_rdy)
+  );
+
+  // Result Memory C
+  wire mem_c_wen;
+  wire [B_ADDR_W-1:0] mem_c_waddr;
+  wire [DATA_W-1:0] mem_c_wdata;
+  wire ctrl_art_output_en;
+
+  simple_mem_dp #(
+    .DATA_W(DATA_W),
+    .ADDR_W(B_ADDR_W)
+  ) mem_C (
+    .clk(CLK),
+    .ren(1'b0), // Read only by TB or future units
+    .raddr(0),
+    .rdata(),
+    .wen(mem_c_wen),
+    .waddr(mem_c_waddr),
+    .wdata(mem_c_wdata)
   );
 
 endmodule

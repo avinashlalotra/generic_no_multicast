@@ -1,0 +1,710 @@
+WARNING: controller.v:576: $readmemh(/home/avinash/Desktop/MajorProject/generic_no_multicast/final_codes/matrices/mem_A_2x2.mem): Not enough words in the file for the requested range [0:15].
+WARNING: controller.v:576: $readmemh(/home/avinash/Desktop/MajorProject/generic_no_multicast/final_codes/matrices/mem_B_2x3.mem): Not enough words in the file for the requested range [0:15].
+
+=== STARTING BATCHED EXECUTION (Total VNs: 6, Batch Size: 4, Num Batches: 2) ===
+
+--- BATCH 0 ---
+
+--- VN ALLOCATION ---
+Time 25: [SCHED] State=0 Cmd=0 isB=0 batch=0 vn_idx=0 t=0 adv=1
+Time 35: ACCELERATOR FINAL RESULT -> 43690
+Time 35: [SCHED] State=0 Cmd=1 isB=0 batch=0 vn_idx=0 t=0 adv=1
+Time 45: [SCHED] State=1 Cmd=0 isB=0 batch=0 vn_idx=0 t=0 adv=1
+Time 55: ACCELERATOR FINAL RESULT -> 43690
+Time 55: [SCHED] State=2 Cmd=0 isB=0 batch=0 vn_idx=0 t=0 adv=1
+Time 65: [SCHED] State=3 Cmd=0 isB=0 batch=0 vn_idx=0 t=0 adv=1
+Time 75: ACCELERATOR FINAL RESULT -> 43690
+Time 75: [SCHED] State=4 Cmd=0 isB=0 batch=0 vn_idx=0 t=0 adv=1
+Time 85: [SCHED] State=5 Cmd=0 isB=0 batch=0 vn_idx=0 t=0 adv=1
+Time 95: ACCELERATOR FINAL RESULT -> 43690
+Time 95: [SCHED] State=6 Cmd=0 isB=0 batch=0 vn_idx=0 t=0 adv=1
+Time 105: [SCHED] State=6 Cmd=0 isB=0 batch=0 vn_idx=1 t=0 adv=1
+Time 105: [GEN] Alloc VN 0 (Batch 0, vn_idx 0)
+Time 115: ACCELERATOR FINAL RESULT -> 43690
+Time 115: [SCHED] State=6 Cmd=0 isB=0 batch=0 vn_idx=2 t=0 adv=1
+Time 115: [GEN] Alloc VN 1 (Batch 0, vn_idx 1)
+Time 125: [SCHED] State=6 Cmd=0 isB=0 batch=0 vn_idx=3 t=0 adv=1
+Time 125: [GEN] Alloc VN 2 (Batch 0, vn_idx 2)
+Time 135: ACCELERATOR FINAL RESULT -> 43690
+Time 135: [SCHED] State=6 Cmd=0 isB=0 batch=0 vn_idx=4 t=0 adv=1
+Time 135: [GEN] Alloc VN 3 (Batch 0, vn_idx 3)
+Time 145: [SCHED] State=6 Cmd=0 isB=0 batch=0 vn_idx=5 t=0 adv=1
+Time 155: ACCELERATOR FINAL RESULT -> 43690
+Time 155: [SCHED] State=10 Cmd=0 isB=0 batch=0 vn_idx=0 t=0 adv=1
+Time 155: [ST] ACK_ST entry: isB=0 cmd=0 batch=0 inc_done=0
+ACK received for VN ALLOCATION
+Time 165: [SCHED] State=0 Cmd=0 isB=0 batch=0 vn_idx=0 t=0 adv=1
+Time 175: ACCELERATOR FINAL RESULT -> 43690
+Time 175: [SCHED] State=0 Cmd=0 isB=0 batch=0 vn_idx=0 t=0 adv=1
+
+--- RN CONFIGURATION ---
+Time 185: [SCHED] State=0 Cmd=0 isB=0 batch=0 vn_idx=0 t=0 adv=1
+Time 195: ACCELERATOR FINAL RESULT -> 43690
+Time 195: [SCHED] State=0 Cmd=0 isB=0 batch=0 vn_idx=0 t=0 adv=1
+Time 205: [SCHED] State=0 Cmd=0 isB=0 batch=0 vn_idx=0 t=0 adv=1
+Time 215: ACCELERATOR FINAL RESULT -> 43690
+Time 215: [SCHED] State=0 Cmd=0 isB=0 batch=0 vn_idx=0 t=0 adv=1
+Time 225: [SCHED] State=0 Cmd=0 isB=0 batch=0 vn_idx=0 t=0 adv=1
+Time 235: ACCELERATOR FINAL RESULT -> 43690
+Time 235: [SCHED] State=0 Cmd=0 isB=0 batch=0 vn_idx=0 t=0 adv=1
+Time 245: [SCHED] State=0 Cmd=0 isB=0 batch=0 vn_idx=0 t=0 adv=1
+Time 255: ACCELERATOR FINAL RESULT -> 43690
+Time 255: [SCHED] State=0 Cmd=0 isB=0 batch=0 vn_idx=0 t=0 adv=1
+Time 265: [SCHED] State=0 Cmd=0 isB=0 batch=0 vn_idx=0 t=0 adv=1
+Time 275: ACCELERATOR FINAL RESULT -> 43690
+Time 275: [SCHED] State=0 Cmd=0 isB=0 batch=0 vn_idx=0 t=0 adv=1
+Time 285: [SCHED] State=0 Cmd=0 isB=0 batch=0 vn_idx=0 t=0 adv=1
+Time 295: ACCELERATOR FINAL RESULT -> 43690
+Time 295: [SCHED] State=0 Cmd=0 isB=0 batch=0 vn_idx=0 t=0 adv=1
+Time 305: [SCHED] State=0 Cmd=0 isB=0 batch=0 vn_idx=0 t=0 adv=1
+Time 315: ACCELERATOR FINAL RESULT -> 43690
+Time 315: [SCHED] State=0 Cmd=0 isB=0 batch=0 vn_idx=0 t=0 adv=1
+ACK received for RN CONFIGURATION
+Time 325: [SCHED] State=0 Cmd=0 isB=0 batch=0 vn_idx=0 t=0 adv=1
+Time 335: ACCELERATOR FINAL RESULT -> 43690
+Time 335: [SCHED] State=0 Cmd=0 isB=0 batch=0 vn_idx=0 t=0 adv=1
+
+--- ONFIG STATIONARY ---
+Time 345: [SCHED] State=0 Cmd=0 isB=0 batch=0 vn_idx=0 t=0 adv=1
+Time 355: ACCELERATOR FINAL RESULT -> 43690
+Time 355: [SCHED] State=0 Cmd=0 isB=0 batch=0 vn_idx=0 t=0 adv=1
+Time 365: [SCHED] State=0 Cmd=0 isB=0 batch=0 vn_idx=0 t=0 adv=1
+Time 375: ACCELERATOR FINAL RESULT -> 43690
+Time 375: [SCHED] State=0 Cmd=0 isB=0 batch=0 vn_idx=0 t=0 adv=1
+Time 385: [SCHED] State=0 Cmd=0 isB=0 batch=0 vn_idx=0 t=0 adv=1
+Time 395: ACCELERATOR FINAL RESULT -> 43690
+Time 395: [SCHED] State=0 Cmd=0 isB=0 batch=0 vn_idx=0 t=0 adv=1
+Time 405: [SCHED] State=0 Cmd=0 isB=0 batch=0 vn_idx=0 t=0 adv=1
+Time 415: ACCELERATOR FINAL RESULT -> 43690
+Time 415: [SCHED] State=0 Cmd=0 isB=0 batch=0 vn_idx=0 t=0 adv=1
+Time 425: [SCHED] State=0 Cmd=0 isB=0 batch=0 vn_idx=0 t=0 adv=1
+Time 435: ACCELERATOR FINAL RESULT -> 43690
+Time 435: [SCHED] State=0 Cmd=0 isB=0 batch=0 vn_idx=0 t=0 adv=1
+Time 445: [SCHED] State=0 Cmd=0 isB=0 batch=0 vn_idx=0 t=0 adv=1
+Time 455: ACCELERATOR FINAL RESULT -> 43690
+Time 455: [SCHED] State=0 Cmd=0 isB=0 batch=0 vn_idx=0 t=0 adv=1
+Time 465: [SCHED] State=0 Cmd=0 isB=0 batch=0 vn_idx=0 t=0 adv=1
+Time 475: ACCELERATOR FINAL RESULT -> 43690
+Time 475: [SCHED] State=0 Cmd=0 isB=0 batch=0 vn_idx=0 t=0 adv=1
+Time 485: MS Config Broadcast:
+  MS[0]: state=0001  payload=0
+  MS[1]: state=0001  payload=0
+  MS[2]: state=0001  payload=0
+  MS[3]: state=0001  payload=0
+  MS[4]: state=0001  payload=0
+  MS[5]: state=0001  payload=0
+  MS[6]: state=0001  payload=0
+  MS[7]: state=0001  payload=0
+Time 485: [SCHED] State=0 Cmd=0 isB=0 batch=0 vn_idx=0 t=0 adv=1
+ACK received for ONFIG STATIONARY
+Time 495: ACCELERATOR FINAL RESULT -> 43690
+Time 495: [SCHED] State=0 Cmd=0 isB=0 batch=0 vn_idx=0 t=0 adv=1
+Time 505: [SCHED] State=0 Cmd=0 isB=0 batch=0 vn_idx=0 t=0 adv=1
+Time 515: ACCELERATOR FINAL RESULT -> 43690
+
+--- SEND MATRIX A ---
+Time 515: [SCHED] State=0 Cmd=0 isB=0 batch=0 vn_idx=0 t=0 adv=1
+Time 525: [SCHED] State=0 Cmd=0 isB=0 batch=0 vn_idx=0 t=0 adv=1
+Time 535: ACCELERATOR FINAL RESULT -> 43690
+Time 535: [SCHED] State=0 Cmd=2 isB=0 batch=0 vn_idx=0 t=0 adv=1
+Time 545: [SCHED] State=7 Cmd=0 isB=0 batch=0 vn_idx=0 t=0 adv=1
+Time 555: ACCELERATOR FINAL RESULT -> 43690
+Time 555: [SCHED] A-Pkt: Val=1 Mask=00000001 (idx=0, t=0)
+Time 555: [SCHED] State=7 Cmd=0 isB=0 batch=0 vn_idx=0 t=1 adv=1
+Time 565: Controller Packet -> Val=1  Mask=00000001
+Time 565: [SCHED] State=7 Cmd=0 isB=0 batch=0 vn_idx=1 t=0 adv=1
+Time 565: [SCHED] A-Pkt: Val=2 Mask=00000010 (idx=0, t=1)
+Time 575: Controller Packet -> Val=2  Mask=00000010
+Time 575: ACCELERATOR FINAL RESULT -> 43690
+Time 575: [SCHED] A-Pkt: Val=1 Mask=00000100 (idx=1, t=0)
+Time 575: [SCHED] State=7 Cmd=0 isB=0 batch=0 vn_idx=1 t=1 adv=1
+Time 585: Controller Packet -> Val=1  Mask=00000100
+Time 585: [SCHED] State=7 Cmd=0 isB=0 batch=0 vn_idx=2 t=0 adv=1
+Time 585: [SCHED] A-Pkt: Val=2 Mask=00001000 (idx=1, t=1)
+Time 595: Controller Packet -> Val=2  Mask=00001000
+Time 595: ACCELERATOR FINAL RESULT -> 43690
+Time 595: [SCHED] A-Pkt: Val=1 Mask=00010000 (idx=2, t=0)
+Time 595: [SCHED] State=7 Cmd=0 isB=0 batch=0 vn_idx=2 t=1 adv=1
+Time 605: Controller Packet -> Val=1  Mask=00010000
+Time 605: [SCHED] State=7 Cmd=0 isB=0 batch=0 vn_idx=3 t=0 adv=1
+Time 605: [SCHED] A-Pkt: Val=2 Mask=00100000 (idx=2, t=1)
+Time 615: Controller Packet -> Val=2  Mask=00100000
+Time 615: ACCELERATOR FINAL RESULT -> 43690
+Time 615: [SCHED] A-Pkt: Val=3 Mask=01000000 (idx=3, t=0)
+Time 615: [SCHED] State=7 Cmd=0 isB=0 batch=0 vn_idx=3 t=1 adv=1
+Time 625: Controller Packet -> Val=3  Mask=01000000
+Time 625: [SCHED] State=9 Cmd=0 isB=0 batch=0 vn_idx=0 t=0 adv=1
+Time 625: [SCHED] A-Pkt: Val=4 Mask=10000000 (idx=3, t=1)
+Time 635: Controller Packet -> Val=4  Mask=10000000
+Time 635: ACCELERATOR FINAL RESULT -> 43690
+Time 635: [SCHED] State=9 Cmd=0 isB=0 batch=0 vn_idx=0 t=0 adv=1
+Time 645: [SCHED] State=9 Cmd=0 isB=0 batch=0 vn_idx=0 t=0 adv=1
+Time 655: ACCELERATOR FINAL RESULT -> 43690
+Time 655: [SCHED] State=9 Cmd=0 isB=0 batch=0 vn_idx=0 t=0 adv=1
+Time 665: [SCHED] State=9 Cmd=0 isB=0 batch=0 vn_idx=0 t=0 adv=1
+Time 675: ACCELERATOR FINAL RESULT -> 43690
+Time 675: [SCHED] State=9 Cmd=0 isB=0 batch=0 vn_idx=0 t=0 adv=1
+Time 685: [SCHED] State=9 Cmd=0 isB=0 batch=0 vn_idx=0 t=0 adv=1
+Time 695: ACCELERATOR FINAL RESULT -> 43690
+Time 695: [SCHED] State=9 Cmd=0 isB=0 batch=0 vn_idx=0 t=0 adv=1
+Time 705: [SCHED] State=9 Cmd=0 isB=0 batch=0 vn_idx=0 t=0 adv=1
+Time 715: ACCELERATOR FINAL RESULT -> 43690
+Time 715: [SCHED] State=9 Cmd=0 isB=0 batch=0 vn_idx=0 t=0 adv=1
+Time 725: [SCHED] State=9 Cmd=0 isB=0 batch=0 vn_idx=0 t=0 adv=1
+Time 735: ACCELERATOR FINAL RESULT -> 43690
+Time 735: [SCHED] State=9 Cmd=0 isB=0 batch=0 vn_idx=0 t=0 adv=1
+Time 745: [SCHED] State=9 Cmd=0 isB=0 batch=0 vn_idx=0 t=0 adv=1
+Time 755: ACCELERATOR FINAL RESULT -> 43690
+Time 755: [SCHED] State=9 Cmd=0 isB=0 batch=0 vn_idx=0 t=0 adv=1
+Time 765: [SCHED] State=9 Cmd=0 isB=0 batch=0 vn_idx=0 t=0 adv=1
+Time 775: ACCELERATOR FINAL RESULT -> 43690
+Time 775: [SCHED] State=9 Cmd=0 isB=0 batch=0 vn_idx=0 t=0 adv=1
+Time 785: [SCHED] State=9 Cmd=0 isB=0 batch=0 vn_idx=0 t=0 adv=1
+Time 795: ACCELERATOR FINAL RESULT -> 43690
+Time 795: [SCHED] State=9 Cmd=0 isB=0 batch=0 vn_idx=0 t=0 adv=1
+Time 805: [SCHED] State=9 Cmd=0 isB=0 batch=0 vn_idx=0 t=0 adv=1
+Time 815: ACCELERATOR FINAL RESULT -> 43690
+Time 815: [SCHED] State=9 Cmd=0 isB=0 batch=0 vn_idx=0 t=0 adv=1
+Time 825: [SCHED] State=9 Cmd=0 isB=0 batch=0 vn_idx=0 t=0 adv=1
+Time 835: ACCELERATOR FINAL RESULT -> 43690
+Time 835: [SCHED] State=9 Cmd=0 isB=0 batch=0 vn_idx=0 t=0 adv=1
+Time 845: [SCHED] State=9 Cmd=0 isB=0 batch=0 vn_idx=0 t=0 adv=1
+Time 855: ACCELERATOR FINAL RESULT -> 43690
+Time 855: [SCHED] State=9 Cmd=0 isB=0 batch=0 vn_idx=0 t=0 adv=1
+Time 865: [SCHED] State=9 Cmd=0 isB=0 batch=0 vn_idx=0 t=0 adv=1
+Time 875: ACCELERATOR FINAL RESULT -> 43690
+Time 875: [SCHED] State=9 Cmd=0 isB=0 batch=0 vn_idx=0 t=0 adv=1
+Time 885: [SCHED] State=9 Cmd=0 isB=0 batch=0 vn_idx=0 t=0 adv=1
+Time 895: ACCELERATOR FINAL RESULT -> 43690
+Time 895: [SCHED] State=9 Cmd=0 isB=0 batch=0 vn_idx=0 t=0 adv=1
+Time 905: [SCHED] State=9 Cmd=0 isB=0 batch=0 vn_idx=0 t=0 adv=1
+Time 915: ACCELERATOR FINAL RESULT -> 43690
+Time 915: [SCHED] State=9 Cmd=0 isB=0 batch=0 vn_idx=0 t=0 adv=1
+Time 925: [SCHED] State=9 Cmd=0 isB=0 batch=0 vn_idx=0 t=0 adv=1
+Time 935: ACCELERATOR FINAL RESULT -> 43690
+Time 935: [SCHED] State=9 Cmd=0 isB=0 batch=0 vn_idx=0 t=0 adv=1
+Time 945: [SCHED] State=9 Cmd=0 isB=0 batch=0 vn_idx=0 t=0 adv=1
+Time 955: ACCELERATOR FINAL RESULT -> 43690
+Time 955: [SCHED] State=9 Cmd=0 isB=0 batch=0 vn_idx=0 t=0 adv=1
+Time 965: [SCHED] State=9 Cmd=0 isB=0 batch=0 vn_idx=0 t=0 adv=1
+Time 975: ACCELERATOR FINAL RESULT -> 43690
+Time 975: [SCHED] State=9 Cmd=0 isB=0 batch=0 vn_idx=0 t=0 adv=1
+Time 985: [SCHED] State=9 Cmd=0 isB=0 batch=0 vn_idx=0 t=0 adv=1
+Time 995: ACCELERATOR FINAL RESULT -> 43690
+Time 995: [SCHED] State=9 Cmd=0 isB=0 batch=0 vn_idx=0 t=0 adv=1
+Time 1005: [SCHED] State=9 Cmd=0 isB=0 batch=0 vn_idx=0 t=0 adv=1
+Time 1015: ACCELERATOR FINAL RESULT -> 43690
+Time 1015: [SCHED] State=9 Cmd=0 isB=0 batch=0 vn_idx=0 t=0 adv=1
+Time 1025: [SCHED] State=9 Cmd=0 isB=0 batch=0 vn_idx=0 t=0 adv=1
+Time 1035: ACCELERATOR FINAL RESULT -> 43690
+Time 1035: [SCHED] State=9 Cmd=0 isB=0 batch=0 vn_idx=0 t=0 adv=1
+Time 1045: [SCHED] State=9 Cmd=0 isB=0 batch=0 vn_idx=0 t=0 adv=1
+Time 1055: ACCELERATOR FINAL RESULT -> 43690
+Time 1055: [SCHED] State=9 Cmd=0 isB=0 batch=0 vn_idx=0 t=0 adv=1
+Time 1065: [SCHED] State=9 Cmd=0 isB=0 batch=0 vn_idx=0 t=0 adv=1
+Time 1075: ACCELERATOR FINAL RESULT -> 43690
+Time 1075: [SCHED] State=9 Cmd=0 isB=0 batch=0 vn_idx=0 t=0 adv=1
+Time 1085: [SCHED] State=9 Cmd=0 isB=0 batch=0 vn_idx=0 t=0 adv=1
+Time 1095: ACCELERATOR FINAL RESULT -> 43690
+Time 1095: [SCHED] State=9 Cmd=0 isB=0 batch=0 vn_idx=0 t=0 adv=1
+Time 1105: [SCHED] State=9 Cmd=0 isB=0 batch=0 vn_idx=0 t=0 adv=1
+Time 1115: ACCELERATOR FINAL RESULT -> 43690
+Time 1115: [SCHED] State=9 Cmd=0 isB=0 batch=0 vn_idx=0 t=0 adv=1
+Time 1125: [SCHED] State=9 Cmd=0 isB=0 batch=0 vn_idx=0 t=0 adv=1
+Time 1135: ACCELERATOR FINAL RESULT -> 43690
+Time 1135: [SCHED] State=10 Cmd=0 isB=0 batch=0 vn_idx=0 t=0 adv=1
+Time 1135: [ST] ACK_ST entry: isB=0 cmd=0 batch=0 inc_done=0
+ACK received for SEND MATRIX A
+Time 1145: [SCHED] State=0 Cmd=0 isB=0 batch=0 vn_idx=0 t=0 adv=1
+Time 1155: ACCELERATOR FINAL RESULT -> 43690
+Time 1155: [SCHED] State=0 Cmd=0 isB=0 batch=0 vn_idx=0 t=0 adv=1
+
+--- CONFIG STREAMING ---
+Time 1165: [SCHED] State=0 Cmd=0 isB=0 batch=0 vn_idx=0 t=0 adv=1
+Time 1175: ACCELERATOR FINAL RESULT -> 43690
+Time 1175: [SCHED] State=0 Cmd=0 isB=0 batch=0 vn_idx=0 t=0 adv=1
+Time 1185: [SCHED] State=0 Cmd=0 isB=0 batch=0 vn_idx=0 t=0 adv=1
+Time 1195: ACCELERATOR FINAL RESULT -> 43690
+Time 1195: [SCHED] State=0 Cmd=0 isB=0 batch=0 vn_idx=0 t=0 adv=1
+Time 1205: [SCHED] State=0 Cmd=0 isB=0 batch=0 vn_idx=0 t=0 adv=1
+Time 1215: ACCELERATOR FINAL RESULT -> 43690
+Time 1215: [SCHED] State=0 Cmd=0 isB=0 batch=0 vn_idx=0 t=0 adv=1
+Time 1225: [SCHED] State=0 Cmd=0 isB=0 batch=0 vn_idx=0 t=0 adv=1
+Time 1235: ACCELERATOR FINAL RESULT -> 43690
+Time 1235: [SCHED] State=0 Cmd=0 isB=0 batch=0 vn_idx=0 t=0 adv=1
+Time 1245: [SCHED] State=0 Cmd=0 isB=0 batch=0 vn_idx=0 t=0 adv=1
+Time 1255: ACCELERATOR FINAL RESULT -> 43690
+Time 1255: [SCHED] State=0 Cmd=0 isB=0 batch=0 vn_idx=0 t=0 adv=1
+Time 1265: [SCHED] State=0 Cmd=0 isB=0 batch=0 vn_idx=0 t=0 adv=1
+Time 1275: ACCELERATOR FINAL RESULT -> 43690
+Time 1275: [SCHED] State=0 Cmd=0 isB=0 batch=0 vn_idx=0 t=0 adv=1
+Time 1285: [SCHED] State=0 Cmd=0 isB=0 batch=0 vn_idx=0 t=0 adv=1
+Time 1295: ACCELERATOR FINAL RESULT -> 43690
+Time 1295: [SCHED] State=0 Cmd=0 isB=0 batch=0 vn_idx=0 t=0 adv=1
+Time 1305: MS Config Broadcast:
+  MS[0]: state=0010  payload=1
+  MS[1]: state=0010  payload=1
+  MS[2]: state=0010  payload=1
+  MS[3]: state=0010  payload=1
+  MS[4]: state=0010  payload=1
+  MS[5]: state=0010  payload=1
+  MS[6]: state=0010  payload=1
+  MS[7]: state=0010  payload=1
+Time 1305: [SCHED] State=0 Cmd=0 isB=0 batch=0 vn_idx=0 t=0 adv=1
+ACK received for CONFIG STREAMING
+Time 1315: ACCELERATOR FINAL RESULT -> 43690
+Time 1315: [SCHED] State=0 Cmd=0 isB=0 batch=0 vn_idx=0 t=0 adv=1
+Time 1325: [SCHED] State=0 Cmd=0 isB=0 batch=0 vn_idx=0 t=0 adv=1
+Time 1335: ACCELERATOR FINAL RESULT -> 43690
+
+--- SEND MATRIX B ---
+Time 1335: [SCHED] State=0 Cmd=0 isB=0 batch=0 vn_idx=0 t=0 adv=1
+Time 1345: [SCHED] State=0 Cmd=0 isB=0 batch=0 vn_idx=0 t=0 adv=1
+Time 1355: ACCELERATOR FINAL RESULT -> 43690
+Time 1355: [SCHED] State=0 Cmd=3 isB=0 batch=0 vn_idx=0 t=0 adv=1
+Time 1365: [SCHED] State=8 Cmd=0 isB=1 batch=0 vn_idx=0 t=0 adv=1
+Time 1375: ACCELERATOR FINAL RESULT -> 43690
+Time 1375: [SCHED] B-Pkt: Val=1 Mask=00000001 (idx=0, t=0)
+Time 1375: [SCHED] State=8 Cmd=0 isB=1 batch=0 vn_idx=0 t=1 adv=1
+Time 1385: Controller Packet -> Val=1  Mask=00000001
+Time 1385: [SCHED] State=8 Cmd=0 isB=1 batch=0 vn_idx=1 t=0 adv=1
+Time 1385: [SCHED] B-Pkt: Val=4 Mask=00000010 (idx=0, t=1)
+Time 1395: Controller Packet -> Val=4  Mask=00000010
+Time 1395: ACCELERATOR FINAL RESULT -> 43690
+Time 1395: [SCHED] B-Pkt: Val=2 Mask=00000100 (idx=1, t=0)
+Time 1395: [SCHED] State=8 Cmd=0 isB=1 batch=0 vn_idx=1 t=1 adv=1
+Time 1405: Controller Packet -> Val=2  Mask=00000100
+Time 1405: [SCHED] State=8 Cmd=0 isB=1 batch=0 vn_idx=2 t=0 adv=1
+Time 1405: [SCHED] B-Pkt: Val=5 Mask=00001000 (idx=1, t=1)
+Time 1415: Controller Packet -> Val=5  Mask=00001000
+Time 1415: ACCELERATOR FINAL RESULT -> 43690
+Time 1415: [SCHED] B-Pkt: Val=3 Mask=00010000 (idx=2, t=0)
+Time 1415: [SCHED] State=8 Cmd=0 isB=1 batch=0 vn_idx=2 t=1 adv=1
+Time 1425: Controller Packet -> Val=3  Mask=00010000
+Time 1425: [SCHED] State=8 Cmd=0 isB=1 batch=0 vn_idx=3 t=0 adv=1
+Time 1425: [SCHED] B-Pkt: Val=6 Mask=00100000 (idx=2, t=1)
+Time 1435: Controller Packet -> Val=6  Mask=00100000
+Time 1435: ACCELERATOR FINAL RESULT -> 43690
+Time 1435: [SCHED] B-Pkt: Val=1 Mask=01000000 (idx=3, t=0)
+Time 1435: [SCHED] State=8 Cmd=0 isB=1 batch=0 vn_idx=3 t=1 adv=1
+Time 1445: Controller Packet -> Val=1  Mask=01000000
+Time 1445: [SCHED] State=9 Cmd=0 isB=1 batch=0 vn_idx=0 t=0 adv=1
+Time 1445: [SCHED] B-Pkt: Val=4 Mask=10000000 (idx=3, t=1)
+Time 1455: Controller Packet -> Val=4  Mask=10000000
+Time 1455: ACCELERATOR FINAL RESULT -> 43690
+Time 1455: [SCHED] State=9 Cmd=0 isB=1 batch=0 vn_idx=0 t=0 adv=1
+Time 1465: ACCELERATOR FINAL RESULT -> 9
+Time 1465: [SCHED] State=9 Cmd=0 isB=1 batch=0 vn_idx=0 t=0 adv=1
+Time 1475: [SCHED] State=9 Cmd=0 isB=1 batch=0 vn_idx=0 t=0 adv=1
+Time 1485: ACCELERATOR FINAL RESULT -> 9
+Time 1485: [SCHED] State=9 Cmd=0 isB=1 batch=0 vn_idx=0 t=0 adv=1
+Time 1495: [SCHED] State=9 Cmd=0 isB=1 batch=0 vn_idx=0 t=0 adv=1
+Time 1505: ACCELERATOR FINAL RESULT -> 9
+Time 1505: [SCHED] State=9 Cmd=0 isB=1 batch=0 vn_idx=0 t=0 adv=1
+Time 1515: ACCELERATOR FINAL RESULT -> 12
+Time 1515: [SCHED] State=9 Cmd=0 isB=1 batch=0 vn_idx=0 t=0 adv=1
+Time 1525: [SCHED] State=9 Cmd=0 isB=1 batch=0 vn_idx=0 t=0 adv=1
+Time 1535: ACCELERATOR FINAL RESULT -> 12
+Time 1535: [SCHED] State=9 Cmd=0 isB=1 batch=0 vn_idx=0 t=0 adv=1
+Time 1545: ACCELERATOR FINAL RESULT -> 15
+Time 1545: [SCHED] State=9 Cmd=0 isB=1 batch=0 vn_idx=0 t=0 adv=1
+Time 1555: [SCHED] State=9 Cmd=0 isB=1 batch=0 vn_idx=0 t=0 adv=1
+Time 1565: ACCELERATOR FINAL RESULT -> 15
+Time 1565: [SCHED] State=9 Cmd=0 isB=1 batch=0 vn_idx=0 t=0 adv=1
+Time 1575: [SCHED] State=9 Cmd=0 isB=1 batch=0 vn_idx=0 t=0 adv=1
+Time 1585: ACCELERATOR FINAL RESULT -> 15
+Time 1585: [SCHED] State=9 Cmd=0 isB=1 batch=0 vn_idx=0 t=0 adv=1
+Time 1595: ACCELERATOR FINAL RESULT -> 19
+Time 1595: [SCHED] State=9 Cmd=0 isB=1 batch=0 vn_idx=0 t=0 adv=1
+Time 1605: [SCHED] State=9 Cmd=0 isB=1 batch=0 vn_idx=0 t=0 adv=1
+Time 1615: ACCELERATOR FINAL RESULT -> 19
+Time 1615: [SCHED] State=9 Cmd=0 isB=1 batch=0 vn_idx=0 t=0 adv=1
+Time 1625: [SCHED] State=9 Cmd=0 isB=1 batch=0 vn_idx=0 t=0 adv=1
+Time 1635: ACCELERATOR FINAL RESULT -> 19
+Time 1635: [SCHED] State=9 Cmd=0 isB=1 batch=0 vn_idx=0 t=0 adv=1
+Time 1645: [SCHED] State=9 Cmd=0 isB=1 batch=0 vn_idx=0 t=0 adv=1
+Time 1655: ACCELERATOR FINAL RESULT -> 19
+Time 1655: [SCHED] State=9 Cmd=0 isB=1 batch=0 vn_idx=0 t=0 adv=1
+Time 1665: [SCHED] State=9 Cmd=0 isB=1 batch=0 vn_idx=0 t=0 adv=1
+Time 1675: ACCELERATOR FINAL RESULT -> 19
+Time 1675: [SCHED] State=9 Cmd=0 isB=1 batch=0 vn_idx=0 t=0 adv=1
+Time 1685: [SCHED] State=9 Cmd=0 isB=1 batch=0 vn_idx=0 t=0 adv=1
+Time 1695: ACCELERATOR FINAL RESULT -> 19
+Time 1695: [SCHED] State=9 Cmd=0 isB=1 batch=0 vn_idx=0 t=0 adv=1
+Time 1705: [SCHED] State=9 Cmd=0 isB=1 batch=0 vn_idx=0 t=0 adv=1
+Time 1715: ACCELERATOR FINAL RESULT -> 19
+Time 1715: [SCHED] State=9 Cmd=0 isB=1 batch=0 vn_idx=0 t=0 adv=1
+Time 1725: [SCHED] State=9 Cmd=0 isB=1 batch=0 vn_idx=0 t=0 adv=1
+Time 1735: ACCELERATOR FINAL RESULT -> 19
+Time 1735: [SCHED] State=9 Cmd=0 isB=1 batch=0 vn_idx=0 t=0 adv=1
+Time 1745: [SCHED] State=9 Cmd=0 isB=1 batch=0 vn_idx=0 t=0 adv=1
+Time 1755: ACCELERATOR FINAL RESULT -> 19
+Time 1755: [SCHED] State=9 Cmd=0 isB=1 batch=0 vn_idx=0 t=0 adv=1
+Time 1765: [SCHED] State=9 Cmd=0 isB=1 batch=0 vn_idx=0 t=0 adv=1
+Time 1775: ACCELERATOR FINAL RESULT -> 19
+Time 1775: [SCHED] State=9 Cmd=0 isB=1 batch=0 vn_idx=0 t=0 adv=1
+Time 1785: [SCHED] State=9 Cmd=0 isB=1 batch=0 vn_idx=0 t=0 adv=1
+Time 1795: ACCELERATOR FINAL RESULT -> 19
+Time 1795: [SCHED] State=9 Cmd=0 isB=1 batch=0 vn_idx=0 t=0 adv=1
+Time 1805: [SCHED] State=9 Cmd=0 isB=1 batch=0 vn_idx=0 t=0 adv=1
+Time 1815: ACCELERATOR FINAL RESULT -> 19
+Time 1815: [SCHED] State=9 Cmd=0 isB=1 batch=0 vn_idx=0 t=0 adv=1
+Time 1825: [SCHED] State=9 Cmd=0 isB=1 batch=0 vn_idx=0 t=0 adv=1
+Time 1835: ACCELERATOR FINAL RESULT -> 19
+Time 1835: [SCHED] State=9 Cmd=0 isB=1 batch=0 vn_idx=0 t=0 adv=1
+Time 1845: [SCHED] State=9 Cmd=0 isB=1 batch=0 vn_idx=0 t=0 adv=1
+Time 1855: ACCELERATOR FINAL RESULT -> 19
+Time 1855: [SCHED] State=9 Cmd=0 isB=1 batch=0 vn_idx=0 t=0 adv=1
+Time 1865: [SCHED] State=9 Cmd=0 isB=1 batch=0 vn_idx=0 t=0 adv=1
+Time 1875: ACCELERATOR FINAL RESULT -> 19
+Time 1875: [SCHED] State=9 Cmd=0 isB=1 batch=0 vn_idx=0 t=0 adv=1
+Time 1885: [SCHED] State=9 Cmd=0 isB=1 batch=0 vn_idx=0 t=0 adv=1
+Time 1895: ACCELERATOR FINAL RESULT -> 19
+Time 1895: [SCHED] State=9 Cmd=0 isB=1 batch=0 vn_idx=0 t=0 adv=1
+Time 1905: [SCHED] State=9 Cmd=0 isB=1 batch=0 vn_idx=0 t=0 adv=1
+Time 1915: ACCELERATOR FINAL RESULT -> 19
+Time 1915: [SCHED] State=9 Cmd=0 isB=1 batch=0 vn_idx=0 t=0 adv=1
+Time 1925: [SCHED] State=9 Cmd=0 isB=1 batch=0 vn_idx=0 t=0 adv=1
+Time 1935: ACCELERATOR FINAL RESULT -> 19
+Time 1935: [SCHED] State=9 Cmd=0 isB=1 batch=0 vn_idx=0 t=0 adv=1
+Time 1945: [SCHED] State=9 Cmd=0 isB=1 batch=0 vn_idx=0 t=0 adv=1
+Time 1955: ACCELERATOR FINAL RESULT -> 19
+Time 1955: [SCHED] State=10 Cmd=0 isB=1 batch=0 vn_idx=0 t=0 adv=1
+Time 1955: [ST] ACK_ST entry: isB=1 cmd=0 batch=0 inc_done=0
+Time 1955: [ST] Incrementing current_batch to 1
+ACK received for SEND MATRIX B
+Time 1965: [SCHED] State=0 Cmd=0 isB=1 batch=1 vn_idx=0 t=0 adv=1
+Time 1975: ACCELERATOR FINAL RESULT -> 19
+Time 1975: [SCHED] State=0 Cmd=0 isB=1 batch=1 vn_idx=0 t=0 adv=1
+  [TB] Waiting for ART to be EMPTY...
+Time 1985: [SCHED] State=0 Cmd=0 isB=1 batch=1 vn_idx=0 t=0 adv=1
+Time 1995: ACCELERATOR FINAL RESULT -> 19
+Time 1995: [SCHED] State=0 Cmd=0 isB=1 batch=1 vn_idx=0 t=0 adv=1
+
+--- BATCH 1 ---
+
+--- VN ALLOCATION ---
+Time 2005: [SCHED] State=0 Cmd=0 isB=1 batch=1 vn_idx=0 t=0 adv=1
+Time 2015: ACCELERATOR FINAL RESULT -> 19
+Time 2015: [SCHED] State=0 Cmd=1 isB=1 batch=1 vn_idx=0 t=0 adv=1
+Time 2025: [SCHED] State=6 Cmd=0 isB=1 batch=1 vn_idx=0 t=0 adv=1
+Time 2035: ACCELERATOR FINAL RESULT -> 19
+Time 2035: [SCHED] State=6 Cmd=0 isB=1 batch=1 vn_idx=1 t=0 adv=1
+Time 2035: [GEN] Alloc VN 4 (Batch 1, vn_idx 0)
+Time 2045: [SCHED] State=6 Cmd=0 isB=1 batch=1 vn_idx=2 t=0 adv=1
+Time 2045: [GEN] Alloc VN 5 (Batch 1, vn_idx 1)
+Time 2055: ACCELERATOR FINAL RESULT -> 19
+Time 2055: [SCHED] State=6 Cmd=0 isB=1 batch=1 vn_idx=3 t=0 adv=1
+Time 2065: [SCHED] State=6 Cmd=0 isB=1 batch=1 vn_idx=4 t=0 adv=1
+Time 2075: ACCELERATOR FINAL RESULT -> 19
+Time 2075: [SCHED] State=6 Cmd=0 isB=1 batch=1 vn_idx=5 t=0 adv=1
+Time 2085: [SCHED] State=10 Cmd=0 isB=1 batch=1 vn_idx=0 t=0 adv=1
+Time 2085: [ST] ACK_ST entry: isB=1 cmd=0 batch=1 inc_done=0
+Time 2085: [ST] Incrementing current_batch to 2
+Time 2085: [ST] All batches completed, resetting dims_loaded
+ACK received for VN ALLOCATION
+Time 2095: ACCELERATOR FINAL RESULT -> 19
+Time 2095: [SCHED] State=0 Cmd=0 isB=1 batch=2 vn_idx=0 t=0 adv=1
+Time 2105: [SCHED] State=0 Cmd=0 isB=1 batch=2 vn_idx=0 t=0 adv=1
+Time 2115: ACCELERATOR FINAL RESULT -> 19
+
+--- RN CONFIGURATION ---
+Time 2115: [SCHED] State=0 Cmd=0 isB=1 batch=2 vn_idx=0 t=0 adv=1
+Time 2125: [SCHED] State=0 Cmd=0 isB=1 batch=2 vn_idx=0 t=0 adv=1
+Time 2135: ACCELERATOR FINAL RESULT -> 19
+Time 2135: [SCHED] State=0 Cmd=0 isB=1 batch=2 vn_idx=0 t=0 adv=1
+ACK received for RN CONFIGURATION
+Time 2145: [SCHED] State=0 Cmd=0 isB=1 batch=2 vn_idx=0 t=0 adv=1
+Time 2155: ACCELERATOR FINAL RESULT -> 19
+Time 2155: [SCHED] State=0 Cmd=0 isB=1 batch=2 vn_idx=0 t=0 adv=1
+
+--- ONFIG STATIONARY ---
+Time 2165: [SCHED] State=0 Cmd=0 isB=1 batch=2 vn_idx=0 t=0 adv=1
+Time 2175: ACCELERATOR FINAL RESULT -> 19
+Time 2175: [SCHED] State=0 Cmd=0 isB=1 batch=2 vn_idx=0 t=0 adv=1
+Time 2185: [SCHED] State=0 Cmd=0 isB=1 batch=2 vn_idx=0 t=0 adv=1
+Time 2195: ACCELERATOR FINAL RESULT -> 19
+Time 2195: [SCHED] State=0 Cmd=0 isB=1 batch=2 vn_idx=0 t=0 adv=1
+Time 2205: [SCHED] State=0 Cmd=0 isB=1 batch=2 vn_idx=0 t=0 adv=1
+Time 2215: ACCELERATOR FINAL RESULT -> 19
+Time 2215: [SCHED] State=0 Cmd=0 isB=1 batch=2 vn_idx=0 t=0 adv=1
+Time 2225: [SCHED] State=0 Cmd=0 isB=1 batch=2 vn_idx=0 t=0 adv=1
+Time 2235: ACCELERATOR FINAL RESULT -> 19
+Time 2235: [SCHED] State=0 Cmd=0 isB=1 batch=2 vn_idx=0 t=0 adv=1
+Time 2245: [SCHED] State=0 Cmd=0 isB=1 batch=2 vn_idx=0 t=0 adv=1
+Time 2255: ACCELERATOR FINAL RESULT -> 19
+Time 2255: [SCHED] State=0 Cmd=0 isB=1 batch=2 vn_idx=0 t=0 adv=1
+Time 2265: MS Config Broadcast:
+  MS[0]: state=0001  payload=0
+  MS[1]: state=0001  payload=0
+  MS[2]: state=0001  payload=0
+  MS[3]: state=0001  payload=0
+  MS[4]: state=0000  payload=0
+  MS[5]: state=0000  payload=0
+  MS[6]: state=0000  payload=0
+  MS[7]: state=0000  payload=0
+Time 2265: [SCHED] State=0 Cmd=0 isB=1 batch=2 vn_idx=0 t=0 adv=1
+ACK received for ONFIG STATIONARY
+Time 2275: ACCELERATOR FINAL RESULT -> 19
+Time 2275: [SCHED] State=0 Cmd=0 isB=1 batch=2 vn_idx=0 t=0 adv=1
+Time 2285: [SCHED] State=0 Cmd=0 isB=1 batch=2 vn_idx=0 t=0 adv=1
+Time 2295: ACCELERATOR FINAL RESULT -> 19
+
+--- SEND MATRIX A ---
+Time 2295: [SCHED] State=0 Cmd=0 isB=1 batch=2 vn_idx=0 t=0 adv=1
+Time 2305: [SCHED] State=0 Cmd=0 isB=1 batch=2 vn_idx=0 t=0 adv=1
+Time 2315: ACCELERATOR FINAL RESULT -> 19
+Time 2315: [SCHED] State=0 Cmd=2 isB=1 batch=2 vn_idx=0 t=0 adv=1
+Time 2325: [SCHED] State=7 Cmd=0 isB=0 batch=2 vn_idx=0 t=0 adv=1
+Time 2335: ACCELERATOR FINAL RESULT -> 19
+Time 2335: [SCHED] A-Pkt: Val=x Mask=00000001 (idx=8, t=0)
+Time 2335: [SCHED] State=7 Cmd=0 isB=0 batch=2 vn_idx=0 t=1 adv=1
+Time 2345: Controller Packet -> Val=x  Mask=00000001
+Time 2345: [SCHED] State=7 Cmd=0 isB=0 batch=2 vn_idx=1 t=0 adv=1
+Time 2355: ACCELERATOR FINAL RESULT -> 19
+Time 2355: [SCHED] State=7 Cmd=0 isB=0 batch=2 vn_idx=1 t=1 adv=1
+Time 2365: [SCHED] State=7 Cmd=0 isB=0 batch=2 vn_idx=2 t=0 adv=1
+Time 2375: ACCELERATOR FINAL RESULT -> 19
+Time 2375: [SCHED] State=7 Cmd=0 isB=0 batch=2 vn_idx=2 t=1 adv=1
+Time 2385: [SCHED] State=7 Cmd=0 isB=0 batch=2 vn_idx=3 t=0 adv=1
+Time 2395: ACCELERATOR FINAL RESULT -> 19
+Time 2395: [SCHED] State=7 Cmd=0 isB=0 batch=2 vn_idx=3 t=1 adv=1
+Time 2405: [SCHED] State=9 Cmd=0 isB=0 batch=2 vn_idx=0 t=0 adv=1
+Time 2415: ACCELERATOR FINAL RESULT -> 19
+Time 2415: [SCHED] State=9 Cmd=0 isB=0 batch=2 vn_idx=0 t=0 adv=1
+Time 2425: [SCHED] State=9 Cmd=0 isB=0 batch=2 vn_idx=0 t=0 adv=1
+Time 2435: ACCELERATOR FINAL RESULT -> 19
+Time 2435: [SCHED] State=9 Cmd=0 isB=0 batch=2 vn_idx=0 t=0 adv=1
+Time 2445: [SCHED] State=9 Cmd=0 isB=0 batch=2 vn_idx=0 t=0 adv=1
+Time 2455: ACCELERATOR FINAL RESULT -> 19
+Time 2455: [SCHED] State=9 Cmd=0 isB=0 batch=2 vn_idx=0 t=0 adv=1
+Time 2465: [SCHED] State=9 Cmd=0 isB=0 batch=2 vn_idx=0 t=0 adv=1
+Time 2475: ACCELERATOR FINAL RESULT -> 19
+Time 2475: [SCHED] State=9 Cmd=0 isB=0 batch=2 vn_idx=0 t=0 adv=1
+Time 2485: [SCHED] State=9 Cmd=0 isB=0 batch=2 vn_idx=0 t=0 adv=1
+Time 2495: ACCELERATOR FINAL RESULT -> 19
+Time 2495: [SCHED] State=9 Cmd=0 isB=0 batch=2 vn_idx=0 t=0 adv=1
+Time 2505: [SCHED] State=9 Cmd=0 isB=0 batch=2 vn_idx=0 t=0 adv=1
+Time 2515: ACCELERATOR FINAL RESULT -> 19
+Time 2515: [SCHED] State=9 Cmd=0 isB=0 batch=2 vn_idx=0 t=0 adv=1
+Time 2525: [SCHED] State=9 Cmd=0 isB=0 batch=2 vn_idx=0 t=0 adv=1
+Time 2535: ACCELERATOR FINAL RESULT -> 19
+Time 2535: [SCHED] State=9 Cmd=0 isB=0 batch=2 vn_idx=0 t=0 adv=1
+Time 2545: [SCHED] State=9 Cmd=0 isB=0 batch=2 vn_idx=0 t=0 adv=1
+Time 2555: ACCELERATOR FINAL RESULT -> 19
+Time 2555: [SCHED] State=9 Cmd=0 isB=0 batch=2 vn_idx=0 t=0 adv=1
+Time 2565: [SCHED] State=9 Cmd=0 isB=0 batch=2 vn_idx=0 t=0 adv=1
+Time 2575: ACCELERATOR FINAL RESULT -> 19
+Time 2575: [SCHED] State=9 Cmd=0 isB=0 batch=2 vn_idx=0 t=0 adv=1
+Time 2585: [SCHED] State=9 Cmd=0 isB=0 batch=2 vn_idx=0 t=0 adv=1
+Time 2595: ACCELERATOR FINAL RESULT -> 19
+Time 2595: [SCHED] State=9 Cmd=0 isB=0 batch=2 vn_idx=0 t=0 adv=1
+Time 2605: [SCHED] State=9 Cmd=0 isB=0 batch=2 vn_idx=0 t=0 adv=1
+Time 2615: ACCELERATOR FINAL RESULT -> 19
+Time 2615: [SCHED] State=9 Cmd=0 isB=0 batch=2 vn_idx=0 t=0 adv=1
+Time 2625: [SCHED] State=9 Cmd=0 isB=0 batch=2 vn_idx=0 t=0 adv=1
+Time 2635: ACCELERATOR FINAL RESULT -> 19
+Time 2635: [SCHED] State=9 Cmd=0 isB=0 batch=2 vn_idx=0 t=0 adv=1
+Time 2645: [SCHED] State=9 Cmd=0 isB=0 batch=2 vn_idx=0 t=0 adv=1
+Time 2655: ACCELERATOR FINAL RESULT -> 19
+Time 2655: [SCHED] State=9 Cmd=0 isB=0 batch=2 vn_idx=0 t=0 adv=1
+Time 2665: [SCHED] State=9 Cmd=0 isB=0 batch=2 vn_idx=0 t=0 adv=1
+Time 2675: ACCELERATOR FINAL RESULT -> 19
+Time 2675: [SCHED] State=9 Cmd=0 isB=0 batch=2 vn_idx=0 t=0 adv=1
+Time 2685: [SCHED] State=9 Cmd=0 isB=0 batch=2 vn_idx=0 t=0 adv=1
+Time 2695: ACCELERATOR FINAL RESULT -> 19
+Time 2695: [SCHED] State=9 Cmd=0 isB=0 batch=2 vn_idx=0 t=0 adv=1
+Time 2705: [SCHED] State=9 Cmd=0 isB=0 batch=2 vn_idx=0 t=0 adv=1
+Time 2715: ACCELERATOR FINAL RESULT -> 19
+Time 2715: [SCHED] State=9 Cmd=0 isB=0 batch=2 vn_idx=0 t=0 adv=1
+Time 2725: [SCHED] State=9 Cmd=0 isB=0 batch=2 vn_idx=0 t=0 adv=1
+Time 2735: ACCELERATOR FINAL RESULT -> 19
+Time 2735: [SCHED] State=9 Cmd=0 isB=0 batch=2 vn_idx=0 t=0 adv=1
+Time 2745: [SCHED] State=9 Cmd=0 isB=0 batch=2 vn_idx=0 t=0 adv=1
+Time 2755: ACCELERATOR FINAL RESULT -> 19
+Time 2755: [SCHED] State=9 Cmd=0 isB=0 batch=2 vn_idx=0 t=0 adv=1
+Time 2765: [SCHED] State=9 Cmd=0 isB=0 batch=2 vn_idx=0 t=0 adv=1
+Time 2775: ACCELERATOR FINAL RESULT -> 19
+Time 2775: [SCHED] State=9 Cmd=0 isB=0 batch=2 vn_idx=0 t=0 adv=1
+Time 2785: [SCHED] State=9 Cmd=0 isB=0 batch=2 vn_idx=0 t=0 adv=1
+Time 2795: ACCELERATOR FINAL RESULT -> 19
+Time 2795: [SCHED] State=9 Cmd=0 isB=0 batch=2 vn_idx=0 t=0 adv=1
+Time 2805: [SCHED] State=9 Cmd=0 isB=0 batch=2 vn_idx=0 t=0 adv=1
+Time 2815: ACCELERATOR FINAL RESULT -> 19
+Time 2815: [SCHED] State=9 Cmd=0 isB=0 batch=2 vn_idx=0 t=0 adv=1
+Time 2825: [SCHED] State=9 Cmd=0 isB=0 batch=2 vn_idx=0 t=0 adv=1
+Time 2835: ACCELERATOR FINAL RESULT -> 19
+Time 2835: [SCHED] State=9 Cmd=0 isB=0 batch=2 vn_idx=0 t=0 adv=1
+Time 2845: [SCHED] State=9 Cmd=0 isB=0 batch=2 vn_idx=0 t=0 adv=1
+Time 2855: ACCELERATOR FINAL RESULT -> 19
+Time 2855: [SCHED] State=9 Cmd=0 isB=0 batch=2 vn_idx=0 t=0 adv=1
+Time 2865: [SCHED] State=9 Cmd=0 isB=0 batch=2 vn_idx=0 t=0 adv=1
+Time 2875: ACCELERATOR FINAL RESULT -> 19
+Time 2875: [SCHED] State=9 Cmd=0 isB=0 batch=2 vn_idx=0 t=0 adv=1
+Time 2885: [SCHED] State=9 Cmd=0 isB=0 batch=2 vn_idx=0 t=0 adv=1
+Time 2895: ACCELERATOR FINAL RESULT -> 19
+Time 2895: [SCHED] State=9 Cmd=0 isB=0 batch=2 vn_idx=0 t=0 adv=1
+Time 2905: [SCHED] State=9 Cmd=0 isB=0 batch=2 vn_idx=0 t=0 adv=1
+Time 2915: ACCELERATOR FINAL RESULT -> 19
+Time 2915: [SCHED] State=10 Cmd=0 isB=0 batch=2 vn_idx=0 t=0 adv=1
+Time 2915: [ST] ACK_ST entry: isB=0 cmd=0 batch=2 inc_done=0
+ACK received for SEND MATRIX A
+Time 2925: [SCHED] State=0 Cmd=0 isB=0 batch=2 vn_idx=0 t=0 adv=1
+Time 2935: ACCELERATOR FINAL RESULT -> 19
+Time 2935: [SCHED] State=0 Cmd=0 isB=0 batch=2 vn_idx=0 t=0 adv=1
+
+--- CONFIG STREAMING ---
+Time 2945: [SCHED] State=0 Cmd=0 isB=0 batch=2 vn_idx=0 t=0 adv=1
+Time 2955: ACCELERATOR FINAL RESULT -> 19
+Time 2955: [SCHED] State=0 Cmd=0 isB=0 batch=2 vn_idx=0 t=0 adv=1
+Time 2965: [SCHED] State=0 Cmd=0 isB=0 batch=2 vn_idx=0 t=0 adv=1
+Time 2975: ACCELERATOR FINAL RESULT -> 19
+Time 2975: [SCHED] State=0 Cmd=0 isB=0 batch=2 vn_idx=0 t=0 adv=1
+Time 2985: [SCHED] State=0 Cmd=0 isB=0 batch=2 vn_idx=0 t=0 adv=1
+Time 2995: ACCELERATOR FINAL RESULT -> 19
+Time 2995: [SCHED] State=0 Cmd=0 isB=0 batch=2 vn_idx=0 t=0 adv=1
+Time 3005: [SCHED] State=0 Cmd=0 isB=0 batch=2 vn_idx=0 t=0 adv=1
+Time 3015: ACCELERATOR FINAL RESULT -> 19
+Time 3015: [SCHED] State=0 Cmd=0 isB=0 batch=2 vn_idx=0 t=0 adv=1
+Time 3025: [SCHED] State=0 Cmd=0 isB=0 batch=2 vn_idx=0 t=0 adv=1
+Time 3035: ACCELERATOR FINAL RESULT -> 19
+Time 3035: [SCHED] State=0 Cmd=0 isB=0 batch=2 vn_idx=0 t=0 adv=1
+Time 3045: MS Config Broadcast:
+  MS[0]: state=0010  payload=1
+  MS[1]: state=0010  payload=1
+  MS[2]: state=0010  payload=1
+  MS[3]: state=0010  payload=1
+  MS[4]: state=0000  payload=0
+  MS[5]: state=0000  payload=0
+  MS[6]: state=0000  payload=0
+  MS[7]: state=0000  payload=0
+Time 3045: [SCHED] State=0 Cmd=0 isB=0 batch=2 vn_idx=0 t=0 adv=1
+ACK received for CONFIG STREAMING
+Time 3055: ACCELERATOR FINAL RESULT -> 19
+Time 3055: [SCHED] State=0 Cmd=0 isB=0 batch=2 vn_idx=0 t=0 adv=1
+Time 3065: [SCHED] State=0 Cmd=0 isB=0 batch=2 vn_idx=0 t=0 adv=1
+Time 3075: ACCELERATOR FINAL RESULT -> 19
+
+--- SEND MATRIX B ---
+Time 3075: [SCHED] State=0 Cmd=0 isB=0 batch=2 vn_idx=0 t=0 adv=1
+Time 3085: [SCHED] State=0 Cmd=0 isB=0 batch=2 vn_idx=0 t=0 adv=1
+Time 3095: ACCELERATOR FINAL RESULT -> 19
+Time 3095: [SCHED] State=0 Cmd=3 isB=0 batch=2 vn_idx=0 t=0 adv=1
+Time 3105: [SCHED] State=8 Cmd=0 isB=1 batch=2 vn_idx=0 t=0 adv=1
+Time 3115: ACCELERATOR FINAL RESULT -> 19
+Time 3115: [SCHED] B-Pkt: Val=3 Mask=00000001 (idx=8, t=0)
+Time 3115: [SCHED] State=8 Cmd=0 isB=1 batch=2 vn_idx=0 t=1 adv=1
+Time 3125: Controller Packet -> Val=3  Mask=00000001
+Time 3125: [SCHED] State=8 Cmd=0 isB=1 batch=2 vn_idx=1 t=0 adv=1
+Time 3135: ACCELERATOR FINAL RESULT -> 19
+Time 3135: [SCHED] State=8 Cmd=0 isB=1 batch=2 vn_idx=1 t=1 adv=1
+Time 3145: [SCHED] State=8 Cmd=0 isB=1 batch=2 vn_idx=2 t=0 adv=1
+Time 3155: ACCELERATOR FINAL RESULT -> 19
+Time 3155: [SCHED] State=8 Cmd=0 isB=1 batch=2 vn_idx=2 t=1 adv=1
+Time 3165: [SCHED] State=8 Cmd=0 isB=1 batch=2 vn_idx=3 t=0 adv=1
+Time 3175: ACCELERATOR FINAL RESULT -> 19
+Time 3175: [SCHED] State=8 Cmd=0 isB=1 batch=2 vn_idx=3 t=1 adv=1
+Time 3185: [SCHED] State=9 Cmd=0 isB=1 batch=2 vn_idx=0 t=0 adv=1
+Time 3195: ACCELERATOR FINAL RESULT -> 19
+Time 3195: [SCHED] State=9 Cmd=0 isB=1 batch=2 vn_idx=0 t=0 adv=1
+Time 3205: [SCHED] State=9 Cmd=0 isB=1 batch=2 vn_idx=0 t=0 adv=1
+Time 3215: ACCELERATOR FINAL RESULT -> 19
+Time 3215: [SCHED] State=9 Cmd=0 isB=1 batch=2 vn_idx=0 t=0 adv=1
+Time 3225: [SCHED] State=9 Cmd=0 isB=1 batch=2 vn_idx=0 t=0 adv=1
+Time 3235: ACCELERATOR FINAL RESULT -> 19
+Time 3235: [SCHED] State=9 Cmd=0 isB=1 batch=2 vn_idx=0 t=0 adv=1
+Time 3245: [SCHED] State=9 Cmd=0 isB=1 batch=2 vn_idx=0 t=0 adv=1
+Time 3255: ACCELERATOR FINAL RESULT -> 19
+Time 3255: [SCHED] State=9 Cmd=0 isB=1 batch=2 vn_idx=0 t=0 adv=1
+Time 3265: [SCHED] State=9 Cmd=0 isB=1 batch=2 vn_idx=0 t=0 adv=1
+Time 3275: ACCELERATOR FINAL RESULT -> 19
+Time 3275: [SCHED] State=9 Cmd=0 isB=1 batch=2 vn_idx=0 t=0 adv=1
+Time 3285: [SCHED] State=9 Cmd=0 isB=1 batch=2 vn_idx=0 t=0 adv=1
+Time 3295: ACCELERATOR FINAL RESULT -> 19
+Time 3295: [SCHED] State=9 Cmd=0 isB=1 batch=2 vn_idx=0 t=0 adv=1
+Time 3305: [SCHED] State=9 Cmd=0 isB=1 batch=2 vn_idx=0 t=0 adv=1
+Time 3315: ACCELERATOR FINAL RESULT -> 19
+Time 3315: [SCHED] State=9 Cmd=0 isB=1 batch=2 vn_idx=0 t=0 adv=1
+Time 3325: [SCHED] State=9 Cmd=0 isB=1 batch=2 vn_idx=0 t=0 adv=1
+Time 3335: ACCELERATOR FINAL RESULT -> 19
+Time 3335: [SCHED] State=9 Cmd=0 isB=1 batch=2 vn_idx=0 t=0 adv=1
+Time 3345: [SCHED] State=9 Cmd=0 isB=1 batch=2 vn_idx=0 t=0 adv=1
+Time 3355: ACCELERATOR FINAL RESULT -> 19
+Time 3355: [SCHED] State=9 Cmd=0 isB=1 batch=2 vn_idx=0 t=0 adv=1
+Time 3365: [SCHED] State=9 Cmd=0 isB=1 batch=2 vn_idx=0 t=0 adv=1
+Time 3375: ACCELERATOR FINAL RESULT -> 19
+Time 3375: [SCHED] State=9 Cmd=0 isB=1 batch=2 vn_idx=0 t=0 adv=1
+Time 3385: [SCHED] State=9 Cmd=0 isB=1 batch=2 vn_idx=0 t=0 adv=1
+Time 3395: ACCELERATOR FINAL RESULT -> 19
+Time 3395: [SCHED] State=9 Cmd=0 isB=1 batch=2 vn_idx=0 t=0 adv=1
+Time 3405: [SCHED] State=9 Cmd=0 isB=1 batch=2 vn_idx=0 t=0 adv=1
+Time 3415: ACCELERATOR FINAL RESULT -> 19
+Time 3415: [SCHED] State=9 Cmd=0 isB=1 batch=2 vn_idx=0 t=0 adv=1
+Time 3425: [SCHED] State=9 Cmd=0 isB=1 batch=2 vn_idx=0 t=0 adv=1
+Time 3435: ACCELERATOR FINAL RESULT -> 19
+Time 3435: [SCHED] State=9 Cmd=0 isB=1 batch=2 vn_idx=0 t=0 adv=1
+Time 3445: [SCHED] State=9 Cmd=0 isB=1 batch=2 vn_idx=0 t=0 adv=1
+Time 3455: ACCELERATOR FINAL RESULT -> 19
+Time 3455: [SCHED] State=9 Cmd=0 isB=1 batch=2 vn_idx=0 t=0 adv=1
+Time 3465: [SCHED] State=9 Cmd=0 isB=1 batch=2 vn_idx=0 t=0 adv=1
+Time 3475: ACCELERATOR FINAL RESULT -> 19
+Time 3475: [SCHED] State=9 Cmd=0 isB=1 batch=2 vn_idx=0 t=0 adv=1
+Time 3485: [SCHED] State=9 Cmd=0 isB=1 batch=2 vn_idx=0 t=0 adv=1
+Time 3495: ACCELERATOR FINAL RESULT -> 19
+Time 3495: [SCHED] State=9 Cmd=0 isB=1 batch=2 vn_idx=0 t=0 adv=1
+Time 3505: [SCHED] State=9 Cmd=0 isB=1 batch=2 vn_idx=0 t=0 adv=1
+Time 3515: ACCELERATOR FINAL RESULT -> 19
+Time 3515: [SCHED] State=9 Cmd=0 isB=1 batch=2 vn_idx=0 t=0 adv=1
+Time 3525: [SCHED] State=9 Cmd=0 isB=1 batch=2 vn_idx=0 t=0 adv=1
+Time 3535: ACCELERATOR FINAL RESULT -> 19
+Time 3535: [SCHED] State=9 Cmd=0 isB=1 batch=2 vn_idx=0 t=0 adv=1
+Time 3545: [SCHED] State=9 Cmd=0 isB=1 batch=2 vn_idx=0 t=0 adv=1
+Time 3555: ACCELERATOR FINAL RESULT -> 19
+Time 3555: [SCHED] State=9 Cmd=0 isB=1 batch=2 vn_idx=0 t=0 adv=1
+Time 3565: [SCHED] State=9 Cmd=0 isB=1 batch=2 vn_idx=0 t=0 adv=1
+Time 3575: ACCELERATOR FINAL RESULT -> 19
+Time 3575: [SCHED] State=9 Cmd=0 isB=1 batch=2 vn_idx=0 t=0 adv=1
+Time 3585: [SCHED] State=9 Cmd=0 isB=1 batch=2 vn_idx=0 t=0 adv=1
+Time 3595: ACCELERATOR FINAL RESULT -> 19
+Time 3595: [SCHED] State=9 Cmd=0 isB=1 batch=2 vn_idx=0 t=0 adv=1
+Time 3605: [SCHED] State=9 Cmd=0 isB=1 batch=2 vn_idx=0 t=0 adv=1
+Time 3615: ACCELERATOR FINAL RESULT -> 19
+Time 3615: [SCHED] State=9 Cmd=0 isB=1 batch=2 vn_idx=0 t=0 adv=1
+Time 3625: [SCHED] State=9 Cmd=0 isB=1 batch=2 vn_idx=0 t=0 adv=1
+Time 3635: ACCELERATOR FINAL RESULT -> 19
+Time 3635: [SCHED] State=9 Cmd=0 isB=1 batch=2 vn_idx=0 t=0 adv=1
+Time 3645: [SCHED] State=9 Cmd=0 isB=1 batch=2 vn_idx=0 t=0 adv=1
+Time 3655: ACCELERATOR FINAL RESULT -> 19
+Time 3655: [SCHED] State=9 Cmd=0 isB=1 batch=2 vn_idx=0 t=0 adv=1
+Time 3665: [SCHED] State=9 Cmd=0 isB=1 batch=2 vn_idx=0 t=0 adv=1
+Time 3675: ACCELERATOR FINAL RESULT -> 19
+Time 3675: [SCHED] State=9 Cmd=0 isB=1 batch=2 vn_idx=0 t=0 adv=1
+Time 3685: [SCHED] State=9 Cmd=0 isB=1 batch=2 vn_idx=0 t=0 adv=1
+Time 3695: ACCELERATOR FINAL RESULT -> 19
+Time 3695: [SCHED] State=10 Cmd=0 isB=1 batch=2 vn_idx=0 t=0 adv=1
+Time 3695: [ST] ACK_ST entry: isB=1 cmd=0 batch=2 inc_done=0
+Time 3695: [ST] Incrementing current_batch to 3
+Time 3695: [ST] All batches completed, resetting dims_loaded
+ACK received for SEND MATRIX B
+Time 3705: [SCHED] State=0 Cmd=0 isB=1 batch=3 vn_idx=0 t=0 adv=1
+Time 3715: ACCELERATOR FINAL RESULT -> 19
+Time 3715: [SCHED] State=0 Cmd=0 isB=1 batch=3 vn_idx=0 t=0 adv=1
+
+=== FULL SEQUENCE COMPLETED ===
+Time 3725: [SCHED] State=0 Cmd=0 isB=1 batch=3 vn_idx=0 t=0 adv=1
+Time 3735: ACCELERATOR FINAL RESULT -> 19
+Time 3735: [SCHED] State=0 Cmd=0 isB=1 batch=3 vn_idx=0 t=0 adv=1
+Time 3745: [SCHED] State=0 Cmd=0 isB=1 batch=3 vn_idx=0 t=0 adv=1
+Time 3755: ACCELERATOR FINAL RESULT -> 19
+Time 3755: [SCHED] State=0 Cmd=0 isB=1 batch=3 vn_idx=0 t=0 adv=1
+Time 3765: [SCHED] State=0 Cmd=0 isB=1 batch=3 vn_idx=0 t=0 adv=1
+Time 3775: ACCELERATOR FINAL RESULT -> 19
+Time 3775: [SCHED] State=0 Cmd=0 isB=1 batch=3 vn_idx=0 t=0 adv=1
+Time 3785: [SCHED] State=0 Cmd=0 isB=1 batch=3 vn_idx=0 t=0 adv=1
+Time 3795: ACCELERATOR FINAL RESULT -> 19
+Time 3795: [SCHED] State=0 Cmd=0 isB=1 batch=3 vn_idx=0 t=0 adv=1
+Time 3805: [SCHED] State=0 Cmd=0 isB=1 batch=3 vn_idx=0 t=0 adv=1
+Time 3815: ACCELERATOR FINAL RESULT -> 19
+Time 3815: [SCHED] State=0 Cmd=0 isB=1 batch=3 vn_idx=0 t=0 adv=1
+tb_accel.v:167: $finish called at 3825 (1s)
+Time 3825: [SCHED] State=0 Cmd=0 isB=1 batch=3 vn_idx=0 t=0 adv=1
