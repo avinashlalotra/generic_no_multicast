@@ -49,8 +49,8 @@ module tb_accel;
         .A_ADDR_W(A_ADDR_W),
         .B_ADDR_W(B_ADDR_W),
         .BV_ADDR_W(BV_ADDR_W),
-        .A_INIT_FILE("/home/avinash/Desktop/MajorProject/generic_no_multicast/path_bit_gen/tb/mem_A_2x2.mem"),
-        .B_INIT_FILE("/home/avinash/Desktop/MajorProject/generic_no_multicast/path_bit_gen/tb/mem_B_2x2.mem")
+        .A_INIT_FILE("/home/avinash/Desktop/MajorProject/generic_no_multicast/final_codes/matrices/mem_A_2x2.mem"),
+        .B_INIT_FILE("/home/avinash/Desktop/MajorProject/generic_no_multicast/final_codes/matrices/mem_B_2x3.mem")
     ) dut (
         .CLK(clk),
         .RST_N(rst_n),
@@ -120,28 +120,49 @@ module tb_accel;
         end
     endtask
 
+    integer batch;
+    integer total_vns;
+    integer batch_vns;
+    integer num_batches;
+    integer M, K, N;
+
     initial begin
         rst_n = 0;
         cmd = CMD_INIT;
         // Initialize
         cmd_valid = 0;
-        output_en = 1; // ENABLED
+        output_en = 1;
         #20; rst_n = 1;
         
-        run_cmd(CMD_VN_ALLOC,      "VN ALLOCATION");
-        run_cmd(CMD_RN_CONFIG,     "RN CONFIGURATION");
-        run_cmd(CMD_MN_CFG_STAT,   "MN CONFIG STATIONARY");
-        run_cmd(CMD_SEND_A,        "SEND MATRIX A");
-        run_cmd(CMD_MN_CFG_STREAM, "MN CONFIG STREAMING");
-        run_cmd(CMD_SEND_B,        "SEND MATRIX B");
+        // Let's assume M, K, N are known for the loop (or read them if we want to be fancy)
+        // For the current test (2x2 * 2x3), M=2, K=2, N=3
+        M = 2; K = 2; N = 3;
+        total_vns = M * N;
+        batch_vns = NUM_MS / K;
+        num_batches = (total_vns + batch_vns - 1) / batch_vns;
+
+        $display("\n=== STARTING BATCHED EXECUTION (Total VNs: %0d, Batch Size: %0d, Num Batches: %0d) ===", total_vns, batch_vns, num_batches);
+
+        for (batch = 0; batch < num_batches; batch = batch + 1) begin
+            $display("\n--- BATCH %0d ---", batch);
+            run_cmd(CMD_VN_ALLOC,      "VN ALLOCATION");
+            run_cmd(CMD_RN_CONFIG,     "RN CONFIGURATION");
+            run_cmd(CMD_MN_CFG_STAT,   "MN CONFIG STATIONARY");
+            run_cmd(CMD_SEND_A,        "SEND MATRIX A");
+            run_cmd(CMD_MN_CFG_STREAM, "MN CONFIG STREAMING");
+            run_cmd(CMD_SEND_B,        "SEND MATRIX B");
+            
+            // Wait for results to drain before next batch
+            if (batch < num_batches - 1) begin
+                $display("  [TB] Waiting for ART to be EMPTY...");
+                wait(isEmpty == 1);
+                #20;
+            end
+        end
 
         $display("\n=== FULL SEQUENCE COMPLETED ===");
-        #500;
-        $display("Final RN Config: %b", dut.datapath.rn_config_data);
-        
-        // Wait longer for any late results
-        repeat (100) @(posedge clk);
-        #100;
+         #100;
+       
 
         $finish;
     end

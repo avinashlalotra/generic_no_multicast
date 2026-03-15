@@ -681,19 +681,29 @@ module packet_scheduler #(
 
     // Runtime dimensions (read from memory, persist across commands)
     reg [31:0] dim_M, dim_K, dim_N;
+    reg dims_loaded;
+    reg [31:0] current_batch;
+
+    // Derived parameters
+    wire [31:0] total_vns = dim_M * dim_N;
+    wire [31:0] batch_vns = (dim_K > 0) ? (NUM_MS / dim_K) : 1; 
 
     // Loop counters
-    reg [31:0] i, j, t;
-    reg [31:0] vn_idx;
+    reg [31:0] vn_idx, t;
+    wire [31:0] global_vn = (current_batch * batch_vns) + vn_idx;
 
     reg valid_req;
     reg is_b_phase;
+    reg batch_inc_done;
 
     // Drain counter for pipeline flush
-    reg [2:0] drain_cnt;
+    reg [7:0] drain_cnt;
 
     wire stall = (a_pkt_valid | b_pkt_valid) & !out_ready;
     wire advance = !stall;
+
+    // Local variables for logic
+    wire [31:0] rem_vns = (total_vns > current_batch * batch_vns) ? (total_vns - current_batch * batch_vns) : 0;
 
     // =========================================================================
     // Main State Machine
@@ -704,10 +714,10 @@ module packet_scheduler #(
             dim_M      <= 0;
             dim_K      <= 0;
             dim_N      <= 0;
-            i          <= 0;
-            j          <= 0;
-            t          <= 0;
+            dims_loaded <= 1'b0;
+            current_batch <= 0;
             vn_idx     <= 0;
+            t          <= 0;
             valid_req  <= 1'b0;
             is_b_phase <= 1'b0;
             drain_cnt  <= 0;
@@ -725,39 +735,35 @@ module packet_scheduler #(
                     if (cmd_valid) begin
                         case (cmd)
                             CMD_ALLOC_VN: begin
-                                state <= READ_M;
+                                if (!dims_loaded) begin
+                                    state <= READ_M;
+                                    current_batch <= 0;
+                                end else begin
+                                    state <= GEN_BV;
+                                end
+                                batch_inc_done <= 1'b0;
                             end
                             CMD_SEND_A: begin
                                 state      <= RUN_A;
-                                i          <= 0;
-                                j          <= 0;
+                                vn_idx     <= 0;
                                 t          <= 0;
                                 valid_req  <= 1'b1;
                                 is_b_phase <= 1'b0;
+                                batch_inc_done <= 1'b0;
                             end
                             CMD_SEND_B: begin
                                 state      <= RUN_B;
-                                i          <= 0;
-                                j          <= 0;
+                                vn_idx     <= 0;
                                 t          <= 0;
                                 valid_req  <= 1'b1;
                                 is_b_phase <= 1'b1;
+                                batch_inc_done <= 1'b0;
                             end
                             default: ; // CMD_IDLE: stay
                         endcase
                     end
                 end
 
-                // ---------------------------------------------------------
-                // Dimension reading: READ_M -> READ_K_A -> READ_K_B -> READ_N -> WAIT_DIM -> GEN_BV
-                //
-                // Timing (memory has 1-cycle read latency):
-                //   READ_M:   issue a_addr=0, b_addr=0
-                //   READ_K_A: issue a_addr=1, b_addr=1 ; capture a_data=M
-                //   READ_K_B: (no new reads)            ; capture a_data=K
-                //   READ_N:   (no new reads)            ; capture b_data=K (verify)
-                //   WAIT_DIM: (no new reads)            ; capture b_data=N
-                // ---------------------------------------------------------
                 READ_M: begin
                     state <= READ_K_A;
                 end
@@ -774,61 +780,62 @@ module packet_scheduler #(
                 end
                 WAIT_DIM: begin
                     dim_N  <= b_data;
-                    vn_idx <= 0;
+                    dims_loaded <= 1'b1;
+                    current_batch <= 0;
                     state  <= GEN_BV;
                 end
 
                 // ---------------------------------------------------------
-                // Generate bitvectors: write [count, bv0, bv1, ...] to bv_mem
+                // Generate bitvectors: write [count, bv0, bv1, ...] to bv_mem for CURRENT BATCH
                 // ---------------------------------------------------------
                 GEN_BV: begin
                     if (vn_idx == 0) begin
-                        // Write count = M*N to bv_mem[0]
+                        // Write count of VNs in this batch to bv_mem[0]
                         bv_wen   <= 1'b1;
                         bv_waddr <= 0;
-                        bv_wdata <= dim_M * dim_N;
+                        bv_wdata <= (rem_vns < batch_vns) ? rem_vns : batch_vns;
                         vn_idx   <= 1;
-                    end else if (vn_idx <= dim_M * dim_N) begin
-                        // Write BV for VN (vn_idx-1): K consecutive bits at position (vn_idx-1)*K
-                        bv_wen   <= 1'b1;
-                        bv_waddr <= vn_idx[BV_ADDR_W-1:0];
-                        bv_wdata <= (({{(NUM_MS-1){1'b0}}, 1'b1} << dim_K) - 1) << ((vn_idx - 1) * dim_K);
+                    end else if (vn_idx <= batch_vns) begin
+                        // Write local BV to shared memory
+                        if ((vn_idx - 1) < rem_vns) begin
+                            bv_wen   <= 1'b1;
+                            bv_waddr <= vn_idx[BV_ADDR_W-1:0];
+                            bv_wdata <= (({{(NUM_MS-1){1'b0}}, 1'b1} << dim_K) - 1) << ((vn_idx-1) * dim_K);
+                        end
                         vn_idx   <= vn_idx + 1;
                     end else begin
                         bv_wen <= 1'b0;
+                        vn_idx <= 0;
                         state  <= ACK_ST;
                     end
                 end
 
                 // ---------------------------------------------------------
-                // RUN_A / RUN_B: Send matrix packets
-                // Uses runtime dim_M, dim_K, dim_N
+                // RUN_A / RUN_B: Send matrix packets for CURRENT BATCH
                 // ---------------------------------------------------------
                 RUN_A, RUN_B: begin
-                    valid_req <= 1'b1;
+                    if (global_vn < total_vns) begin
+                        valid_req <= 1'b1;
+                    end else begin
+                        valid_req <= 1'b0;
+                    end
+
+                    // Increment counters
                     if (t == dim_K - 1) begin
                         t <= 0;
-                        if (i == dim_M - 1) begin
-                            i <= 0;
-                            if (j == dim_N - 1) begin
-                                j         <= 0;
-                                valid_req <= 1'b0;
-                                state     <= DRAIN;
-                                drain_cnt <= 3'd3; // Wait for pipeline to flush
-                            end else begin
-                                j <= j + 1;
-                            end
+                        if (vn_idx == batch_vns - 1) begin
+                            vn_idx    <= 0;
+                            valid_req <= 1'b0;
+                            state     <= DRAIN;
+                            drain_cnt <= 8'd50;
                         end else begin
-                            i <= i + 1;
+                            vn_idx <= vn_idx + 1;
                         end
                     end else begin
                         t <= t + 1;
                     end
                 end
 
-                // ---------------------------------------------------------
-                // DRAIN: Wait for pipeline-delayed packets to clear
-                // ---------------------------------------------------------
                 DRAIN: begin
                     if (drain_cnt > 0) begin
                         drain_cnt <= drain_cnt - 1;
@@ -837,8 +844,16 @@ module packet_scheduler #(
                     end
                 end
 
-                // ---------------------------------------------------------
                 ACK_ST: begin
+                    if (is_b_phase && !batch_inc_done) begin
+                        current_batch <= current_batch + 1;
+                        batch_inc_done <= 1'b1;
+                        // Reset if all batches done
+                        if ((current_batch + 1) * batch_vns >= total_vns) begin
+                            dims_loaded <= 1'b0;
+                        end
+                    end
+                    is_b_phase <= 1'b0;
                     ack   <= 1'b1;
                     state <= IDLE;
                 end
@@ -849,6 +864,9 @@ module packet_scheduler #(
     // =========================================================================
     // Memory Address and Read Enables
     // =========================================================================
+    wire [31:0] i_curr = global_vn / dim_N;
+    wire [31:0] j_curr = global_vn % dim_N;
+
     always @(*) begin
         a_ren  = 1'b0;
         b_ren  = 1'b0;
@@ -874,10 +892,10 @@ module packet_scheduler #(
                 if (valid_req && advance) begin
                     if (!is_b_phase) begin
                         a_ren  = 1'b1;
-                        a_addr = i * dim_K + t + 2;
+                        a_addr = i_curr * dim_K + t + 2;
                     end else begin
                         b_ren  = 1'b1;
-                        b_addr = j * dim_K + t + 2;
+                        b_addr = t * dim_N + j_curr + 2;
                     end
                 end
             end
@@ -889,25 +907,23 @@ module packet_scheduler #(
     // =========================================================================
     reg valid_req_d;
     reg is_b_phase_d;
-    reg [31:0] i_d, j_d, t_d;
+    reg [31:0] global_vn_d, t_d;
 
     always @(posedge clk or negedge rst_n) begin
         if (!rst_n) begin
             valid_req_d  <= 1'b0;
             is_b_phase_d <= 1'b0;
-            i_d <= 0;
-            j_d <= 0;
+            global_vn_d <= 0;
             t_d <= 0;
         end else if (advance) begin
             valid_req_d  <= valid_req;
             is_b_phase_d <= is_b_phase;
-            i_d <= i;
-            j_d <= j;
+            global_vn_d <= global_vn;
             t_d <= t;
         end
     end
 
-    wire [31:0] ms_index = ((i_d * dim_N + j_d) * dim_K) + t_d;
+    wire [31:0] ms_index = ((global_vn_d % batch_vns) * dim_K) + t_d;
     wire [NUM_MS-1:0] mask_one = 1;
     wire [NUM_MS-1:0] mask_val = mask_one << ms_index;
 
